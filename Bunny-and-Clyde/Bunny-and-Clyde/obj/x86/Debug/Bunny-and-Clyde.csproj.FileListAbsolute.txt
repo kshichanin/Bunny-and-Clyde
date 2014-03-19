@@ -10,3 +10,11 @@ C:\Users\Bestbuy860\Documents\BunnyandClyde\Bunny-and-Clyde\Bunny-and-Clyde\Bunn
 C:\Users\Bestbuy860\Documents\BunnyandClyde\Bunny-and-Clyde\Bunny-and-Clyde\Bunny-and-Clyde\obj\x86\Debug\Bunny-and-Clyde.pdb
 C:\Users\mlp4sf\Documents\GitHub\Bunny-and-Clyde\Bunny-and-Clyde\Bunny-and-Clyde\obj\x86\Debug\Bunny-and-Clyde.exe
 C:\Users\mlp4sf\Documents\GitHub\Bunny-and-Clyde\Bunny-and-Clyde\Bunny-and-Clyde\obj\x86\Debug\Bunny-and-Clyde.pdb
+C:\Users\mlp4sf\Documents\GitHub\Bunny-and-Clyde\Bunny-and-Clyde\Bunny-and-Clyde\bin\WindowsGL\Debug\SDL.dll
+C:\Users\mlp4sf\Documents\GitHub\Bunny-and-Clyde\Bunny-and-Clyde\Bunny-and-Clyde\bin\WindowsGL\Debug\Bunny-and-Clyde.exe
+C:\Users\mlp4sf\Documents\GitHub\Bunny-and-Clyde\Bunny-and-Clyde\Bunny-and-Clyde\bin\WindowsGL\Debug\Bunny-and-Clyde.pdb
+C:\Users\mlp4sf\Documents\GitHub\Bunny-and-Clyde\Bunny-and-Clyde\Bunny-and-Clyde\bin\WindowsGL\Debug\Lidgren.Network.dll
+C:\Users\mlp4sf\Documents\GitHub\Bunny-and-Clyde\Bunny-and-Clyde\Bunny-and-Clyde\bin\WindowsGL\Debug\MonoGame.Framework.dll
+C:\Users\mlp4sf\Documents\GitHub\Bunny-and-Clyde\Bunny-and-Clyde\Bunny-and-Clyde\bin\WindowsGL\Debug\OpenTK.dll
+C:\Users\mlp4sf\Documents\GitHub\Bunny-and-Clyde\Bunny-and-Clyde\Bunny-and-Clyde\bin\WindowsGL\Debug\Tao.Sdl.dll
+C:\Users\mlp4sf\Documents\GitHub\Bunny-and-Clyde\Bunny-and-Clyde\Bunny-and-Clyde\obj\x86\Debug\Bunny-and-Clyde.csprojResolveAssemblyReference.cache
