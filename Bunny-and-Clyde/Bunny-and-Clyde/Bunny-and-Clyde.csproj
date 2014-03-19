@@ -76,6 +76,9 @@
     <Content Include="Content\goldkey.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\platform.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Content\Turtle.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
