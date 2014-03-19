@@ -23,6 +23,9 @@ namespace Bunny_and_Clyde
             : base()
         {
             graphics = new GraphicsDeviceManager(this);
+            graphics.PreferredBackBufferHeight = GameGlobals.WINDOW_HEIGHT;
+            graphics.PreferredBackBufferWidth = GameGlobals.WINDOW_WIDTH;
+
             Content.RootDirectory = "Content";
         }
 
