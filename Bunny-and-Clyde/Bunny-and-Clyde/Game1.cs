@@ -18,8 +18,7 @@ namespace Bunny_and_Clyde
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
-
-        Sprite bunny;
+        GameScreen world;
 
         public Game1()
             : base()
@@ -40,7 +39,7 @@ namespace Bunny_and_Clyde
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
-            bunny = new Sprite("bunny", 100, 100, 98, 97);
+            world = new GameScreen();
             base.Initialize();
         }
 
@@ -54,7 +53,7 @@ namespace Bunny_and_Clyde
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
             // TODO: use this.Content to load your game content here
-            bunny.LoadContent(this.Content);
+            world.LoadContent(this.Content);
         }
 
         /// <summary>
@@ -91,7 +90,7 @@ namespace Bunny_and_Clyde
 
             // TODO: Add your drawing code here
             spriteBatch.Begin();
-            bunny.Draw(spriteBatch);
+            world.Draw(spriteBatch);
             spriteBatch.End();
             
             base.Draw(gameTime);

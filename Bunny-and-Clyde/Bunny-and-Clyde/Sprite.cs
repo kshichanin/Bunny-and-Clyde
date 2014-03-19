@@ -13,7 +13,8 @@ namespace Bunny_and_Clyde
     {
         private Texture2D image;
         private string imageName;
-        private int width, height;
+        //private int width, height;
+        private float scale;
 
         public Vector2 Position
         {
@@ -21,11 +22,10 @@ namespace Bunny_and_Clyde
             set;
         }
 
-        public Sprite(string imageName, float initialX, float initialY, int width, int height)
+        public Sprite(string imageName, float initialX, float initialY, float scale)
         {
             this.Position = new Vector2(initialX, initialY);
-            this.width = width;
-            this.height = height;
+            this.scale = scale;
             this.imageName = imageName;
         }
 
@@ -36,7 +36,7 @@ namespace Bunny_and_Clyde
 
         public void Draw(SpriteBatch sb)
         {
-            sb.Draw(image, this.Position, Color.White);
+            sb.Draw(image, this.Position, null, Color.White, 0f, Vector2.Zero, this.scale, SpriteEffects.None, 0);
         }
     }
 }
