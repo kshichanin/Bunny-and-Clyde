@@ -18,3 +18,8 @@ C:\Users\mlp4sf\Documents\GitHub\Bunny-and-Clyde\Bunny-and-Clyde\Bunny-and-Clyde
 C:\Users\mlp4sf\Documents\GitHub\Bunny-and-Clyde\Bunny-and-Clyde\Bunny-and-Clyde\bin\WindowsGL\Debug\OpenTK.dll
 C:\Users\mlp4sf\Documents\GitHub\Bunny-and-Clyde\Bunny-and-Clyde\Bunny-and-Clyde\bin\WindowsGL\Debug\Tao.Sdl.dll
 C:\Users\mlp4sf\Documents\GitHub\Bunny-and-Clyde\Bunny-and-Clyde\Bunny-and-Clyde\obj\x86\Debug\Bunny-and-Clyde.csprojResolveAssemblyReference.cache
+C:\Users\mlp4sf\Documents\GitHub\Bunny-and-Clyde\Bunny-and-Clyde\Bunny-and-Clyde\bin\WindowsGL\Debug\Content\bunny.png
+C:\Users\mlp4sf\Documents\GitHub\Bunny-and-Clyde\Bunny-and-Clyde\Bunny-and-Clyde\bin\WindowsGL\Debug\Content\golddoor.png
+C:\Users\mlp4sf\Documents\GitHub\Bunny-and-Clyde\Bunny-and-Clyde\Bunny-and-Clyde\bin\WindowsGL\Debug\Content\ground.png
+C:\Users\mlp4sf\Documents\GitHub\Bunny-and-Clyde\Bunny-and-Clyde\Bunny-and-Clyde\bin\WindowsGL\Debug\Content\goldkey.png
+C:\Users\mlp4sf\Documents\GitHub\Bunny-and-Clyde\Bunny-and-Clyde\Bunny-and-Clyde\bin\WindowsGL\Debug\Content\Turtle.png
