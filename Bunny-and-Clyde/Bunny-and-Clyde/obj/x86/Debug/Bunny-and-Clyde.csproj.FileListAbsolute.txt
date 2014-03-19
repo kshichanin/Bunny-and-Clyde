@@ -24,3 +24,4 @@ C:\Users\mlp4sf\Documents\GitHub\Bunny-and-Clyde\Bunny-and-Clyde\Bunny-and-Clyde
 C:\Users\mlp4sf\Documents\GitHub\Bunny-and-Clyde\Bunny-and-Clyde\Bunny-and-Clyde\bin\WindowsGL\Debug\Content\goldkey.png
 C:\Users\mlp4sf\Documents\GitHub\Bunny-and-Clyde\Bunny-and-Clyde\Bunny-and-Clyde\bin\WindowsGL\Debug\Content\Turtle.png
 C:\Users\mlp4sf\Documents\GitHub\Bunny-and-Clyde\Bunny-and-Clyde\Bunny-and-Clyde\bin\WindowsGL\Debug\Content\platform.png
+C:\Users\mlp4sf\Documents\GitHub\Bunny-and-Clyde\Bunny-and-Clyde\Bunny-and-Clyde\bin\WindowsGL\Debug\Content\water.png

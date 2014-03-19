@@ -20,12 +20,14 @@ namespace Bunny_and_Clyde
             this.worldSprites = new List<Sprite>();
             
             // hardcoding the world objects, this should be changed later
-            Sprite ground = new Sprite("ground", 0, 400, 2.0f);
-            Sprite ground2 = new Sprite("ground", 578, 400, 2.0f);
-            Sprite bunny = new Sprite("bunny", 100, 100, 1.0f);
-            this.worldSprites.Add(ground);
-            this.worldSprites.Add(bunny);
-            this.worldSprites.Add(ground2);
+            this.worldSprites.Add(new Sprite("water", 0, 405, 40.0f));
+            this.worldSprites.Add(new Sprite("ground", 0, 400, 2.0f));
+            this.worldSprites.Add(new Sprite("ground", 578, 400, 2.0f));
+            this.worldSprites.Add(new Sprite("bunny", 50, 327, 0.75f));
+            this.worldSprites.Add(new Sprite("Turtle", 375, 375, 1.0f));
+            this.worldSprites.Add(new Sprite("platform", 275, 250, 2.0f));
+            this.worldSprites.Add(new Sprite("goldkey", 350, 238, 1.0f));
+            this.worldSprites.Add(new Sprite("golddoor", 735, 315, 0.75f));
         }
 
         public void LoadContent(ContentManager content)
