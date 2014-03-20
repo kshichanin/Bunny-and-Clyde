@@ -27,9 +27,9 @@ namespace Bunny_and_Clyde
         {
             currentKeyboard = Keyboard.GetState();
 
-            checkScreenEdgeCollision();
-            checkPlatformCollision();
-            checkItemCollision();
+            //checkScreenEdgeCollision();
+            //checkPlatformCollision();
+            //checkItemCollision();
         }
 
         private bool checkScreenEdgeCollision(Vector2 newPosition)
@@ -39,13 +39,13 @@ namespace Bunny_and_Clyde
             else return true;
         }
 
-        //private bool checkPlatformCollision(Vector2 newPosition)
-        //{
-        //    if (
-        //}
+        private bool checkPlatformCollision(Vector2 newPosition)
+        {
+            if (
+        }
 
-        //private bool checkItemCollision()
-        //{
-        //}
+        private bool checkItemCollision()
+        {
+        }
     }
 }
