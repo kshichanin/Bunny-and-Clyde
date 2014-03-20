@@ -33,14 +33,12 @@ namespace Bunny_and_Clyde
             this.WorldSprites.Add(platform);
             this.WorldSprites.Add(new Sprite("goldkey", 350, 238, 25, 12));
             this.WorldSprites.Add(new Sprite("golddoor", 735, 315, 55, 85));
-<<<<<<< HEAD
 
             platforms.Add(ground1);
             platforms.Add(ground2);
             platforms.Add(platform);
-=======
+
             this.WorldSprites.Add(new Sprite("inventory", 0, 0, 55, 55));
->>>>>>> 17ffa17cdda403c7b4b6e284e88d0850c4016f74
         }
 
         public void LoadContent(ContentManager content)
