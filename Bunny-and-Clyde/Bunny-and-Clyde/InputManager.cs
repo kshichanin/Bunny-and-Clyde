@@ -39,13 +39,13 @@ namespace Bunny_and_Clyde
             else return true;
         }
 
-        private bool checkPlatformCollision(Vector2 newPosition)
-        {
-            if (
-        }
+        //private bool checkPlatformCollision(Vector2 newPosition)
+        //{
+        //    if (
+        //}
 
-        private bool checkItemCollision()
-        {
-        }
+        //private bool checkItemCollision()
+        //{
+        //}
     }
 }
