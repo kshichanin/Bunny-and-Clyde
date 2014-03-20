@@ -40,12 +40,12 @@ namespace Bunny_and_Clyde
             else return false;
         }
 
-        private bool checkPlatformCollision(Vector2 newPosition)
-        {
-            //if (newPosition.X <= 222 && newPosition.Y >= (400 - ActiveCharacter.Height)
-            //    return true;
-            //else if (newPosition.X >= (275 - ActiveCharacter.Width) && newPosition.X <= 497 && newPosition.Y 
-        }
+        //private bool checkPlatformCollision(Vector2 newPosition)
+        //{
+        //    //if (newPosition.X <= 222 && newPosition.Y >= (400 - ActiveCharacter.Height)
+        //    //    return true;
+        //    //else if (newPosition.X >= (275 - ActiveCharacter.Width) && newPosition.X <= 497 && newPosition.Y 
+        //}
 
         //private bool checkItemCollision()
         //{

@@ -19,6 +19,7 @@ namespace Bunny_and_Clyde
         public GameScreen()
         {
             this.WorldSprites = new List<Sprite>();
+            this.platforms = new List<Sprite>();
             
             // hardcoding the world objects, this should be changed later
             Sprite ground1 = new Sprite("ground", 0, 400, 222, 10);
