@@ -42,3 +42,5 @@ C:\Users\Mason\Documents\GitHub\Bunny-and-Clyde\Bunny-and-Clyde\Bunny-and-Clyde\
 C:\Users\Mason\Documents\GitHub\Bunny-and-Clyde\Bunny-and-Clyde\Bunny-and-Clyde\bin\WindowsGL\Debug\OpenTK.dll
 C:\Users\Mason\Documents\GitHub\Bunny-and-Clyde\Bunny-and-Clyde\Bunny-and-Clyde\bin\WindowsGL\Debug\Tao.Sdl.dll
 C:\Users\Mason\Documents\GitHub\Bunny-and-Clyde\Bunny-and-Clyde\Bunny-and-Clyde\obj\x86\Debug\Bunny-and-Clyde.csprojResolveAssemblyReference.cache
+C:\Users\Bestbuy860\Documents\GitHub\Bunny-and-Clyde\Bunny-and-Clyde\Bunny-and-Clyde\obj\x86\Debug\Bunny-and-Clyde.exe
+C:\Users\Bestbuy860\Documents\GitHub\Bunny-and-Clyde\Bunny-and-Clyde\Bunny-and-Clyde\obj\x86\Debug\Bunny-and-Clyde.pdb
