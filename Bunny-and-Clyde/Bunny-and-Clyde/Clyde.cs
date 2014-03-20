@@ -7,11 +7,12 @@ using System.Text;
 
 namespace Bunny_and_Clyde
 {
-    class Clyde : Sprite
+    class Clyde : Sprite, Gravity 
     {
         static int CLYDE_WIDTH = 58, CLYDE_HEIGHT = 48;
 
         public float Velocity { get; set; }
+        public bool isAirbourne() { return ClydeState == State.Airbourne; }
         public enum State
         {
             Default,
