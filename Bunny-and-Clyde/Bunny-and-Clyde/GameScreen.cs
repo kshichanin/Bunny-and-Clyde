@@ -13,36 +13,26 @@ namespace Bunny_and_Clyde
 {
     class GameScreen
     {
-        private List<Sprite> worldSprites;
+        public List<Sprite> WorldSprites { get; private set; }
 
         public GameScreen()
         {
-            this.worldSprites = new List<Sprite>();
+            this.WorldSprites = new List<Sprite>();
             
             // hardcoding the world objects, this should be changed later
-            //this.worldSprites.Add(new Sprite("water", 0, 405, 40.0f));
-            //this.worldSprites.Add(new Sprite("ground", 0, 400, 2.0f));
-            //this.worldSprites.Add(new Sprite("ground", 578, 400, 2.0f));
-            //this.worldSprites.Add(new Sprite("bunny", 50, 327, 0.75f));
-            //this.worldSprites.Add(new Sprite("Turtle", 375, 375, 1.0f));
-            //this.worldSprites.Add(new Sprite("platform", 275, 250, 2.0f));
-            //this.worldSprites.Add(new Sprite("goldkey", 350, 238, 1.0f));
-            //this.worldSprites.Add(new Sprite("golddoor", 735, 315, 0.75f));
-            //this.worldSprites.Add(new Sprite("ground", 300, 300, 150, 150));
-
-            this.worldSprites.Add(new Sprite("water", 0, 405, 800, 195));
-            this.worldSprites.Add(new Sprite("ground", 0, 400, 222, 10));
-            this.worldSprites.Add(new Sprite("ground", 578, 400, 222, 10));
-            this.worldSprites.Add(new Sprite("bunny", 50, 327, 74, 73));
-            this.worldSprites.Add(new Sprite("Turtle", 375, 375, 58, 48));
-            this.worldSprites.Add(new Sprite("platform", 275, 250, 222, 10));
-            this.worldSprites.Add(new Sprite("goldkey", 350, 238, 25, 12));
-            this.worldSprites.Add(new Sprite("golddoor", 735, 315, 55, 85));
+            this.WorldSprites.Add(new Sprite("water", 0, 405, 800, 195));
+            this.WorldSprites.Add(new Sprite("ground", 0, 400, 222, 10));
+            this.WorldSprites.Add(new Sprite("ground", 578, 400, 222, 10));
+            this.WorldSprites.Add(new Sprite("bunny", 50, 327, 74, 73));
+            this.WorldSprites.Add(new Sprite("Turtle", 375, 375, 58, 48));
+            this.WorldSprites.Add(new Sprite("platform", 275, 250, 222, 10));
+            this.WorldSprites.Add(new Sprite("goldkey", 350, 238, 25, 12));
+            this.WorldSprites.Add(new Sprite("golddoor", 735, 315, 55, 85));
         }
 
         public void LoadContent(ContentManager content)
         {
-            foreach (Sprite s in this.worldSprites)
+            foreach (Sprite s in this.WorldSprites)
             {
                 s.LoadContent(content);
             }
@@ -50,7 +40,7 @@ namespace Bunny_and_Clyde
 
         public void Draw(SpriteBatch sb)
         {
-            foreach (Sprite s in this.worldSprites)
+            foreach (Sprite s in this.WorldSprites)
             {
                 s.Draw(sb);
             }

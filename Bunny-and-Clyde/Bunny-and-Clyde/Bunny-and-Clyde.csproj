@@ -35,6 +35,7 @@
     <ApplicationIcon>Icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Bunny.cs" />
     <Compile Include="Game1.cs" />
     <Compile Include="GameGlobals.cs" />
     <Compile Include="GameScreen.cs" />
