@@ -35,14 +35,16 @@ namespace Bunny_and_Clyde
         private bool checkScreenEdgeCollision(Vector2 newPosition)
         {
             if (newPosition.X < 0 || newPosition.X > GameGlobals.WINDOW_WIDTH - ActiveCharacter.Width)
-                return false;
-            else return true;
+                return true;
+            else return false;
         }
 
-        //private bool checkPlatformCollision(Vector2 newPosition)
-        //{
-        //    if (
-        //}
+        private bool checkPlatformCollision(Vector2 newPosition)
+        {
+            //if (newPosition.X <= 222 && newPosition.Y >= (400 - ActiveCharacter.Height)
+            //    return true;
+            //else if (newPosition.X >= (275 - ActiveCharacter.Width) && newPosition.X <= 497 && newPosition.Y 
+        }
 
         //private bool checkItemCollision()
         //{
