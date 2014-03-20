@@ -16,8 +16,9 @@ namespace Bunny_and_Clyde
         private List<Sprite> worldSprites;
         private KeyboardState currentKeyboard, previousKeyboard;
         public Sprite ActiveCharacter { get; private set; }
+        public List<Sprite> Platforms { get; private set; }
 
-        public InputManager(List<Sprite> worldSprites, Sprite activeCharacter)
+        public InputManager(List<Sprite> worldSprites, Sprite activeCharacter, List<Sprite> platforms)
         {
             this.worldSprites = worldSprites;
             ActiveCharacter = activeCharacter;
