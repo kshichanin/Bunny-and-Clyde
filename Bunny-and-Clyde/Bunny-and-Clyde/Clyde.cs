@@ -10,7 +10,7 @@ namespace Bunny_and_Clyde
     class Clyde : Sprite, Gravity 
     {
         static int CLYDE_WIDTH = 58, CLYDE_HEIGHT = 48;
-
+        
         public bool isAirbourne() { return base.state == State.Airbourne; }
         //public enum State
         //{
