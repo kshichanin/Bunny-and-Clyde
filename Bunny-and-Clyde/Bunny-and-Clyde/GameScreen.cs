@@ -15,6 +15,10 @@ namespace Bunny_and_Clyde
     {
         public List<Sprite> WorldSprites { get; private set; }
         private List<Sprite> platforms;
+        private InputManager inputManager;
+        private Bunny bunny;
+        private Clyde clyde;
+        private Physics physics;
 
         public GameScreen()
         {
@@ -29,8 +33,10 @@ namespace Bunny_and_Clyde
             this.WorldSprites.Add(new Sprite("water", 0, 405, 800, 195));
             this.WorldSprites.Add(ground1);
             this.WorldSprites.Add(ground2);
-            this.WorldSprites.Add(new Sprite("bunny", 50, 327, 74, 73));
-            this.WorldSprites.Add(new Sprite("Turtle", 375, 375, 58, 48));
+            this.bunny = new Bunny(50, 327);
+            this.WorldSprites.Add(bunny);
+            this.clyde = new Clyde(375, 375);
+            this.WorldSprites.Add(clyde);
             this.WorldSprites.Add(platform);
             this.WorldSprites.Add(new Sprite("goldkey", 350, 238, 25, 12));
             this.WorldSprites.Add(new Sprite("golddoor", 735, 315, 55, 85));
@@ -38,8 +44,14 @@ namespace Bunny_and_Clyde
             platforms.Add(ground1);
             platforms.Add(ground2);
             platforms.Add(platform);
-
+            this.inputManager = new InputManager(WorldSprites, bunny, platforms);
+            
             this.WorldSprites.Add(new Sprite("inventory", 0, 0, 55, 55));
+        }
+
+        public void Update(GameTime gameTime)
+        {
+            inputManager.Update(gameTime);
         }
 
         public void LoadContent(ContentManager content)

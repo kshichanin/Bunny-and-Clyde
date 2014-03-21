@@ -15,6 +15,7 @@ namespace Bunny_and_Clyde
         private string imageName;
         public int Width { get; private set; }
         public int Height { get; private set; }
+        public float Velocity { get; set; }
         public Rectangle HitBox { get; private set; }
         //private float scale;
 

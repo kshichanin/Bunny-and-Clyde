@@ -15,7 +15,6 @@ namespace Bunny_and_Clyde
     {
         static int BUNNY_WIDTH = 74, BUNNY_HEIGHT = 73;
 
-        public float Velocity { get; set; }
         public bool isAirbourne() { return BunnyState == State.Airbourne; }
         public State BunnyState { get; set; }
         public enum State { Default, Riding, Airbourne }
