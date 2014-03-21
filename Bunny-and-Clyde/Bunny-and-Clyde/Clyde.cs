@@ -26,6 +26,7 @@ namespace Bunny_and_Clyde
         {
             Velocity = 0;
             base.state = State.Default;
+            base.jump = 3f;
         }
 
     }

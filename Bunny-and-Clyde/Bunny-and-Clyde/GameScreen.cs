@@ -29,18 +29,20 @@ namespace Bunny_and_Clyde
             Sprite ground1 = new Sprite("ground", 0, 400, 222, 10);
             Sprite ground2 = new Sprite("ground", 578, 400, 222, 10);
             Sprite platform = new Sprite("platform", 275, 250, 222, 10);
-
-            this.WorldSprites.Add(new Sprite("water", 0, 405, 800, 195));
-            this.WorldSprites.Add(ground1);
-            this.WorldSprites.Add(ground2);
-            this.bunny = new Bunny(50, 325);
-            this.WorldSprites.Add(bunny);
-            this.clyde = new Clyde(375, 375);
-            this.WorldSprites.Add(clyde);
-            this.WorldSprites.Add(platform);
             this.WorldSprites.Add(new Sprite("goldkey", 350, 238, 25, 12));
             this.WorldSprites.Add(new Sprite("golddoor", 735, 315, 55, 85));
+            Sprite water = new Sprite("water", 0, 415, 800, 195);
+            this.WorldSprites.Add(ground1);
+            this.WorldSprites.Add(ground2);
+            this.WorldSprites.Add(water);
+            this.bunny = new Bunny(50, 325);
+            this.WorldSprites.Add(bunny);
+            this.clyde = new Clyde(75, 320);
+            this.WorldSprites.Add(clyde);
+            this.WorldSprites.Add(platform);
+           
 
+            platforms.Add(water);
             platforms.Add(ground1);
             platforms.Add(ground2);
             platforms.Add(platform);

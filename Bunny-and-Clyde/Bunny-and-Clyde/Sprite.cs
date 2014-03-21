@@ -18,7 +18,7 @@ namespace Bunny_and_Clyde
         public float Velocity { get; set; }
         public Rectangle HitBox { get; private set; }
         public int Speed;
-
+        public float jump { get; set; }
         public enum State
         {
             Default,
@@ -47,6 +47,7 @@ namespace Bunny_and_Clyde
             this.imageName = imageName;
             HitBox = new Rectangle((int)initialX, (int)initialY, width, height);
             Speed = 5;
+            jump = 0;
         }
 
         public Rectangle testBox(float X, float Y) {
