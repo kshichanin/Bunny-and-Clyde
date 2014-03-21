@@ -16,17 +16,20 @@ namespace Bunny_and_Clyde
         private List<Sprite> worldSprites;
         private KeyboardState currentKeyboard, previousKeyboard;
         public Sprite ActiveCharacter { get; private set; }
+        public Sprite InactiveCharacter { get; private set; }
         public List<Sprite> Platforms { get; private set; }
 
-        public InputManager(List<Sprite> worldSprites, Sprite activeCharacter, List<Sprite> platforms)
+        public InputManager(List<Sprite> worldSprites, Sprite activeCharacter, Sprite inactiveCharacter,List<Sprite> platforms)
         {
             this.worldSprites = worldSprites;
             ActiveCharacter = activeCharacter;
+            InactiveCharacter = inactiveCharacter;
             this.Platforms = platforms;
         }
 
         public void Update(GameTime gameTime)
         {
+            //Left Right Direction check
             currentKeyboard = Keyboard.GetState();
             Vector2 direction;
             if (currentKeyboard.IsKeyDown(Keys.Left))
@@ -36,17 +39,27 @@ namespace Bunny_and_Clyde
             else
                 direction = Vector2.Zero;
 
-            
+            //Switch active characters
+            if (currentKeyboard.IsKeyDown(Keys.RightShift))
+            {
+                Sprite temp = ActiveCharacter;
+                ActiveCharacter = InactiveCharacter;
+                InactiveCharacter = temp;
+            }
+            //Vertical position change
             direction += new Vector2(0, -ActiveCharacter.Velocity);
 
+            
             if (currentKeyboard.IsKeyDown(Keys.Space) && ActiveCharacter.state != Sprite.State.Airbourne)
             {
                 ActiveCharacter.state = Sprite.State.Airbourne;
                 ActiveCharacter.Velocity = 5f;
             }
             
-            Vector2 newPosition = ActiveCharacter.Position + (GameGlobals.BUNNY_MOVE_SPEED * direction);
+            //create test positions
+            Vector2 newPosition = ActiveCharacter.Position + (ActiveCharacter.Speed * direction);
 
+            //Checks for collision and determines if position should be changed
             if (!checkScreenEdgeCollision(newPosition) && !checkPlatformCollision(newPosition, Platforms))
             {
                 ActiveCharacter.Position = newPosition;
