@@ -14,6 +14,10 @@ namespace Bunny_and_Clyde
     {
         const float gravityStrength = 1.0f;
         List<Gravity> worldObjects;
+        public Physics()
+        {
+            worldObjects = new List<Gravity>();
+        }
         public Physics(List<Gravity> objects)
         {
             worldObjects = objects;

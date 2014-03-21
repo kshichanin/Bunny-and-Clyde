@@ -45,12 +45,16 @@ namespace Bunny_and_Clyde
             platforms.Add(ground2);
             platforms.Add(platform);
             this.inputManager = new InputManager(WorldSprites, bunny, platforms);
-            
+
+            this.physics = new Physics();
+            this.physics.Add(this.bunny);
+            this.physics.Add(this.clyde);
             this.WorldSprites.Add(new Sprite("inventory", 0, 0, 55, 55));
         }
 
         public void Update(GameTime gameTime)
         {
+            this.physics.Update(gameTime);
             inputManager.Update(gameTime);
         }
 
