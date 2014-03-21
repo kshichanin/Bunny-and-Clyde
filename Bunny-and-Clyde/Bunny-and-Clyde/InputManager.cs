@@ -42,14 +42,15 @@ namespace Bunny_and_Clyde
             if (currentKeyboard.IsKeyDown(Keys.Space) && ActiveCharacter.state != Sprite.State.Airbourne)
             {
                 ActiveCharacter.state = Sprite.State.Airbourne;
-                ActiveCharacter.Velocity = 15f;
+                ActiveCharacter.Velocity = 0.5f;
             }
-            Console.WriteLine(ActiveCharacter.Velocity);
+            
             Vector2 newPosition = ActiveCharacter.Position + (GameGlobals.BUNNY_MOVE_SPEED * direction);
 
             if (!checkScreenEdgeCollision(newPosition) && !checkPlatformCollision(newPosition, Platforms))
-                Console.WriteLine("Something");
+            {
                 ActiveCharacter.Position = newPosition;
+            }
                 
             //checkItemCollision();
         }
@@ -66,6 +67,7 @@ namespace Bunny_and_Clyde
             foreach (Sprite platform in platforms)
             {
                 if (ActiveCharacter.HitBox.Intersects(platform.HitBox))
+                {
                     Console.WriteLine("Intersect");
                     if (ActiveCharacter.state == Sprite.State.Airbourne && ActiveCharacter.Velocity != 0)
                     {
@@ -73,6 +75,7 @@ namespace Bunny_and_Clyde
                         ActiveCharacter.Velocity = 0;
                     }
                     return true;
+                }
             }
 
             return false;

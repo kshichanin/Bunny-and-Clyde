@@ -54,6 +54,10 @@ namespace Bunny_and_Clyde
 
         public void Update(GameTime gameTime)
         {
+            foreach (Sprite s in this.WorldSprites)
+            {
+                s.Update(gameTime);
+            }
             this.physics.Update(gameTime);
             inputManager.Update(gameTime);
         }
