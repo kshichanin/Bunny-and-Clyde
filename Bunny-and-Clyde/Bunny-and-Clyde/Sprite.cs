@@ -47,6 +47,10 @@ namespace Bunny_and_Clyde
             HitBox = new Rectangle((int)initialX, (int)initialY, width, height);
         }
 
+        public Rectangle testBox(float X, float Y) {
+            return new Rectangle((int)X, (int)Y, Width, Height);
+        }
+
         public void LoadContent(ContentManager content)
         {
             image = content.Load<Texture2D>(imageName);

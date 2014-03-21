@@ -12,7 +12,7 @@ namespace Bunny_and_Clyde
 {
     class Physics
     {
-        const float gravityStrength = 0.4f;
+        const float gravityStrength = 0.3f;
         List<Gravity> worldObjects;
         public Physics()
         {
