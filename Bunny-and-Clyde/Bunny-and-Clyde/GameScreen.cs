@@ -33,7 +33,7 @@ namespace Bunny_and_Clyde
             this.WorldSprites.Add(new Sprite("water", 0, 405, 800, 195));
             this.WorldSprites.Add(ground1);
             this.WorldSprites.Add(ground2);
-            this.bunny = new Bunny(50, 327);
+            this.bunny = new Bunny(50, 325);
             this.WorldSprites.Add(bunny);
             this.clyde = new Clyde(375, 375);
             this.WorldSprites.Add(clyde);

@@ -35,11 +35,20 @@ namespace Bunny_and_Clyde
                 direction = Vector2.Normalize(new Vector2(1, 0));
             else
                 direction = Vector2.Zero;
-         
 
-            Vector2 newPosition = ActiveCharacter.Position + (GameGlobals.BUNNY_MOVE_SPEED * direction);
             
+            direction += new Vector2(0, -ActiveCharacter.Velocity);
+
+            if (currentKeyboard.IsKeyDown(Keys.Space) && ActiveCharacter.state != Sprite.State.Airbourne)
+            {
+                ActiveCharacter.state = Sprite.State.Airbourne;
+                ActiveCharacter.Velocity = 15f;
+            }
+            Console.WriteLine(ActiveCharacter.Velocity);
+            Vector2 newPosition = ActiveCharacter.Position + (GameGlobals.BUNNY_MOVE_SPEED * direction);
+
             if (!checkScreenEdgeCollision(newPosition) && !checkPlatformCollision(newPosition, Platforms))
+                Console.WriteLine("Something");
                 ActiveCharacter.Position = newPosition;
                 
             //checkItemCollision();
@@ -57,6 +66,12 @@ namespace Bunny_and_Clyde
             foreach (Sprite platform in platforms)
             {
                 if (ActiveCharacter.HitBox.Intersects(platform.HitBox))
+                    Console.WriteLine("Intersect");
+                    if (ActiveCharacter.state == Sprite.State.Airbourne && ActiveCharacter.Velocity != 0)
+                    {
+                        ActiveCharacter.state = Sprite.State.Default;
+                        ActiveCharacter.Velocity = 0;
+                    }
                     return true;
             }
 

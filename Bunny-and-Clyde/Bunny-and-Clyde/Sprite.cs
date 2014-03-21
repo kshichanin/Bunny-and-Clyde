@@ -17,6 +17,16 @@ namespace Bunny_and_Clyde
         public int Height { get; private set; }
         public float Velocity { get; set; }
         public Rectangle HitBox { get; private set; }
+
+        public enum State
+        {
+            Default,
+            Airbourne,
+            Swimming,
+            Diving,
+            Riding
+        }
+        public State state { get; set; }
         //private float scale;
 
         public Vector2 Position { get; set; }

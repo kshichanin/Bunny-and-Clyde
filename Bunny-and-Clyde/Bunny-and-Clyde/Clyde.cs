@@ -11,21 +11,21 @@ namespace Bunny_and_Clyde
     {
         static int CLYDE_WIDTH = 58, CLYDE_HEIGHT = 48;
 
-        public bool isAirbourne() { return ClydeState == State.Airbourne; }
-        public enum State
-        {
-            Default,
-            Airbourne,
-            Swimming,
-            Diving
-        }
-        public State ClydeState { get; set; }
+        public bool isAirbourne() { return base.state == State.Airbourne; }
+        //public enum State
+        //{
+        //    Default,
+        //    Airbourne,
+        //    Swimming,
+        //    Diving
+        //}
+        //public State ClydeState { get; set; }
 
         public Clyde(float initialX, float initialY)
             : base("Turtle", initialX, initialY, CLYDE_WIDTH, CLYDE_HEIGHT)
         {
             Velocity = 0;
-            ClydeState = State.Default;
+            base.state = State.Default;
         }
 
     }
