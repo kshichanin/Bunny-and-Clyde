@@ -35,15 +35,15 @@ namespace Bunny_and_Clyde
             //Left Right Direction check
             currentKeyboard = Keyboard.GetState();
             Vector2 direction;
-            if (currentKeyboard.IsKeyDown(Keys.Left))
+            if (currentKeyboard.IsKeyDown(Keys.Left) || GamePad .GetState (PlayerIndex.One).DPad .Left ==  ButtonState.Pressed )
                 direction = Vector2.Normalize(new Vector2(-1, 0));
-            else if (currentKeyboard.IsKeyDown(Keys.Right))
+            else if (currentKeyboard.IsKeyDown(Keys.Right) || GamePad .GetState (PlayerIndex.One).DPad .Right == ButtonState.Pressed)
                 direction = Vector2.Normalize(new Vector2(1, 0));
             else
                 direction = Vector2.Zero;
             
             //Switch active characters
-            if (currentKeyboard.IsKeyDown(Keys.RightShift) && !check)
+            if ((currentKeyboard.IsKeyDown(Keys.RightShift) || GamePad.GetState(PlayerIndex.One).Buttons.X == ButtonState.Pressed) && !check)
             {
                 InactiveCharacter.state = previousState;
                 Sprite temp = ActiveCharacter;
@@ -53,7 +53,7 @@ namespace Bunny_and_Clyde
                 InactiveCharacter.state = Sprite.State.Default;
                 bunny = !bunny;
             }
-            else if(currentKeyboard.IsKeyUp(Keys.RightShift))
+            else if ((currentKeyboard.IsKeyUp(Keys.RightShift) && GamePad.GetState(PlayerIndex.One).Buttons.X == ButtonState.Released))
             {
                 check = false;
             }
@@ -61,7 +61,7 @@ namespace Bunny_and_Clyde
             direction += new Vector2(0, -ActiveCharacter.Velocity);
 
             
-            if (currentKeyboard.IsKeyDown(Keys.Space) && ActiveCharacter.state != Sprite.State.Airbourne)
+            if ((currentKeyboard.IsKeyDown(Keys.Space) || GamePad .GetState (PlayerIndex.One ).Buttons .A == ButtonState.Pressed) && ActiveCharacter.state != Sprite.State.Airbourne)
             {
                 ActiveCharacter.state = Sprite.State.Airbourne;
                 ActiveCharacter.Velocity = ActiveCharacter.jump;
