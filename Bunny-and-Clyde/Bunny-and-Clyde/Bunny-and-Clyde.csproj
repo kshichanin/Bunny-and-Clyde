@@ -49,6 +49,7 @@
     <Compile Include="Sprite.cs" />
     <Compile Include="SpriteBunny.cs" />
     <Compile Include="SpriteClyde.cs" />
+    <Compile Include="TiledTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="OpenTK">
@@ -96,6 +97,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Icon.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TiledSharp.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
