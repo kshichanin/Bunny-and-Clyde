@@ -13,33 +13,55 @@ namespace Bunny_and_Clyde
     {
         private Texture2D image;
         private string imageName;
-        private int width, height;
-        private float scale;
-
-        public Vector2 Position
+        public int Width { get; private set; }
+        public int Height { get; private set; }
+        public float Velocity { get; set; }
+        public Rectangle HitBox { get; private set; }
+        public int Speed;
+        public float jump { get; set; }
+        public enum State
         {
-            get;
-            set;
+            Default,
+            Airbourne,
+            Swimming,
+            Diving,
+            Riding
         }
+        public State state { get; set; }
+        //private float scale;
 
-        public Sprite(string imageName, float initialX, float initialY, float scale)
-        {
-            this.Position = new Vector2(initialX, initialY);
-            this.scale = scale;
-            this.imageName = imageName;
-        }
+        public Vector2 Position { get; set; }
+
+        //public Sprite(string imageName, float initialX, float initialY, float scale)
+        //{
+        //    Position = new Vector2(initialX, initialY);
+        //    //this.scale = scale;
+        //    this.imageName = imageName;
+        //}
 
         public Sprite(string imageName, float initialX, float initialY, int width, int height)
         {
-            this.Position = new Vector2(initialX, initialY);
-            this.width = width;
-            this.height = height;
+            Position = new Vector2(initialX, initialY);
+            Width = width;
+            Height = height;
             this.imageName = imageName;
+            HitBox = new Rectangle((int)initialX, (int)initialY, width, height);
+            Speed = 5;
+            jump = 0;
+        }
+
+        public Rectangle testBox(float X, float Y) {
+            return new Rectangle((int)X, (int)Y, Width, Height);
         }
 
         public void LoadContent(ContentManager content)
         {
             image = content.Load<Texture2D>(imageName);
+        }
+
+        public void Update(GameTime gameTime)
+        {
+            HitBox = new Rectangle((int)Position.X, (int)Position.Y, Width, Height);
         }
 
         //public void Draw(SpriteBatch sb)
@@ -49,7 +71,7 @@ namespace Bunny_and_Clyde
 
         public void Draw(SpriteBatch sb)
         {
-            sb.Draw(image, new Rectangle((int)this.Position.X, (int)this.Position.Y, width, height), Color.White);
+            sb.Draw(image, new Rectangle((int)Position.X, (int)Position.Y, Width, Height), Color.White);
         }
     }
 }

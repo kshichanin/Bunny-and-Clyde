@@ -19,7 +19,7 @@ namespace Bunny_and_Clyde
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         GameScreen world;
-
+        
         public Game1()
             : base()
         {
@@ -76,7 +76,7 @@ namespace Bunny_and_Clyde
                 Exit();
 
             // TODO: Add your update logic here
-
+            world.Update(gameTime);
             base.Update(gameTime);
         }
 
