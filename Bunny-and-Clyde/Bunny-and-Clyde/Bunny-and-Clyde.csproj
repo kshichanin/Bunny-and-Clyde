@@ -72,6 +72,9 @@
       <Link>SDL.dll</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\Aindra.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Content\bunny.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
