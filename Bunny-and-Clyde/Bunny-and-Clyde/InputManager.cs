@@ -93,13 +93,23 @@ namespace Bunny_and_Clyde
                     ActiveCharacter.state = Sprite.State.Airbourne;
                 }
             }
-                
+            else if (checkScreenEdgeCollision(newPosition) && !checkPlatformCollision(newPosition, Platforms))
+            {
+                float newY = newPosition.Y;
+                float currentX = ActiveCharacter.Position.X;
+                newPosition = new Vector2(currentX, newY);
+                ActiveCharacter.Position = newPosition;
+                if (ActiveCharacter.Velocity >= 0)
+                {
+                    ActiveCharacter.state = Sprite.State.Airbourne;
+                }
+            }
             //checkItemCollision();
         }
 
         private bool checkScreenEdgeCollision(Vector2 newPosition)
         {
-            if (newPosition.X < 0 || newPosition.X > GameGlobals.WINDOW_WIDTH - ActiveCharacter.Width)
+            if (newPosition.X < 0 ||newPosition.X > GameGlobals.WINDOW_WIDTH - ActiveCharacter.Width)
                 return true;
             else return false;
         }
