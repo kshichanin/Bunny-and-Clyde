@@ -7,6 +7,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Storage;
 using Microsoft.Xna.Framework.GamerServices;
+using TiledSharp;
 #endregion
 
 namespace Bunny_and_Clyde
@@ -25,6 +26,10 @@ namespace Bunny_and_Clyde
             this.WorldSprites = new List<Sprite>();
             this.platforms = new List<Sprite>();
             
+            // load each tile to be drawn
+            TmxMap map = new TmxMap("Content\\lvl_1.tmx");
+            
+
             // hardcoding the world objects, this should be changed later
             Sprite ground1 = new Sprite("ground", 0, 400, 222, 50);
             Sprite ground2 = new Sprite("ground", 578, 400, 222, 50);

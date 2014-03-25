@@ -18,10 +18,14 @@ namespace Bunny_and_Clyde
         {
             TmxMap map = new TmxMap("Content\\lvl_1.tmx");
 
-            foreach (TmxObjectGroup.TmxObject o in map.ObjectGroups["objects"].Objects)
-            {
-                Console.WriteLine(o);
-            }
+            //foreach (TmxObjectGroup.TmxObject o in map.ObjectGroups["objects"].Objects)
+            //{
+            //    //Console.WriteLine("x:" + o.X);
+            //    //Console.WriteLine("y:" + o.Y);
+
+            //}
+
+            Console.WriteLine(map.Tilesets["ground_tile"].Image.Source);
         }
     }
 }
