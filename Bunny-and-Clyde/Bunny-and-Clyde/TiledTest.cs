@@ -14,5 +14,14 @@ namespace Bunny_and_Clyde
 {
     class TiledTest
     {
+        public TiledTest()
+        {
+            TmxMap map = new TmxMap("Content\\lvl_1.tmx");
+
+            foreach (TmxObjectGroup.TmxObject o in map.ObjectGroups["objects"].Objects)
+            {
+                Console.WriteLine(o);
+            }
+        }
     }
 }

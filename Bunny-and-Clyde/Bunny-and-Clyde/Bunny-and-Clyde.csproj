@@ -114,7 +114,9 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Content\lvl_1.tmx" />
+    <Content Include="Content\lvl_1.tmx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

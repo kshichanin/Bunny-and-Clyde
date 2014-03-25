@@ -82,8 +82,8 @@ namespace Bunny_and_Clyde
             
             //create test positions
             Vector2 newPosition = ActiveCharacter.Position + (ActiveCharacter.Speed * direction);
-            Console.WriteLine("Inactive= " + InactiveCharacter.Velocity);
-            Console.WriteLine("Inactive= " + ActiveCharacter.Velocity);
+            //Console.WriteLine("Inactive= " + InactiveCharacter.Velocity);
+            //Console.WriteLine("Inactive= " + ActiveCharacter.Velocity);
             //Checks for collision and determines if position should be changed
             if (!checkScreenEdgeCollision(newPosition) && !checkPlatformCollision(newPosition, Platforms))
             {
@@ -131,7 +131,7 @@ namespace Bunny_and_Clyde
                 }
                 else if (ActiveCharacter.testBox(newPosition.X, newPosition.Y).Intersects(platform.HitBox))
                 {
-                    Console.WriteLine("Intersect");
+                    //Console.WriteLine("Intersect");
                     if (ActiveCharacter.state == Sprite.State.Airbourne && ActiveCharacter.Velocity != 0)
                     {
                         ActiveCharacter.state = Sprite.State.Default;

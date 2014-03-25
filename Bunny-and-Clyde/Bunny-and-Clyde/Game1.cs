@@ -41,6 +41,7 @@ namespace Bunny_and_Clyde
             // TODO: Add your initialization logic here
             world = new GameScreen();
             base.Initialize();
+            TiledTest test = new TiledTest();
         }
 
         /// <summary>
