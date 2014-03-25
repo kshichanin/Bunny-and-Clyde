@@ -126,6 +126,7 @@ namespace Bunny_and_Clyde
                         if (bunny)
                         {
                             ActiveCharacter.Position = new Vector2(50, 325);
+                            ActiveCharacter.Velocity = 0;
                             return true;
                         }
                         else
