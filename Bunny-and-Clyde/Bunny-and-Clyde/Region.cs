@@ -7,18 +7,15 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Storage;
 using Microsoft.Xna.Framework.GamerServices;
-using TiledSharp;
 #endregion
 
 namespace Bunny_and_Clyde
 {
-    class TiledTest
+    class Region : Sprite
     {
-        public TiledTest()
+        public Region(float initialX, float initialY, int width, int height)
+            : base("blank", initialX, initialY, width, height)
         {
-            //TmxMap map = new TmxMap("Content\\lvl_1.tmx");
-
-            //Console.WriteLine(map.ObjectGroups["objects"].Objects["ground1"]);
         }
     }
 }
