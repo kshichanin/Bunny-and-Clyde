@@ -45,7 +45,7 @@ namespace Bunny_and_Clyde
             this.clyde = new Clyde(75, 350);
             this.WorldSprites.Add(clyde);
             this.WorldSprites.Add(platform);
-           
+            //this.WorldSprites.Add(new Sprite("lvl_1.png", 0, 0, 1280, 448));
 
             platforms.Add(water);
             platforms.Add(ground1);
