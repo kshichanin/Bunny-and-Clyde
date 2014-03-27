@@ -7,6 +7,8 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Storage;
 using Microsoft.Xna.Framework.GamerServices;
+using Microsoft.Xna.Framework.Audio;
+using Microsoft.Xna.Framework.Media;
 #endregion
 
 namespace Bunny_and_Clyde
@@ -52,7 +54,10 @@ namespace Bunny_and_Clyde
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
-
+            Song song = Content.Load<Song>("mainthemetheone.wav");  // Put the name of your song here instead of "song_title"
+            MediaPlayer.IsRepeating = true;
+            MediaPlayer.Volume = 0.25f;
+            MediaPlayer.Play(song);
             // TODO: use this.Content to load your game content here
             world.LoadContent(this.Content);
         }
