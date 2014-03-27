@@ -16,6 +16,7 @@ namespace Bunny_and_Clyde
     {
         public List<Sprite> WorldSprites { get; private set; }
         private List<Sprite> platforms;
+        private List<Sprite> items;
         private InputManager inputManager;
         private Bunny bunny;
         private Clyde clyde;
@@ -26,7 +27,8 @@ namespace Bunny_and_Clyde
         {
             this.WorldSprites = new List<Sprite>();
             this.platforms = new List<Sprite>();
-            
+            this.items = new List<Sprite>();
+
             // load each object to be drawn
             TmxMap map = new TmxMap("Content\\lvl_1.tmx");
             TmxObjectGroup mapObjectsDrawable = map.ObjectGroups["drawable"];
@@ -53,6 +55,7 @@ namespace Bunny_and_Clyde
             {
                 Sprite currentObject = new Sprite(o.Properties["imageName"], o.X, o.Y, o.Width, o.Height);
                 this.WorldSprites.Add(currentObject);
+                this.items.Add(currentObject);
             }
 
             this.background = new Sprite("lvl_1.png", 0, 0, 1280, 448);
