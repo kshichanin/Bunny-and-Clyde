@@ -22,7 +22,7 @@ namespace Bunny_and_Clyde
         public Bunny(float initialX, float initialY)
             : base("bunny", initialX, initialY, BUNNY_WIDTH, BUNNY_HEIGHT)
         {
-            Velocity = 0;
+            Velocity = new Vector2 (0,0);
             base.state = State.Default;
             base.jump = 5f;
         }

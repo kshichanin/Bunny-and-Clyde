@@ -16,6 +16,12 @@ namespace Bunny_and_Clyde
             stationaryobjects = new List<Sprite>();
             movingObjects = new List<Sprite>();
         }
+        public CollisionManager(List<Sprite> sld, List<Sprite> stationary, List<Sprite> moving)
+        {
+            solids = sld;
+            stationaryobjects = stationary;
+            movingObjects = moving;
+        }
         public void addSolid(Sprite s)
         {
             solids.Add(s);
@@ -40,20 +46,21 @@ namespace Bunny_and_Clyde
             Vector2 velocity = sprite.Velocity;
             if (checkPlatformCollision(sprite.testBox(velocity.X, 0)))
             {
-                resolveCollision(sprite, velocity);
+                resolveCollision(sprite, new Vector2  (velocity.X, 0));
             }
             else
             {
-                sprite.Position += velocity;
+                sprite.Position += new Vector2 (velocity.X, 0);
             }
             if (checkPlatformCollision(sprite.testBox(0, velocity.Y)))
             {
-                resolveCollision(sprite, velocity);
+                resolveCollision(sprite, new Vector2(0,velocity.Y));
                 sprite.Velocity = new Vector2(velocity.X, 0);
+                sprite.state = Sprite.State.Default;
             }
             else
             {
-                sprite.Position += velocity;
+                sprite.Position += new Vector2 (0, velocity .Y);
             }
         }
         public void resolveCollision(Sprite s, Vector2 velocity)
@@ -61,21 +68,26 @@ namespace Bunny_and_Clyde
             float time = 0.5f;
             int i = 1;
             bool collides = true;
-            while (i <= 5 || collides)
+            while (i <= 5 )
             {
                 collides = checkPlatformCollision(s.testBox(velocity.X * time, velocity.Y * time));
                 i++;
                 if (collides)
                 {
-                    time -= 1 / (2 ^ i);
+                    time -= 1 / (float)Math.Pow (2,i);
                 }
                 else
                 {
-                    time += 1 / (2 ^ i);
+                    time += 1 / (float)Math.Pow (2,i);
                 }
 
             }
+            if (time == 0.015625f)
+            {
+                time = 0;
+            }
             s.Position += velocity * time;
+            s.Speed = s.Speed;
         }
         public bool checkPlatformCollision(Rectangle r)
         {

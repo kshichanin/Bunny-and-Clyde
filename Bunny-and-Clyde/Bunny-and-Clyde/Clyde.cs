@@ -24,7 +24,7 @@ namespace Bunny_and_Clyde
         public Clyde(float initialX, float initialY)
             : base("Turtle", initialX, initialY, CLYDE_WIDTH, CLYDE_HEIGHT)
         {
-            Velocity = 0;
+            Velocity = Vector2 .Zero ;
             base.state = State.Default;
             base.jump = 3f;
         }

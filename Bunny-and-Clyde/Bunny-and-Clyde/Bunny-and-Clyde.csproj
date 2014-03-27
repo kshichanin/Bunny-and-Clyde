@@ -38,6 +38,7 @@
   <ItemGroup>
     <Compile Include="Bunny.cs" />
     <Compile Include="Clyde.cs" />
+    <Compile Include="CollisionManager.cs" />
     <Compile Include="Game1.cs" />
     <Compile Include="GameGlobals.cs" />
     <Compile Include="GameScreen.cs" />
@@ -90,7 +91,9 @@
     <Content Include="Content\Clyde.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\door.png" />
+    <Content Include="Content\door.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Content\door_tile.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -113,6 +116,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\key.png" />
+    <Content Include="Content\key.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Content\key_tile.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

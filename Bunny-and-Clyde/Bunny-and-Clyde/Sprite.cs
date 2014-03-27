@@ -51,7 +51,7 @@ namespace Bunny_and_Clyde
         }
 
         public Rectangle testBox(float X, float Y) {
-            return new Rectangle((int)X, (int)Y, Width, Height);
+            return new Rectangle((int)(X+Position.X) , (int)(Y+Position .Y), Width, Height);
         }
 
         public void LoadContent(ContentManager content)

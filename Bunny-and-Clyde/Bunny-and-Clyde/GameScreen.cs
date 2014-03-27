@@ -25,7 +25,7 @@ namespace Bunny_and_Clyde
         private Clyde clyde;
         private Physics physics;
         private Sprite background;
-
+        private CollisionManager collisions;
         public GameScreen()
         {
 
@@ -76,9 +76,9 @@ namespace Bunny_and_Clyde
             //this.WorldSprites.Add(ground2);
             //this.WorldSprites.Add(water);
             //this.WorldSprites.Add(platform);
-            this.bunny = new Bunny(50, 225);
+            this.bunny = new Bunny(50, 150);
             this.WorldSprites.Add(bunny);
-            this.clyde = new Clyde(75, 250);
+            this.clyde = new Clyde(75, 150);
             this.WorldSprites.Add(clyde);
             //this.WorldSprites.Add(new Sprite("lvl_1.png", 0, 0, 1280, 448));
 
@@ -86,12 +86,20 @@ namespace Bunny_and_Clyde
             //platforms.Add(ground1);
             //platforms.Add(ground2);
             //platforms.Add(platform);
+<<<<<<< HEAD
             
             this.inputManager = new InputManager(WorldSprites, bunny, clyde, platforms, sounds);
 
+=======
+            this.inputManager = new InputManager(WorldSprites, bunny, clyde, platforms);
+            
+>>>>>>> Collision bugs
             this.physics = new Physics();
             this.physics.Add(this.bunny);
             this.physics.Add(this.clyde);
+            this.collisions = new CollisionManager(platforms, items, new List<Sprite>());
+            this.collisions.addMoving(this.bunny);
+            this.collisions.addMoving(this.clyde);
             this.WorldSprites.Add(new Sprite("inventory", 0, 0, 55, 55));
         }
 
@@ -103,6 +111,7 @@ namespace Bunny_and_Clyde
             }
             this.physics.Update(gameTime);
             inputManager.Update(gameTime);
+            this.collisions.Update();
         }
 
         public void LoadContent(ContentManager content)

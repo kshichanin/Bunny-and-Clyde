@@ -26,7 +26,7 @@ namespace Bunny_and_Clyde
         {
             worldObjects = objects;
         }
-        public void Update2(GameTime time, List<Action> actions)
+       /* public void Update2(GameTime time, List<Action> actions)
         {
             Vector2 bunnyHvec = new Vector2(0, 0);
             Vector2 clydeHvec = new Vector2(0, 0);
@@ -42,7 +42,7 @@ namespace Bunny_and_Clyde
             if(actions.Contains(Action.ClydeMoveLeft){
             
             }
-        }
+        }*/
         public void moveSprite(Sprite sprite, Vector2 velocity)
         {
             if (checkPlatformCollision(sprite.testBox(velocity.X, velocity.Y)))
@@ -90,7 +90,7 @@ namespace Bunny_and_Clyde
         {
             foreach (Gravity worldObject in worldObjects)
             {
-                if (worldObject.isAirbourne())
+                if (worldObject.isAirbourne() || true)
                 {
                     worldObject.Velocity += new Vector2(0, gravityStrength);
                 }
