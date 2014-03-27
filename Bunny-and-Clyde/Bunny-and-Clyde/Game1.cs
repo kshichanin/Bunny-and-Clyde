@@ -28,10 +28,9 @@ namespace Bunny_and_Clyde
             graphics = new GraphicsDeviceManager(this);
             graphics.PreferredBackBufferHeight = GameGlobals.WINDOW_HEIGHT;
             graphics.PreferredBackBufferWidth = GameGlobals.WINDOW_WIDTH;
-
             Content.RootDirectory = "Content";
         }
-
+        
         /// <summary>
         /// Allows the game to perform any initialization it needs to before starting to run.
         /// This is where it can query for any required services and load any non-graphic
