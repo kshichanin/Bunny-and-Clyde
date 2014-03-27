@@ -113,6 +113,9 @@
     <Content Include="Content\lvl_1.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\mainthemetheone.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Content\platform.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
