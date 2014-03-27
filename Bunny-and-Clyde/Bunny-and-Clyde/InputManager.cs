@@ -35,12 +35,12 @@ namespace Bunny_and_Clyde
             //Left Right Direction check
             currentKeyboard = Keyboard.GetState();
             Vector2 direction;
-            if (currentKeyboard.IsKeyDown(Keys.Left) || GamePad .GetState (PlayerIndex.One).DPad .Left ==  ButtonState.Pressed )
-                direction = Vector2.Normalize(new Vector2(-1, 0));
-            else if (currentKeyboard.IsKeyDown(Keys.Right) || GamePad .GetState (PlayerIndex.One).DPad .Right == ButtonState.Pressed)
-                direction = Vector2.Normalize(new Vector2(1, 0));
+            if (currentKeyboard.IsKeyDown(Keys.Left) || GamePad.GetState(PlayerIndex.One).DPad.Left == ButtonState.Pressed)
+                ActiveCharacter.Velocity = new Vector2(-ActiveCharacter.Speed, ActiveCharacter.Velocity.Y);
+            else if (currentKeyboard.IsKeyDown(Keys.Right) || GamePad.GetState(PlayerIndex.One).DPad.Right == ButtonState.Pressed)
+                ActiveCharacter.Velocity = new Vector2(ActiveCharacter.Speed, ActiveCharacter.Velocity.Y);
             else
-                direction = Vector2.Zero;
+                ActiveCharacter.Velocity = new Vector2(0, ActiveCharacter.Velocity.Y);
             
             //Switch active characters
             if ((currentKeyboard.IsKeyDown(Keys.RightShift) || GamePad.GetState(PlayerIndex.One).Buttons.X == ButtonState.Pressed) && !check)
@@ -58,13 +58,13 @@ namespace Bunny_and_Clyde
                 check = false;
             }
             //Vertical position change
-            direction += new Vector2(0, -ActiveCharacter.Velocity);
+
 
             
             if ((currentKeyboard.IsKeyDown(Keys.Space) || GamePad .GetState (PlayerIndex.One ).Buttons .A == ButtonState.Pressed) && ActiveCharacter.state != Sprite.State.Airbourne)
             {
                 ActiveCharacter.state = Sprite.State.Airbourne;
-                ActiveCharacter.Velocity = ActiveCharacter.jump;
+                ActiveCharacter.Velocity += new Vector2 (0, ActiveCharacter.jump);
             }
 
             if (ActiveCharacter.HitBox.Intersects(worldSprites[0].HitBox))
@@ -81,14 +81,15 @@ namespace Bunny_and_Clyde
             }
             
             //create test positions
-            Vector2 newPosition = ActiveCharacter.Position + (ActiveCharacter.Speed * direction);
+            /*
+            Vector2 newPosition;// = ActiveCharacter.Position + (ActiveCharacter.Speed * direction);
             //Console.WriteLine("Inactive= " + InactiveCharacter.Velocity);
             //Console.WriteLine("Inactive= " + ActiveCharacter.Velocity);
             //Checks for collision and determines if position should be changed
             if (!checkScreenEdgeCollision(newPosition) && !checkPlatformCollision(newPosition, Platforms))
             {
                 ActiveCharacter.Position = newPosition;
-                if (ActiveCharacter.Velocity >= 0)
+                if (ActiveCharacter.Velocity.Y >= 0)
                 {
                     ActiveCharacter.state = Sprite.State.Airbourne;
                 }
@@ -99,14 +100,15 @@ namespace Bunny_and_Clyde
                 float currentX = ActiveCharacter.Position.X;
                 newPosition = new Vector2(currentX, newY);
                 ActiveCharacter.Position = newPosition;
-                if (ActiveCharacter.Velocity >= 0)
+                if (ActiveCharacter.Velocity.Y >= 0)
                 {
                     ActiveCharacter.state = Sprite.State.Airbourne;
                 }
             }
+            */
             //checkItemCollision();
         }
-
+/*
         private bool checkScreenEdgeCollision(Vector2 newPosition)
         {
             if (newPosition.X < 0 ||newPosition.X > GameGlobals.WINDOW_WIDTH - ActiveCharacter.Width)
@@ -155,7 +157,7 @@ namespace Bunny_and_Clyde
 
             return false;
         }
-
+        */
         //private bool checkItemCollision()
         //{
         //}
