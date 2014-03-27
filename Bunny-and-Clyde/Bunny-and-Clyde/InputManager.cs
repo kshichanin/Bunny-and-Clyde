@@ -7,6 +7,9 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Storage;
 using Microsoft.Xna.Framework.GamerServices;
+using Microsoft.Xna.Framework.Audio;
+using Microsoft.Xna.Framework.Media;
+
 #endregion
 
 namespace Bunny_and_Clyde
@@ -19,15 +22,17 @@ namespace Bunny_and_Clyde
         public Sprite InactiveCharacter { get; private set; }
         public Sprite.State previousState { get; set; }
         public List<Sprite> Platforms { get; private set; }
+        public List<SoundEffect> sounds { get; private set; }
         private bool check = false;
         private bool bunny = true;
-        public InputManager(List<Sprite> worldSprites, Sprite activeCharacter, Sprite inactiveCharacter,List<Sprite> platforms)
+        public InputManager(List<Sprite> worldSprites, Sprite activeCharacter, Sprite inactiveCharacter,List<Sprite> platforms, List<SoundEffect> sounds)
         {
             this.worldSprites = worldSprites;
             ActiveCharacter = activeCharacter;
             InactiveCharacter = inactiveCharacter;
             this.Platforms = platforms;
             previousState = InactiveCharacter.state;
+            this.sounds = sounds;
         }
 
         public void Update(GameTime gameTime)
@@ -63,6 +68,8 @@ namespace Bunny_and_Clyde
             
             if ((currentKeyboard.IsKeyDown(Keys.Space) || GamePad .GetState (PlayerIndex.One ).Buttons .A == ButtonState.Pressed) && ActiveCharacter.state != Sprite.State.Airbourne)
             {
+               
+                sounds[0].Play();
                 ActiveCharacter.state = Sprite.State.Airbourne;
                 ActiveCharacter.Velocity += new Vector2 (0, ActiveCharacter.jump);
             }

@@ -86,6 +86,7 @@
     <Content Include="Content\bunny.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\bunny_jump.wav" />
     <Content Include="Content\Clyde.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

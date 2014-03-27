@@ -7,6 +7,8 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Storage;
 using Microsoft.Xna.Framework.GamerServices;
+using Microsoft.Xna.Framework.Audio;
+using Microsoft.Xna.Framework.Media;
 using TiledSharp;
 #endregion
 
@@ -17,6 +19,7 @@ namespace Bunny_and_Clyde
         public List<Sprite> WorldSprites { get; private set; }
         private List<Sprite> platforms;
         private List<Sprite> items;
+        private List<SoundEffect> sounds;
         private InputManager inputManager;
         private Bunny bunny;
         private Clyde clyde;
@@ -25,9 +28,11 @@ namespace Bunny_and_Clyde
 
         public GameScreen()
         {
+
             this.WorldSprites = new List<Sprite>();
             this.platforms = new List<Sprite>();
             this.items = new List<Sprite>();
+            this.sounds = new List<SoundEffect>();
 
             // load each object to be drawn
             TmxMap map = new TmxMap("Content\\lvl_1.tmx");
@@ -81,7 +86,8 @@ namespace Bunny_and_Clyde
             //platforms.Add(ground1);
             //platforms.Add(ground2);
             //platforms.Add(platform);
-            this.inputManager = new InputManager(WorldSprites, bunny, clyde, platforms);
+            
+            this.inputManager = new InputManager(WorldSprites, bunny, clyde, platforms, sounds);
 
             this.physics = new Physics();
             this.physics.Add(this.bunny);
@@ -102,7 +108,9 @@ namespace Bunny_and_Clyde
         public void LoadContent(ContentManager content)
         {
             this.background.LoadContent(content);
-
+            SoundEffect jump;
+            jump = content.Load<SoundEffect>("bunny_jump.wav");
+            sounds.Add(jump);
             foreach (Sprite s in this.WorldSprites)
             {
                 s.LoadContent(content);
