@@ -112,6 +112,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\key.png" />
+    <Content Include="Content\key_tile.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Content\lvl_1.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
