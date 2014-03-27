@@ -1,46 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" width="40" height="14" tilewidth="32" tileheight="32">
- <tileset firstgid="1" name="ground_tile" tilewidth="32" tileheight="32">
-  <image source="ground_tile.png" width="32" height="32"/>
-  <tile id="0">
-   <properties>
-    <property name="imageName" value="ground_tile"/>
-   </properties>
-  </tile>
+<map version="1.0" orientation="orthogonal" width="26" height="20" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" name="tileset_1x1" tilewidth="32" tileheight="32" spacing="1">
+  <image source="tileset_1x1.png" width="131" height="32"/>
  </tileset>
- <tileset firstgid="2" name="platform_tile" tilewidth="32" tileheight="32">
-  <image source="platform_tile.png" width="32" height="32"/>
-  <tile id="0">
-   <properties>
-    <property name="imageName" value="platform_tile"/>
-   </properties>
-  </tile>
- </tileset>
- <tileset firstgid="3" name="water_tile" tilewidth="32" tileheight="32">
-  <image source="water_tile.png" width="32" height="32"/>
-  <tile id="0">
-   <properties>
-    <property name="imageName" value="water_tile"/>
-   </properties>
-  </tile>
- </tileset>
- <tileset firstgid="4" name="door_tile" tilewidth="64" tileheight="96">
+ <tileset firstgid="5" name="door_tile" tilewidth="64" tileheight="96" spacing="1">
   <image source="door_tile.png" width="64" height="96"/>
-  <tile id="0">
-   <properties>
-    <property name="image_name" value="door_tile"/>
-   </properties>
-  </tile>
  </tileset>
- <tileset firstgid="5" name="goldkey_tile" tilewidth="64" tileheight="32">
-  <image source="goldkey_tile.png" width="64" height="32"/>
-  <tile id="0">
-   <properties>
-    <property name="imageName" value="goldkey_tile"/>
-   </properties>
-  </tile>
- </tileset>
- <layer name="background" width="40" height="14">
+ <layer name="background" width="26" height="20">
   <data>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -124,9 +90,20 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -139,6 +116,7 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
+   <tile gid="1"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -164,6 +142,7 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
+   <tile gid="1"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -185,6 +164,11 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -203,6 +187,9 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -236,6 +223,14 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -253,6 +248,8 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -271,6 +268,14 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -285,7 +290,70 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
    <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -306,195 +374,32 @@
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="1"/>
+   <tile gid="1"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
+   <tile gid="2"/>
+   <tile gid="2"/>
+   <tile gid="2"/>
+   <tile gid="2"/>
+   <tile gid="2"/>
+   <tile gid="2"/>
+   <tile gid="2"/>
+   <tile gid="2"/>
    <tile gid="3"/>
    <tile gid="3"/>
    <tile gid="3"/>
@@ -510,31 +415,17 @@
    <tile gid="3"/>
    <tile gid="3"/>
    <tile gid="3"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
+   <tile gid="2"/>
+   <tile gid="2"/>
+   <tile gid="2"/>
+   <tile gid="2"/>
+   <tile gid="2"/>
+   <tile gid="2"/>
+   <tile gid="2"/>
+   <tile gid="2"/>
+   <tile gid="2"/>
+   <tile gid="2"/>
+   <tile gid="2"/>
    <tile gid="3"/>
    <tile gid="3"/>
    <tile gid="3"/>
@@ -550,31 +441,17 @@
    <tile gid="3"/>
    <tile gid="3"/>
    <tile gid="3"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
+   <tile gid="2"/>
+   <tile gid="2"/>
+   <tile gid="2"/>
+   <tile gid="2"/>
+   <tile gid="2"/>
+   <tile gid="2"/>
+   <tile gid="2"/>
+   <tile gid="2"/>
+   <tile gid="2"/>
+   <tile gid="2"/>
+   <tile gid="2"/>
    <tile gid="3"/>
    <tile gid="3"/>
    <tile gid="3"/>
@@ -590,64 +467,209 @@
    <tile gid="3"/>
    <tile gid="3"/>
    <tile gid="3"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
-   <tile gid="1"/>
+   <tile gid="2"/>
+   <tile gid="2"/>
+   <tile gid="2"/>
+   <tile gid="2"/>
+   <tile gid="2"/>
+   <tile gid="2"/>
+   <tile gid="2"/>
+   <tile gid="2"/>
+   <tile gid="2"/>
+   <tile gid="2"/>
+   <tile gid="2"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="2"/>
+   <tile gid="2"/>
+   <tile gid="2"/>
+   <tile gid="2"/>
+   <tile gid="2"/>
+   <tile gid="2"/>
+   <tile gid="2"/>
+   <tile gid="2"/>
+   <tile gid="2"/>
+   <tile gid="2"/>
+   <tile gid="2"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="3"/>
+   <tile gid="2"/>
+   <tile gid="2"/>
+   <tile gid="2"/>
+   <tile gid="2"/>
+   <tile gid="2"/>
+   <tile gid="2"/>
+   <tile gid="2"/>
+   <tile gid="2"/>
+   <tile gid="2"/>
   </data>
  </layer>
- <objectgroup name="nondrawable" width="40" height="14">
-  <object name="ground1" x="0" y="320" width="416" height="32">
+ <objectgroup name="drawable" width="26" height="20">
+  <object name="white_door" x="96" y="224" width="64" height="96">
    <properties>
-    <property name="type" value="solid"/>
-   </properties>
-  </object>
-  <object name="ground2" x="896" y="320" width="384" height="32">
-   <properties>
-    <property name="type" value="solid"/>
-   </properties>
-  </object>
-  <object name="platform1" x="448" y="192" width="416" height="32">
-   <properties>
-    <property name="type" value="solid"/>
-   </properties>
-  </object>
-  <object name="water1" x="416" y="352" width="480" height="96">
-   <properties>
-    <property name="type" value="solid"/>
-   </properties>
-  </object>
- </objectgroup>
- <objectgroup name="drawable" width="40" height="14">
-  <object name="white_key" x="640" y="160" width="32" height="32">
-   <properties>
-    <property name="imageName" value="key_tile.png"/>
-    <property name="type" value="white_key"/>
-   </properties>
-  </object>
-  <object name="white_door" x="1088" y="224" width="64" height="96">
-   <properties>
+    <property name="color" value="White"/>
     <property name="imageName" value="door_tile.png"/>
     <property name="type" value="white_door"/>
    </properties>
   </object>
+  <object name="green_door" x="768" y="224" width="64" height="96">
+   <properties>
+    <property name="color" value="Green"/>
+    <property name="imageName" value="door_tile.png"/>
+    <property name="type" value="green_door"/>
+   </properties>
+  </object>
+  <object name="switch_door" x="64" y="448" width="128" height="32">
+   <properties>
+    <property name="height" value="1"/>
+    <property name="imageName" value="switch_blocks_4x1.png"/>
+    <property name="type" value="switch_door"/>
+    <property name="width" value="4"/>
+   </properties>
+  </object>
+  <object name="switch_block" x="288" y="352" width="32" height="32">
+   <properties>
+    <property name="imageName" value=""/>
+    <property name="type" value="switch_block"/>
+   </properties>
+  </object>
+  <object name="ramp" x="448" y="32" width="128" height="64">
+   <properties>
+    <property name="imageName" value=""/>
+    <property name="type" value="ramp"/>
+   </properties>
+  </object>
  </objectgroup>
- <objectgroup name="spawns" width="40" height="14">
-  <object name="spawn_point1" x="32" y="288" width="32" height="32">
+ <objectgroup name="nondrawable" width="26" height="20">
+  <object name="platform1" x="0" y="192" width="128" height="32">
+   <properties>
+    <property name="type" value="solid"/>
+   </properties>
+  </object>
+  <object name="platform2" x="128" y="96" width="32" height="128">
+   <properties>
+    <property name="type" value="solid"/>
+   </properties>
+  </object>
+  <object name="platform3" x="160" y="96" width="128" height="32">
+   <properties>
+    <property name="type" value="solid"/>
+   </properties>
+  </object>
+  <object name="platform4" x="384" y="96" width="192" height="32">
+   <properties>
+    <property name="type" value="solid"/>
+   </properties>
+  </object>
+  <object name="platform5" x="736" y="192" width="96" height="32">
+   <properties>
+    <property name="type" value="solid"/>
+   </properties>
+  </object>
+  <object name="platform6" x="704" y="320" width="128" height="96">
+   <properties>
+    <property name="type" value="solid"/>
+   </properties>
+  </object>
+  <object name="ground3" x="544" y="448" width="32" height="192">
+   <properties>
+    <property name="type" value="solid"/>
+   </properties>
+  </object>
+  <object name="water1" x="64" y="480" width="480" height="160">
+   <properties>
+    <property name="type" value="solid"/>
+   </properties>
+  </object>
+  <object name="platform11" x="256" y="384" width="96" height="32">
+   <properties>
+    <property name="type" value="solid"/>
+   </properties>
+  </object>
+  <object name="platform10" x="192" y="320" width="64" height="160">
+   <properties>
+    <property name="type" value="solid"/>
+   </properties>
+  </object>
+  <object name="platform9" x="0" y="320" width="192" height="32">
+   <properties>
+    <property name="type" value="solid"/>
+   </properties>
+  </object>
+  <object name="platform8" x="224" y="256" width="32" height="64">
+   <properties>
+    <property name="type" value="solid"/>
+   </properties>
+  </object>
+  <object name="platform7" x="256" y="256" width="224" height="32">
+   <properties>
+    <property name="type" value="solid"/>
+   </properties>
+  </object>
+  <object name="ground1" x="0" y="448" width="64" height="192">
+   <properties>
+    <property name="type" value="solid"/>
+   </properties>
+  </object>
+  <object name="ground2" x="576" y="416" width="256" height="32">
+   <properties>
+    <property name="type" value="solid"/>
+   </properties>
+  </object>
+  <object name="white_key" x="416" y="64" width="32" height="32">
+   <properties>
+    <property name="color" value="White"/>
+    <property name="imageName" value="key_tile.png"/>
+    <property name="type" value="white_key"/>
+   </properties>
+  </object>
+  <object name="green_key" x="0" y="416" width="32" height="32">
+   <properties>
+    <property name="color" value="Green"/>
+    <property name="imageName" value="key_tile.png"/>
+    <property name="type" value="green_key"/>
+   </properties>
+  </object>
+  <object name="platform12" x="192" y="288" width="32" height="32">
+   <properties>
+    <property name="type" value="solid"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup name="spawns" width="26" height="20">
+  <object name="spawn_point1" x="32" y="160" width="32" height="32">
    <properties>
     <property name="character" value="Bunny"/>
     <property name="type" value="spawn_point"/>
    </properties>
   </object>
-  <object name="spawn_point2" x="160" y="288" width="32" height="32">
+  <object name="spawn_point2" x="32" y="288" width="32" height="32">
    <properties>
     <property name="character" value="Clyde"/>
     <property name="type" value="spawn_point"/>
