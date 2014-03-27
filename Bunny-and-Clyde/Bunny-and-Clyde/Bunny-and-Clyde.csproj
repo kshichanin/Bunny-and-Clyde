@@ -89,6 +89,7 @@
     <Content Include="Content\Clyde.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\door.png" />
     <Content Include="Content\door_tile.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -110,6 +111,7 @@
     <Content Include="Content\inventory.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\key.png" />
     <Content Include="Content\lvl_1.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

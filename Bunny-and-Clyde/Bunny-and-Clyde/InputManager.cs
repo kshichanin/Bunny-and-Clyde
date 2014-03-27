@@ -119,13 +119,13 @@ namespace Bunny_and_Clyde
             int count = 0;
             foreach (Sprite platform in platforms)
             {
-                if (count == 0)
+                if (count == 4) // platform = water***
                 {
                     if (ActiveCharacter.testBox(newPosition.X, newPosition.Y).Intersects(platform.HitBox))
                     {
                         if (bunny)
                         {
-                            ActiveCharacter.Position = new Vector2(50, 325);
+                            ActiveCharacter.Position = new Vector2(50, 225);
                             ActiveCharacter.Velocity = 0;
                             return true;
                         }
