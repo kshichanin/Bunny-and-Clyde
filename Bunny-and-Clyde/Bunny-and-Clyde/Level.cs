@@ -87,7 +87,8 @@ namespace Bunny_and_Clyde
                 this.items.Add(currentObject);
             }
 
-            this.background = new Sprite("lvl_1.png", 0, 0, 1280, 448);
+            this.background = new Sprite(map.Properties["backgroundImage"], 0, 0,
+                int.Parse(map.Properties["width"]), int.Parse(map.Properties["height"]));
 
             this.worldSprites.Add(this.Bunny);
             this.worldSprites.Add(this.Clyde);

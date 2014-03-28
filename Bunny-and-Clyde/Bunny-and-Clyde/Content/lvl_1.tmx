@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" width="40" height="14" tilewidth="32" tileheight="32">
  <properties>
+  <property name="backgroundImage" value="lvl_1.png"/>
   <property name="bunnySpawnX" value="32"/>
   <property name="bunnySpawnY" value="288"/>
   <property name="clydeSpawnX" value="162"/>
   <property name="clydeSpawnY" value="280"/>
+  <property name="height" value="1280"/>
+  <property name="width" value="448"/>
  </properties>
  <tileset firstgid="1" name="ground_tile" tilewidth="32" tileheight="32">
   <image source="ground_tile.png" width="32" height="32"/>
@@ -610,7 +613,7 @@
    <tile gid="1"/>
   </data>
  </layer>
- <objectgroup name="nondrawable" width="40" height="14">
+ <objectgroup name="nondrawable" width="40" height="14" visible="0">
   <object name="ground1" x="0" y="320" width="416" height="128">
    <properties>
     <property name="type" value="solid"/>
@@ -632,7 +635,7 @@
    </properties>
   </object>
  </objectgroup>
- <objectgroup name="drawable" width="40" height="14">
+ <objectgroup name="drawable" width="40" height="14" visible="0">
   <object name="white_key" x="640" y="160" width="32" height="32">
    <properties>
     <property name="imageName" value="key_tile.png"/>
