@@ -86,14 +86,11 @@ namespace Bunny_and_Clyde
             //platforms.Add(ground1);
             //platforms.Add(ground2);
             //platforms.Add(platform);
-<<<<<<< HEAD
-            
+    
             this.inputManager = new InputManager(WorldSprites, bunny, clyde, platforms, sounds);
 
-=======
-            this.inputManager = new InputManager(WorldSprites, bunny, clyde, platforms);
-            
->>>>>>> Collision bugs
+    //        this.inputManager = new InputManager(WorldSprites, bunny, clyde, platforms);
+
             this.physics = new Physics();
             this.physics.Add(this.bunny);
             this.physics.Add(this.clyde);
@@ -120,6 +117,9 @@ namespace Bunny_and_Clyde
             SoundEffect jump;
             jump = content.Load<SoundEffect>("bunny_jump.wav");
             sounds.Add(jump);
+            SoundEffect jump2;
+            jump2 = content.Load<SoundEffect>("clyde_jump.wav");
+            sounds.Add(jump2);
             foreach (Sprite s in this.WorldSprites)
             {
                 s.LoadContent(content);
