@@ -8,9 +8,9 @@
   <property name="clydeSpawnY" value="276"/>
  </properties>
  <tileset firstgid="1" name="tileset_1x1" tilewidth="32" tileheight="32" spacing="1">
-  <image source="tileset_1x1.png" width="131" height="32"/>
+  <image source="tileset_1x1.png" width="164" height="32"/>
  </tileset>
- <tileset firstgid="5" name="door_tile" tilewidth="64" tileheight="96" spacing="1">
+ <tileset firstgid="6" name="door_tile" tilewidth="64" tileheight="96" spacing="1">
   <image source="door_tile.png" width="64" height="96"/>
  </tileset>
  <layer name="background" width="26" height="20">
@@ -371,16 +371,16 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -396,7 +396,7 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
-   <tile gid="2"/>
+   <tile gid="0"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
