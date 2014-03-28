@@ -50,7 +50,7 @@
   </tile>
  </tileset>
  <tileset firstgid="6" name="tileset_1x1" tilewidth="32" tileheight="32" spacing="1">
-  <image source="tileset_1x1.png" width="164" height="32"/>
+  <image source="tileset_1x1.png" width="230" height="65"/>
  </tileset>
  <layer name="background" width="40" height="14">
   <data>
@@ -308,6 +308,7 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
+   <tile gid="14"/>
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
@@ -319,8 +320,7 @@
    <tile gid="2"/>
    <tile gid="2"/>
    <tile gid="2"/>
-   <tile gid="2"/>
-   <tile gid="2"/>
+   <tile gid="13"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -466,7 +466,7 @@
    <tile gid="10"/>
    <tile gid="10"/>
    <tile gid="10"/>
-   <tile gid="10"/>
+   <tile gid="11"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -482,7 +482,7 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
-   <tile gid="10"/>
+   <tile gid="12"/>
    <tile gid="10"/>
    <tile gid="10"/>
    <tile gid="10"/>
