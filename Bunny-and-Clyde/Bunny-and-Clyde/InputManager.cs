@@ -68,10 +68,16 @@ namespace Bunny_and_Clyde
             
             if ((currentKeyboard.IsKeyDown(Keys.Space) || GamePad .GetState (PlayerIndex.One ).Buttons .A == ButtonState.Pressed) && ActiveCharacter.state != Sprite.State.Airbourne)
             {
-               
-                sounds[0].Play();
+                if (bunny)
+                {
+                    sounds[0].Play();
+                }
+                else
+                {
+                    sounds[1].Play();
+                }
                 ActiveCharacter.state = Sprite.State.Airbourne;
-                ActiveCharacter.Velocity += new Vector2 (0, ActiveCharacter.jump);
+                ActiveCharacter.Velocity -= new Vector2 (0, ActiveCharacter.jump);
             }
 
             if (ActiveCharacter.HitBox.Intersects(worldSprites[0].HitBox))

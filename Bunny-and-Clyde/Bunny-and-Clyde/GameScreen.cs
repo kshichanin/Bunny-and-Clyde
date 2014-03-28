@@ -117,6 +117,9 @@ namespace Bunny_and_Clyde
             SoundEffect jump;
             jump = content.Load<SoundEffect>("bunny_jump.wav");
             sounds.Add(jump);
+            SoundEffect jump2;
+            jump2 = content.Load<SoundEffect>("clyde_jump.wav");
+            sounds.Add(jump2);
             foreach (Sprite s in this.WorldSprites)
             {
                 s.LoadContent(content);
