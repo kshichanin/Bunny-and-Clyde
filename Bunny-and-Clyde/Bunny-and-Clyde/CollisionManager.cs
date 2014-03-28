@@ -56,7 +56,19 @@ namespace Bunny_and_Clyde
             {
                 resolveCollision(sprite, new Vector2(0,velocity.Y));
                 sprite.Velocity = new Vector2(velocity.X, 0);
-                sprite.state = Sprite.State.Default;
+
+                Console.WriteLine(sprite.Velocity);
+                if (velocity.Y > 0)
+                {
+                    sprite.state = Sprite.State.Default;
+                }
+                else
+                {
+
+                }
+
+                
+
             }
             else
             {
@@ -65,6 +77,7 @@ namespace Bunny_and_Clyde
         }
         public void resolveCollision(Sprite s, Vector2 velocity)
         {
+            return;
             float time = 0.5f;
             int i = 1;
             bool collides = true;
@@ -98,6 +111,7 @@ namespace Bunny_and_Clyde
                     return true;
                 }
             }
+            if (r.X < 0 || r.X + r.Width > GameGlobals.WINDOW_WIDTH) return true;
             return false;
         }
 
