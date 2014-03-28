@@ -24,6 +24,8 @@ namespace Bunny_and_Clyde
         private List<Sprite> items;
         private Sprite background;
 
+        private List<SoundEffect> sounds;
+
         // spawn points
         private Vector2 bunnySpawn;
         private Vector2 clydeSpawn;
@@ -32,16 +34,9 @@ namespace Bunny_and_Clyde
         private TmxObjectGroup mapObjectsDrawable;
         private TmxObjectGroup mapObjectsNonDrawable;
 
-        // sounds
-        private List<SoundEffect> sounds;
-
-        // physics
+        // engine modules
         private Physics physics;
-
-        // collisions
         private CollisionManager collisions;
-
-        // input
         private InputManager inputManager;
 
         public Bunny Bunny { get; private set; }
