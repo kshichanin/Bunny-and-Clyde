@@ -643,7 +643,7 @@
     <property name="type" value="solid"/>
    </properties>
   </object>
-  <object name="ground2" x="576" y="416" width="256" height="32">
+  <object name="ground2" x="576" y="416" width="256" height="224">
    <properties>
     <property name="type" value="solid"/>
    </properties>

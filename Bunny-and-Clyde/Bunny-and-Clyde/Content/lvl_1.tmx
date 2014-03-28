@@ -611,12 +611,12 @@
   </data>
  </layer>
  <objectgroup name="nondrawable" width="40" height="14">
-  <object name="ground1" x="0" y="320" width="416" height="32">
+  <object name="ground1" x="0" y="320" width="416" height="128">
    <properties>
     <property name="type" value="solid"/>
    </properties>
   </object>
-  <object name="ground2" x="896" y="320" width="384" height="32">
+  <object name="ground2" x="896" y="320" width="384" height="128">
    <properties>
     <property name="type" value="solid"/>
    </properties>
