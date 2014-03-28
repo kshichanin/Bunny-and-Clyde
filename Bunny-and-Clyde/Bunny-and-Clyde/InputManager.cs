@@ -77,7 +77,7 @@ namespace Bunny_and_Clyde
                     sounds[1].Play();
                 }
                 ActiveCharacter.state = Sprite.State.Airbourne;
-                ActiveCharacter.Velocity += new Vector2 (0, ActiveCharacter.jump);
+                ActiveCharacter.Velocity -= new Vector2 (0, ActiveCharacter.jump);
             }
 
             if (ActiveCharacter.HitBox.Intersects(worldSprites[1].HitBox) && InactiveCharacter.HitBox.Intersects(worldSprites[1].HitBox) && worldSprites[0].Position.X == 12 && worldSprites[0].Position.Y == 20)

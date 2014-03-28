@@ -86,6 +86,7 @@ namespace Bunny_and_Clyde
             //platforms.Add(ground2);
             //platforms.Add(platform);
 <<<<<<< HEAD
+<<<<<<< HEAD
     
             this.inputManager = new InputManager(WorldSprites, bunny, clyde, platforms, sounds);
 
@@ -97,6 +98,15 @@ namespace Bunny_and_Clyde
             this.inputManager = new InputManager(WorldSprites, bunny, clyde, platforms, sounds);
 
 >>>>>>> bug fixes
+=======
+
+            
+            this.inputManager = new InputManager(WorldSprites, bunny, clyde, platforms, sounds);
+
+
+            
+
+>>>>>>> working collisions
             this.physics = new Physics();
             this.physics.Add(this.bunny);
             this.physics.Add(this.clyde);
