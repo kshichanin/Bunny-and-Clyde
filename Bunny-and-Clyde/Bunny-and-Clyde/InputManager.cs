@@ -50,12 +50,12 @@ namespace Bunny_and_Clyde
             //Switch active characters
             if ((currentKeyboard.IsKeyDown(Keys.RightShift) || GamePad.GetState(PlayerIndex.One).Buttons.X == ButtonState.Pressed) && !check)
             {
-                InactiveCharacter.state = previousState;
+                //InactiveCharacter.state = previousState;
                 Sprite temp = ActiveCharacter;
                 ActiveCharacter = InactiveCharacter;
                 InactiveCharacter = temp;
                 check = true;
-                InactiveCharacter.state = Sprite.State.Default;
+                //InactiveCharacter.state = Sprite.State.Default;
                 bunny = !bunny;
             }
             else if ((currentKeyboard.IsKeyUp(Keys.RightShift) && GamePad.GetState(PlayerIndex.One).Buttons.X == ButtonState.Released))
@@ -79,7 +79,7 @@ namespace Bunny_and_Clyde
                 ActiveCharacter.state = Sprite.State.Airbourne;
                 ActiveCharacter.Velocity -= new Vector2 (0, ActiveCharacter.jump);
             }
-
+            /*
             if (ActiveCharacter.HitBox.Intersects(worldSprites[0].HitBox))
             {
                 worldSprites[0].Position = new Vector2(12, 20);
@@ -92,7 +92,7 @@ namespace Bunny_and_Clyde
                 worldSprites[0].Position = new Vector2(352, 238);
                 
             }
-            
+            */
             //create test positions
             /*
             Vector2 newPosition;// = ActiveCharacter.Position + (ActiveCharacter.Speed * direction);
