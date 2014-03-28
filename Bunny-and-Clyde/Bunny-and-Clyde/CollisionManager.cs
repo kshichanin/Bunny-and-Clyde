@@ -38,11 +38,6 @@ namespace Bunny_and_Clyde
         {
             foreach (Sprite mover in movingObjects)
             {
-                if (checkPlatformCollision(mover.HitBox ))
-                {
-                    Console.WriteLine("collision at start of frame");
-                }
-                Console.WriteLine(mover.Velocity);
                 moveSprite(mover);
             }
         }
@@ -61,6 +56,7 @@ namespace Bunny_and_Clyde
             {
                 resolveCollision(sprite, new Vector2(0,velocity.Y));
                 sprite.Velocity = new Vector2(velocity.X, 0);
+<<<<<<< HEAD
                 Console.WriteLine(sprite.Velocity);
                 if (velocity.Y > 0)
                 {
@@ -70,6 +66,9 @@ namespace Bunny_and_Clyde
                 {
 
                 }
+=======
+                sprite.state = Sprite.State.Default;
+>>>>>>> 4895e29bc48b7ea4086e951fc6bab52108fc5544
             }
             else
             {
@@ -78,11 +77,10 @@ namespace Bunny_and_Clyde
         }
         public void resolveCollision(Sprite s, Vector2 velocity)
         {
-            return;
             float time = 0.5f;
             int i = 1;
             bool collides = true;
-            while (i <= 5 || collides)
+            while (i <= 5 )
             {
                 collides = checkPlatformCollision(s.testBox(velocity.X * time, velocity.Y * time));
                 i++;

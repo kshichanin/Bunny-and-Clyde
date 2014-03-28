@@ -16,7 +16,7 @@ namespace Bunny_and_Clyde
         public int Width { get; private set; }
         public int Height { get; private set; }
         public Vector2 Velocity { get; set; }
-        public Rectangle HitBox { get{return new Rectangle ((int)Position .X ,(int)Position .Y ,Width ,Height );} private set{} }
+        public Rectangle HitBox { get; private set; }
         public int Speed;
         public float jump { get; set; }
         public enum State

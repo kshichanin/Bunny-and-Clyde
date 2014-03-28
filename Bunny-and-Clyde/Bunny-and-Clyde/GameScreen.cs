@@ -39,6 +39,7 @@ namespace Bunny_and_Clyde
             TmxObjectGroup mapObjectsDrawable = map.ObjectGroups["drawable"];
             TmxObjectGroup mapObjectsNonDrawable = map.ObjectGroups["nondrawable"];
 
+            this.platforms.Add(new Region(0, 0, 0, 0));
 
             // draw the nondrawable objects as Regions
             foreach (TmxObjectGroup.TmxObject o in mapObjectsNonDrawable.Objects)
@@ -85,28 +86,11 @@ namespace Bunny_and_Clyde
             //platforms.Add(ground1);
             //platforms.Add(ground2);
             //platforms.Add(platform);
-<<<<<<< HEAD
-<<<<<<< HEAD
-    
-            this.inputManager = new InputManager(WorldSprites, bunny, clyde, platforms, sounds);
-
-    //        this.inputManager = new InputManager(WorldSprites, bunny, clyde, platforms);
-
-=======
-
             
             this.inputManager = new InputManager(WorldSprites, bunny, clyde, platforms, sounds);
 
->>>>>>> bug fixes
-=======
-
+            //this.inputManager = new InputManager(WorldSprites, bunny, clyde, platforms);
             
-            this.inputManager = new InputManager(WorldSprites, bunny, clyde, platforms, sounds);
-
-
-            
-
->>>>>>> working collisions
             this.physics = new Physics();
             this.physics.Add(this.bunny);
             this.physics.Add(this.clyde);
@@ -133,9 +117,6 @@ namespace Bunny_and_Clyde
             SoundEffect jump;
             jump = content.Load<SoundEffect>("bunny_jump.wav");
             sounds.Add(jump);
-            SoundEffect jump2;
-            jump2 = content.Load<SoundEffect>("clyde_jump.wav");
-            sounds.Add(jump2);
             foreach (Sprite s in this.WorldSprites)
             {
                 s.LoadContent(content);
