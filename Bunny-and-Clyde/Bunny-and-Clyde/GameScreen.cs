@@ -39,7 +39,6 @@ namespace Bunny_and_Clyde
             TmxObjectGroup mapObjectsDrawable = map.ObjectGroups["drawable"];
             TmxObjectGroup mapObjectsNonDrawable = map.ObjectGroups["nondrawable"];
 
-            this.platforms.Add(new Region(0, 0, 0, 0));
 
             // draw the nondrawable objects as Regions
             foreach (TmxObjectGroup.TmxObject o in mapObjectsNonDrawable.Objects)
@@ -86,11 +85,18 @@ namespace Bunny_and_Clyde
             //platforms.Add(ground1);
             //platforms.Add(ground2);
             //platforms.Add(platform);
+<<<<<<< HEAD
     
             this.inputManager = new InputManager(WorldSprites, bunny, clyde, platforms, sounds);
 
     //        this.inputManager = new InputManager(WorldSprites, bunny, clyde, platforms);
 
+=======
+
+            
+            this.inputManager = new InputManager(WorldSprites, bunny, clyde, platforms, sounds);
+
+>>>>>>> bug fixes
             this.physics = new Physics();
             this.physics.Add(this.bunny);
             this.physics.Add(this.clyde);

@@ -80,11 +80,6 @@ namespace Bunny_and_Clyde
                 ActiveCharacter.Velocity += new Vector2 (0, ActiveCharacter.jump);
             }
 
-            if (ActiveCharacter.HitBox.Intersects(worldSprites[0].HitBox))
-            {
-                worldSprites[0].Position = new Vector2(12, 20);
-            }
-
             if (ActiveCharacter.HitBox.Intersects(worldSprites[1].HitBox) && InactiveCharacter.HitBox.Intersects(worldSprites[1].HitBox) && worldSprites[0].Position.X == 12 && worldSprites[0].Position.Y == 20)
             {
                 ActiveCharacter.Position = new Vector2(50, 325);
