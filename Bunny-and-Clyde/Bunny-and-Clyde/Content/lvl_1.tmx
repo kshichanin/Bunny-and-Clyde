@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" width="40" height="14" tilewidth="32" tileheight="32">
+ <properties>
+  <property name="bunnySpawnX" value="32"/>
+  <property name="bunnySpawnY" value="288"/>
+  <property name="clydeSpawnX" value="162"/>
+  <property name="clydeSpawnY" value="280"/>
+ </properties>
  <tileset firstgid="1" name="ground_tile" tilewidth="32" tileheight="32">
   <image source="ground_tile.png" width="32" height="32"/>
   <tile id="0">
@@ -637,20 +643,6 @@
    <properties>
     <property name="imageName" value="door_tile.png"/>
     <property name="type" value="white_door"/>
-   </properties>
-  </object>
- </objectgroup>
- <objectgroup name="spawns" width="40" height="14">
-  <object name="spawn_point1" x="32" y="288" width="32" height="32">
-   <properties>
-    <property name="character" value="Bunny"/>
-    <property name="type" value="spawn_point"/>
-   </properties>
-  </object>
-  <object name="spawn_point2" x="160" y="288" width="32" height="32">
-   <properties>
-    <property name="character" value="Clyde"/>
-    <property name="type" value="spawn_point"/>
    </properties>
   </object>
  </objectgroup>

@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" width="26" height="20" tilewidth="32" tileheight="32">
+ <properties>
+  <property name="bunnySpawnX" value="56"/>
+  <property name="bunnySpawnY" value="148"/>
+  <property name="clydeSpawnX" value="43"/>
+  <property name="clydeSpawnY" value="276"/>
+ </properties>
  <tileset firstgid="1" name="tileset_1x1" tilewidth="32" tileheight="32" spacing="1">
   <image source="tileset_1x1.png" width="131" height="32"/>
  </tileset>
@@ -659,20 +665,6 @@
   <object name="platform12" x="192" y="288" width="32" height="32">
    <properties>
     <property name="type" value="solid"/>
-   </properties>
-  </object>
- </objectgroup>
- <objectgroup name="spawns" width="26" height="20">
-  <object name="spawn_point1" x="32" y="160" width="32" height="32">
-   <properties>
-    <property name="character" value="Bunny"/>
-    <property name="type" value="spawn_point"/>
-   </properties>
-  </object>
-  <object name="spawn_point2" x="32" y="288" width="32" height="32">
-   <properties>
-    <property name="character" value="Clyde"/>
-    <property name="type" value="spawn_point"/>
    </properties>
   </object>
  </objectgroup>
