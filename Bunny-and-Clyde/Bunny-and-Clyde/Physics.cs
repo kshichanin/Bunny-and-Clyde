@@ -91,7 +91,7 @@ namespace Bunny_and_Clyde
         {
             foreach (Gravity worldObject in worldObjects)
             {
-                if (worldObject.state == Sprite.State .Airbourne )
+                if (worldObject.state == Sprite.State .Airbourne || true )
                 {
                     worldObject.Velocity += new Vector2(0, gravityStrength);
                 }

@@ -7,9 +7,14 @@ namespace Bunny_and_Clyde
 {
     class Water : Item
     {
+        public Water(float x, float y, int width, int height) :
+            base("water", x, y, width, height)
+        {
+
+        }
         public override  void activate(Sprite collider)
         {
-            
+           
         }
     }
 

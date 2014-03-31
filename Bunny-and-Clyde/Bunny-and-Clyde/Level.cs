@@ -21,7 +21,7 @@ namespace Bunny_and_Clyde
         // sprites
         private List<Sprite> worldSprites;
         private List<Sprite> platforms;
-        private List<Sprite> items;
+        private List<Item> items;
         private Sprite background;
 
         private List<SoundEffect> sounds;
@@ -53,7 +53,7 @@ namespace Bunny_and_Clyde
 
             this.worldSprites = new List<Sprite>();
             this.platforms = new List<Sprite>();
-            this.items = new List<Sprite>();
+            this.items = new List<Item>();
             this.sounds = new List<SoundEffect>();
 
             this.physics = new Physics();
@@ -83,7 +83,24 @@ namespace Bunny_and_Clyde
             // draw the drawable objects
             foreach (TmxObjectGroup.TmxObject o in mapObjectsDrawable.Objects)
             {
-                Sprite currentObject = new Sprite(o.Properties["imageName"], o.X, o.Y, o.Width, o.Height);
+                Item currentObject;
+                if (o.Properties["imageName"] == "water")
+                {
+                    currentObject = new Water( o.X, o.Y, o.Width, o.Height);
+                }
+                else if (o.Properties["imageName"] == "key_tile")
+                {
+                    currentObject = new Key(Color.AliceBlue, o.X, o.Y, o.Width, o.Height);
+                }
+                else if (o.Properties["imageName"] == "door")
+                {
+                    currentObject = new Door(o.X, o.Y, o.Width, o.Height);
+                }
+                else
+                {
+                    //this shouldn't happen
+                    currentObject = new Door(o.X, o.Y, o.Width, o.Height);
+                }
                 this.worldSprites.Add(currentObject);
                 this.items.Add(currentObject);
             }

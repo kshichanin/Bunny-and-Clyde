@@ -9,11 +9,12 @@ namespace Bunny_and_Clyde
     class Key : Item 
     {
         Color color;
-        GameScreen screen;
-        public Key(Color c, GameScreen gs)
+
+        public Key(Color c, float x, float y, int width, int height) :
+            base("key", x, y, width, height)
         {
             color = c;
-            screen = gs;
+
         }
         public override void activate(Sprite s)
         {
