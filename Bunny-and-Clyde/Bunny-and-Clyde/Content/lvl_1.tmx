@@ -467,21 +467,21 @@
    <tile gid="10"/>
    <tile gid="10"/>
    <tile gid="10"/>
-   <tile gid="12"/>
-   <tile gid="12"/>
-   <tile gid="12"/>
-   <tile gid="12"/>
-   <tile gid="12"/>
-   <tile gid="12"/>
-   <tile gid="12"/>
-   <tile gid="12"/>
-   <tile gid="12"/>
-   <tile gid="12"/>
-   <tile gid="12"/>
-   <tile gid="12"/>
-   <tile gid="12"/>
-   <tile gid="12"/>
-   <tile gid="12"/>
+   <tile gid="9"/>
+   <tile gid="9"/>
+   <tile gid="9"/>
+   <tile gid="9"/>
+   <tile gid="9"/>
+   <tile gid="9"/>
+   <tile gid="9"/>
+   <tile gid="9"/>
+   <tile gid="9"/>
+   <tile gid="9"/>
+   <tile gid="9"/>
+   <tile gid="9"/>
+   <tile gid="9"/>
+   <tile gid="9"/>
+   <tile gid="9"/>
    <tile gid="10"/>
    <tile gid="10"/>
    <tile gid="10"/>
@@ -576,7 +576,7 @@
    <tile gid="10"/>
   </data>
  </layer>
- <objectgroup name="nondrawable" width="40" height="14">
+ <objectgroup name="nondrawable" width="40" height="14" visible="0">
   <object name="ground1" x="0" y="320" width="416" height="128">
    <properties>
     <property name="type" value="solid"/>
@@ -598,7 +598,7 @@
    </properties>
   </object>
  </objectgroup>
- <objectgroup name="drawable" width="40" height="14">
+ <objectgroup name="drawable" width="40" height="14" visible="0">
   <object name="white_key" x="640" y="160" width="32" height="32">
    <properties>
     <property name="imageName" value="key_tile.png"/>
