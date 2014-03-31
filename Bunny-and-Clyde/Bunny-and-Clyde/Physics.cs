@@ -16,6 +16,7 @@ namespace Bunny_and_Clyde
         private Bunny bunny;
         private Clyde clyde;
         const float gravityStrength = 0.6f;
+        const float buoyancy = 0.1f;
         List<Sprite> platforms;
         List<Gravity> worldObjects;
         public Physics()
@@ -90,9 +91,13 @@ namespace Bunny_and_Clyde
         {
             foreach (Gravity worldObject in worldObjects)
             {
-                if (worldObject.isAirbourne() || true)
+                if (worldObject.state == Sprite.State .Airbourne )
                 {
                     worldObject.Velocity += new Vector2(0, gravityStrength);
+                }
+                if (worldObject.state == Sprite.State.Swimming)
+                {
+                    worldObject.Velocity -= new Vector2(0, buoyancy);
                 }
             }
         }

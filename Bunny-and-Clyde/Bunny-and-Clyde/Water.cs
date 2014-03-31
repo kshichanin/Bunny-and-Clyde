@@ -5,11 +5,12 @@ using System.Text;
 using Microsoft.Xna.Framework;
 namespace Bunny_and_Clyde
 {
-    interface Gravity
+    class Water : Item
     {
-        Sprite.State state { get; set; }
-        Vector2 Velocity { get; set; }
-
-
+        public override  void activate(Sprite collider)
+        {
+            
+        }
     }
+
 }

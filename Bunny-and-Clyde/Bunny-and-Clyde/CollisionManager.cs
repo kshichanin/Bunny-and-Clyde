@@ -8,15 +8,22 @@ namespace Bunny_and_Clyde
     class CollisionManager
     {
         List<Sprite> solids;
-        List<Sprite> stationaryobjects;
+        List<Item> stationaryobjects;
         List<Sprite> movingObjects;
+        public void checkItemCollisions(Sprite active) { 
+            foreach(Item item in stationaryobjects ){
+                if(item.HitBox .Intersects (active .HitBox )){
+                    item.activate(active);
+                }
+            }
+        }
         public CollisionManager()
         {
             solids = new List<Sprite>();
-            stationaryobjects = new List<Sprite>();
+            stationaryobjects = new List<Item>();
             movingObjects = new List<Sprite>();
         }
-        public CollisionManager(List<Sprite> sld, List<Sprite> stationary, List<Sprite> moving)
+        public CollisionManager(List<Sprite> sld, List<Item> stationary, List<Sprite> moving)
         {
             solids = sld;
             stationaryobjects = stationary;
@@ -26,7 +33,7 @@ namespace Bunny_and_Clyde
         {
             solids.Add(s);
         }
-        public void addStationary(Sprite s)
+        public void addStationary(Item s)
         {
             stationaryobjects.Add(s);
         }

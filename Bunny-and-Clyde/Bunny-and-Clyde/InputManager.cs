@@ -58,15 +58,25 @@ namespace Bunny_and_Clyde
                 //InactiveCharacter.state = Sprite.State.Default;
                 bunny = !bunny;
             }
-            else if ((currentKeyboard.IsKeyUp(Keys.RightShift) && GamePad.GetState(PlayerIndex.One).Buttons.X == ButtonState.Released))
+            if ((currentKeyboard.IsKeyDown(Keys.Up) || GamePad.GetState(PlayerIndex.One).DPad .Up  == ButtonState.Pressed) )
             {
-                check = false;
+                if (ActiveCharacter.state == Sprite.State.Swimming)
+                {
+                    ActiveCharacter.Velocity += new Vector2(0, -ActiveCharacter.Speed);
+                }
+            }
+            if ((currentKeyboard.IsKeyDown(Keys.Down) || GamePad.GetState(PlayerIndex.One).DPad.Down == ButtonState.Pressed))
+            {
+                if (ActiveCharacter.state == Sprite.State.Swimming)
+                {
+                    ActiveCharacter.Velocity += new Vector2(0, ActiveCharacter.Speed);
+                }
             }
             //Vertical position change
 
 
             
-            if ((currentKeyboard.IsKeyDown(Keys.Space) || GamePad .GetState (PlayerIndex.One ).Buttons .A == ButtonState.Pressed) && ActiveCharacter.state != Sprite.State.Airbourne)
+            if ((currentKeyboard.IsKeyDown(Keys.Space) || GamePad .GetState (PlayerIndex.One).Buttons .A == ButtonState.Pressed) && ActiveCharacter.state != Sprite.State.Airbourne)
             {
                 if (bunny)
                  {
