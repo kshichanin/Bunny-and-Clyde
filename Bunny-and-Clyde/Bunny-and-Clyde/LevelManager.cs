@@ -27,7 +27,11 @@ namespace Bunny_and_Clyde
 
         public void LoadContent(ContentManager content)
         {
-            this.levels[this.currentLevelIndex].LoadContent(content);
+            //this.levels[this.currentLevelIndex].LoadContent(content);
+            foreach (Level lvl in levels)
+            {
+                lvl.LoadContent(content);
+            }
         }
 
         public void Update(GameTime gameTime)

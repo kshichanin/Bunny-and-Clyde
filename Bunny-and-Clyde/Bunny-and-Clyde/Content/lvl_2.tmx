@@ -557,20 +557,20 @@
   <object name="switch_door" x="64" y="448" width="128" height="32">
    <properties>
     <property name="height" value="1"/>
-    <property name="imageName" value="switch_blocks_4x1.png"/>
+    <property name="imageName" value="switch_block_placeholder.png"/>
     <property name="type" value="switch_door"/>
     <property name="width" value="4"/>
    </properties>
   </object>
   <object name="switch_block" x="288" y="352" width="32" height="32">
    <properties>
-    <property name="imageName" value=""/>
+    <property name="imageName" value="log_vertical_top_tile.png"/>
     <property name="type" value="switch_block"/>
    </properties>
   </object>
   <object name="ramp" x="448" y="32" width="128" height="64">
    <properties>
-    <property name="imageName" value=""/>
+    <property name="imageName" value="platform_edge_left_tile.png"/>
     <property name="type" value="ramp"/>
    </properties>
   </object>
