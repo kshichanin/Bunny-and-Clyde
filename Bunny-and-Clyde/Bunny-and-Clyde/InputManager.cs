@@ -69,7 +69,7 @@ namespace Bunny_and_Clyde
             if ((currentKeyboard.IsKeyDown(Keys.Space) || GamePad .GetState (PlayerIndex.One ).Buttons .A == ButtonState.Pressed) && ActiveCharacter.state != Sprite.State.Airbourne)
             {
                 if (bunny)
-                {
+                 {
                     sounds[0].Play();
                 }
                 else
