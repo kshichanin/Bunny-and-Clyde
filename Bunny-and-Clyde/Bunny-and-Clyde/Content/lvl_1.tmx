@@ -2,12 +2,12 @@
 <map version="1.0" orientation="orthogonal" width="40" height="14" tilewidth="32" tileheight="32">
  <properties>
   <property name="backgroundImage" value="lvl_1.png"/>
-  <property name="bunnySpawnX" value="32"/>
-  <property name="bunnySpawnY" value="288"/>
-  <property name="clydeSpawnX" value="162"/>
-  <property name="clydeSpawnY" value="280"/>
-  <property name="height" value="1280"/>
-  <property name="width" value="448"/>
+  <property name="bunnySpawnX" value="50"/>
+  <property name="bunnySpawnY" value="150"/>
+  <property name="clydeSpawnX" value="75"/>
+  <property name="clydeSpawnY" value="150"/>
+  <property name="height" value="448"/>
+  <property name="width" value="1280"/>
  </properties>
  <tileset firstgid="1" name="tileset_1x1" tilewidth="32" tileheight="32" spacing="1">
   <image source="tileset_1x1.png" width="230" height="98"/>
@@ -598,7 +598,7 @@
    </properties>
   </object>
  </objectgroup>
- <objectgroup name="drawable" width="40" height="14" visible="0">
+ <objectgroup name="drawable" width="40" height="14">
   <object name="white_key" x="640" y="160" width="32" height="32">
    <properties>
     <property name="imageName" value="key_tile.png"/>

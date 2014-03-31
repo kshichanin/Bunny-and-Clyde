@@ -26,10 +26,6 @@ namespace Bunny_and_Clyde
 
         private List<SoundEffect> sounds;
 
-        // spawn points
-        private Vector2 bunnySpawn;
-        private Vector2 clydeSpawn;
-
         // map objects
         private TmxObjectGroup mapObjectsDrawable;
         private TmxObjectGroup mapObjectsNonDrawable;
@@ -38,18 +34,28 @@ namespace Bunny_and_Clyde
         private Physics physics;
         private CollisionManager collisions;
         private InputManager inputManager;
+        private GraphicsDeviceManager graphics;
 
         public Bunny Bunny { get; private set; }
         public Clyde Clyde { get; private set; }
 
-        public Level(string mapFile)
+        public Level(string mapFile, GraphicsDeviceManager graphicsManager)
         {
+            this.graphics = graphicsManager;
             this.map = new TmxMap(mapFile);
 
-            this.Bunny = new Bunny(Single.Parse(map.Properties["bunnySpawnX"]), Single.Parse(map.Properties["bunnySpawnY"]));
-            this.Clyde = new Clyde(Single.Parse(map.Properties["clydeSpawnX"]), Single.Parse(map.Properties["clydeSpawnY"]));
+            this.Bunny = new Bunny(
+                Single.Parse(map.Properties["bunnySpawnX"]),
+                Single.Parse(map.Properties["bunnySpawnY"]));
+            this.Clyde = new Clyde(
+                Single.Parse(map.Properties["clydeSpawnX"]),
+                Single.Parse(map.Properties["clydeSpawnY"]));
 
             this.worldSprites = new List<Sprite>();
+            this.platforms = new List<Sprite>();
+            this.items = new List<Sprite>();
+            this.sounds = new List<SoundEffect>();
+
             this.physics = new Physics();
             this.physics.Add(this.Bunny);
             this.physics.Add(this.Clyde);
@@ -88,6 +94,48 @@ namespace Bunny_and_Clyde
             this.worldSprites.Add(this.Bunny);
             this.worldSprites.Add(this.Clyde);
 
+            this.inputManager = new InputManager(worldSprites, this.Bunny, this.Clyde, platforms, sounds);
+            this.physics = new Physics();
+            this.physics.Add(this.Bunny);
+            this.physics.Add(this.Clyde);
+            this.collisions = new CollisionManager(platforms, items, new List<Sprite>());
+            this.collisions.addMoving(this.Bunny);
+            this.collisions.addMoving(this.Clyde);
+            this.worldSprites.Add(new Sprite("inventory", 0, 0, 55, 55));
+        }
+
+        public void LoadContent(ContentManager content)
+        {
+            this.background.LoadContent(content);
+            SoundEffect jumpBunny = content.Load<SoundEffect>("bunny_jump.wav");
+            SoundEffect jumpClyde = content.Load<SoundEffect>("clyde_jump.wav");
+            sounds.Add(jumpBunny);
+            sounds.Add(jumpClyde);
+            foreach (Sprite s in this.worldSprites)
+            {
+                s.LoadContent(content);
+            }
+        }
+
+        public void Update(GameTime gameTime)
+        {
+            foreach (Sprite s in this.worldSprites)
+            {
+                s.Update(gameTime);
+            }
+            this.physics.Update(gameTime);
+            this.inputManager.Update(gameTime);
+            this.collisions.Update();
+        }
+
+        public void Draw(SpriteBatch sb)
+        {
+            this.background.Draw(sb);
+
+            foreach (Sprite s in this.worldSprites)
+            {
+                s.Draw(sb);
+            }
         }
     }
 }
