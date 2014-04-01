@@ -57,6 +57,8 @@ namespace Bunny_and_Clyde
                 check = true;
                 //InactiveCharacter.state = Sprite.State.Default;
                 bunny = !bunny;
+            } else if (currentKeyboard .IsKeyUp ( Keys.RightShift ) || GamePad .GetState (PlayerIndex .One ).Buttons.X == ButtonState.Pressed ) {
+                check = false;
             }
             if ((currentKeyboard.IsKeyDown(Keys.Up) || GamePad.GetState(PlayerIndex.One).DPad .Up  == ButtonState.Pressed) )
             {

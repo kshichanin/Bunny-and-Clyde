@@ -26,7 +26,7 @@ namespace Bunny_and_Clyde
         {
             Velocity = Vector2 .Zero ;
             base.state = State.Default;
-            base.jump = 7f;
+            base.jump = 9f;
         }
 
     }
