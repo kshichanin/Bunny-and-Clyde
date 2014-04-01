@@ -14,7 +14,7 @@ namespace Bunny_and_Clyde
     class Bunny : Sprite, Gravity 
     {
         static int BUNNY_WIDTH = 74, BUNNY_HEIGHT = 73;
-
+        public Vector2 SpawnPoint{get; private set;}
         public bool isAirbourne() { return base.state == State.Airbourne; }
         //public State BunnyState { get; set; }
         //public enum State { Default, Riding, Airbourne }
@@ -22,6 +22,7 @@ namespace Bunny_and_Clyde
         public Bunny(float initialX, float initialY)
             : base("bunny", initialX, initialY, BUNNY_WIDTH, BUNNY_HEIGHT)
         {
+            this.SpawnPoint = new Vector2(initialX, initialY);
             Velocity = new Vector2 (0,0);
             base.state = State.Default;
             base.jump = 13f;

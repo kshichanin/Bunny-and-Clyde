@@ -88,11 +88,11 @@ namespace Bunny_and_Clyde
                 {
                     currentObject = new Water( o.X, o.Y, o.Width, o.Height);
                 }
-                else if (o.Properties["imageName"] == "key_tile.png")
+                else if (o.Properties["type"] == "white_key")
                 {
                     currentObject = new Key(Color.AliceBlue, o.X, o.Y, o.Width, o.Height);
                 }
-                else if (o.Properties["imageName"] == "door_tile.png")
+                else if (o.Properties["type"] == "white_door")
                 {
                     currentObject = new Door(o.X, o.Y, o.Width, o.Height);
                 }
