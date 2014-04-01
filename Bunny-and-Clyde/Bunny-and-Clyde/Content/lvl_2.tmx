@@ -588,6 +588,12 @@
     <property name="type" value="white_key"/>
    </properties>
   </object>
+  <object name="water1" x="63" y="497" width="481" height="142">
+   <properties>
+    <property name="imageName" value="blank.png"/>
+    <property name="type" value="water"/>
+   </properties>
+  </object>
  </objectgroup>
  <objectgroup name="nondrawable" width="26" height="20" visible="0">
   <object name="platform1" x="0" y="192" width="96" height="32">
@@ -616,11 +622,6 @@
    </properties>
   </object>
   <object name="ground3" x="544" y="448" width="32" height="192">
-   <properties>
-    <property name="type" value="solid"/>
-   </properties>
-  </object>
-  <object name="water1" x="64" y="480" width="480" height="160">
    <properties>
     <property name="type" value="solid"/>
    </properties>
