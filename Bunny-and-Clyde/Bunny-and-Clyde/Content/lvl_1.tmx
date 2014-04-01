@@ -592,11 +592,6 @@
     <property name="type" value="solid"/>
    </properties>
   </object>
-  <object name="water1" x="417" y="367" width="477" height="80">
-   <properties>
-    <property name="type" value="solid"/>
-   </properties>
-  </object>
  </objectgroup>
  <objectgroup name="drawable" width="40" height="14">
   <object name="white_key" x="640" y="160" width="32" height="32">
@@ -609,6 +604,12 @@
    <properties>
     <property name="imageName" value="door_tile.png"/>
     <property name="type" value="white_door"/>
+   </properties>
+  </object>
+  <object name="water1" x="418" y="368" width="477" height="80">
+   <properties>
+    <property name="imageName" value="blank.png"/>
+    <property name="type" value="water"/>
    </properties>
   </object>
  </objectgroup>
