@@ -576,7 +576,7 @@
    <tile gid="10"/>
   </data>
  </layer>
- <objectgroup name="nondrawable" width="40" height="14" visible="0">
+ <objectgroup name="nondrawable" width="40" height="14">
   <object name="ground1" x="0" y="320" width="416" height="128">
    <properties>
     <property name="type" value="solid"/>
@@ -592,7 +592,7 @@
     <property name="type" value="solid"/>
    </properties>
   </object>
-  <object name="water1" x="416" y="352" width="480" height="96">
+  <object name="water1" x="417" y="367" width="477" height="80">
    <properties>
     <property name="type" value="solid"/>
    </properties>
