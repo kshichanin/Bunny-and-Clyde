@@ -241,6 +241,7 @@
     <Content Include="Icon.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="inventory.png" />
     <Content Include="TiledSharp.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
