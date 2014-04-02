@@ -216,6 +216,9 @@
     <Content Include="Content\platform_tile.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\stone_block_4x1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Content\switch_block1.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

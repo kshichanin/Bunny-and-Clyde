@@ -42,17 +42,6 @@ namespace Bunny_and_Clyde
             back = new ClydesBack(initialX, initialY - 3, CLYDE_WIDTH, 3);
         }
 
-        public override void Update(GameTime gameTime)
-        {
-            if (base.state != Sprite.State.Airbourne)
-            {
-                base.HitBox = new Rectangle((int)Position.X, (int)Position.Y - 10, Width, Height);
-            }
-            else
-            {
-                base.HitBox = new Rectangle((int)Position.X, (int)Position.Y, Width, Height);
-            }
-        }
 
         public override void Draw(SpriteBatch sb)
         {
@@ -74,7 +63,7 @@ namespace Bunny_and_Clyde
             image = content.Load<Texture2D>(imageName);
             currentFrame = 0;
         }
-        public override void Update(Microsoft.Xna.Framework.GameTime gameTime)
+        public override void Update(GameTime gameTime)
         {
             base.Update(gameTime);
             back.Position = this.Position + new Vector2(0, 3);
