@@ -21,7 +21,7 @@ namespace Bunny_and_Clyde
     {
         static int CLYDE_WIDTH = 58, CLYDE_HEIGHT = 48;
         private Texture2D image;
-
+        public ClydesBack back { get; private set; }
         public bool isAirbourne() { return base.state == State.Airbourne; }
         public imageshow die { get; set; }
         //public enum State
@@ -39,7 +39,7 @@ namespace Bunny_and_Clyde
             Velocity = Vector2.Zero;
             base.state = State.Default;
             base.jump = 7f;
-
+            back = new ClydesBack(initialX, initialY - 3, CLYDE_WIDTH, 3);
         }
 
         public override void Draw(SpriteBatch sb)
@@ -62,7 +62,11 @@ namespace Bunny_and_Clyde
             image = content.Load<Texture2D>(imageName);
             currentFrame = 0;
         }
-
+        public override void Update(Microsoft.Xna.Framework.GameTime gameTime)
+        {
+            base.Update(gameTime);
+            back.Position = this.Position + new Vector2(0, 3);
+        }
     }
 }
 

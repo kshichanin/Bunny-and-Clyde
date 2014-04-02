@@ -46,13 +46,19 @@ namespace Bunny_and_Clyde
             foreach (Sprite mover in movingObjects)
             {
                 moveSprite(mover);
-                if (mover.state == Sprite.State.Swimming) { mover.state = Sprite.State.Default; }
+                if (mover.state == Sprite.State.Swimming || mover.state == Sprite .State .Riding ) { mover.state = Sprite.State.Default; }
                 checkItemCollisions(mover);
             }
         }
         public void moveSprite(Sprite sprite)
         {
             Vector2 velocity = sprite.Velocity;
+            bool removed = false;
+            if (solids.Contains(sprite))
+            {
+                removed = true;
+                solids.Remove(sprite);
+            }
             if (checkPlatformCollision(sprite.testBox(velocity.X, 0)))
             {
                 resolveCollision(sprite, new Vector2  (velocity.X, 0));
@@ -82,6 +88,10 @@ namespace Bunny_and_Clyde
             else
             {
                 sprite.Position += new Vector2 (0, velocity .Y);
+            }
+            if (removed)
+            {
+                solids.Add(sprite);
             }
         }
         public void resolveCollision(Sprite s, Vector2 velocity)

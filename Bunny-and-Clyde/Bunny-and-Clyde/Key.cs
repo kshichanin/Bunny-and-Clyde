@@ -19,7 +19,7 @@ namespace Bunny_and_Clyde
         public override void activate(Sprite s)
         {
             if(!level .inventory .items .Contains (this)){
-                level.items.Remove(this);
+                //level.items.Remove(this);
                 level.inventory.addItem(this);
             }
         }

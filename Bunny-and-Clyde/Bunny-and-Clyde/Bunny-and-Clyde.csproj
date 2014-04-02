@@ -38,6 +38,7 @@
   <ItemGroup>
     <Compile Include="Bunny.cs" />
     <Compile Include="Clyde.cs" />
+    <Compile Include="ClydesBack.cs" />
     <Compile Include="CollisionManager.cs" />
     <Compile Include="Gate.cs" />
     <Compile Include="imageshow.cs" />

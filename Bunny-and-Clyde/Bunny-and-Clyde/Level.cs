@@ -147,12 +147,7 @@ namespace Bunny_and_Clyde
             this.worldSprites.Add(this.Clyde);
 
             this.inputManager = new InputManager(worldSprites, this.Bunny, this.Clyde, platforms, sounds);
-            this.physics = new Physics();
-            this.physics.Add(this.Bunny);
-            this.physics.Add(this.Clyde);
-            this.collisions = new CollisionManager(platforms, new List<Item>(items), new List<Sprite>());
-            this.collisions.addMoving(this.Bunny);
-            this.collisions.addMoving(this.Clyde);
+            
             this.worldSprites.Add(inventory);
             this.imshow2 = new imageshow("bunnydies", 470, 70, 0, 300);
             this.worldSprites.Add(imshow2);
