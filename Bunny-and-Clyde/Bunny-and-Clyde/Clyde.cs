@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-﻿using Microsoft.Xna.Framework;
+﻿﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using System;
@@ -12,12 +11,12 @@ using Microsoft.Xna.Framework.GamerServices;
 
 namespace Bunny_and_Clyde
 {
-    class Clyde : Sprite, Gravity 
+    class Clyde : Sprite, Gravity
     {
         static int CLYDE_WIDTH = 58, CLYDE_HEIGHT = 48;
         private Texture2D image;
         int currentFrame;
-        
+
         public bool isAirbourne() { return base.state == State.Airbourne; }
         //public enum State
         //{
@@ -31,7 +30,7 @@ namespace Bunny_and_Clyde
         public Clyde(float initialX, float initialY)
             : base("Turtle", initialX, initialY, CLYDE_WIDTH, CLYDE_HEIGHT)
         {
-            Velocity = Vector2 .Zero ;
+            Velocity = Vector2.Zero;
             base.state = State.Default;
             base.jump = 7f;
 
@@ -39,7 +38,7 @@ namespace Bunny_and_Clyde
 
         public override void Draw(SpriteBatch sb)
         {
-            
+
             int width = image.Width / 4;
             base.Width = width;
             int height = image.Height / 3;
@@ -56,41 +55,7 @@ namespace Bunny_and_Clyde
             string imageName = "Clyde.png";
             image = content.Load<Texture2D>(imageName);
             currentFrame = 3;
-        }
-    }
-}
-=======
-﻿using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Input;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace Bunny_and_Clyde
-{
-    class Clyde : Sprite, Gravity 
-    {
-        static int CLYDE_WIDTH = 58, CLYDE_HEIGHT = 48;
-        
-        public bool isAirbourne() { return base.state == State.Airbourne; }
-        //public enum State
-        //{
-        //    Default,
-        //    Airbourne,
-        //    Swimming,
-        //    Diving
-        //}
-        //public State ClydeState { get; set; }
-
-        public Clyde(float initialX, float initialY)
-            : base("Turtle", initialX, initialY, CLYDE_WIDTH, CLYDE_HEIGHT)
-        {
-            Velocity = Vector2 .Zero ;
-            base.state = State.Default;
-            base.jump = 9f;
         }
 
     }
 }
->>>>>>> ebf8abeea43017c2ae9fa57036ea6c5800fb90b2
