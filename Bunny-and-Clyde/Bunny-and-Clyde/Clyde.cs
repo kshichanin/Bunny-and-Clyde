@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
@@ -42,7 +41,7 @@ namespace Bunny_and_Clyde
             
             int width = image.Width / 4;
             base.Width = width;
-            int height = image.Height / 3;
+            int height = (image.Height / 3);
             base.Height = height;
             int row = (int)((float)currentFrame / (float)4);
             int column = currentFrame % 4;
@@ -55,42 +54,8 @@ namespace Bunny_and_Clyde
         {
             string imageName = "Clyde.png";
             image = content.Load<Texture2D>(imageName);
-            currentFrame = 3;
+            currentFrame = 0;
         }
     }
 }
-=======
-﻿using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Input;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
-namespace Bunny_and_Clyde
-{
-    class Clyde : Sprite, Gravity 
-    {
-        static int CLYDE_WIDTH = 58, CLYDE_HEIGHT = 48;
-        
-        public bool isAirbourne() { return base.state == State.Airbourne; }
-        //public enum State
-        //{
-        //    Default,
-        //    Airbourne,
-        //    Swimming,
-        //    Diving
-        //}
-        //public State ClydeState { get; set; }
-
-        public Clyde(float initialX, float initialY)
-            : base("Turtle", initialX, initialY, CLYDE_WIDTH, CLYDE_HEIGHT)
-        {
-            Velocity = Vector2 .Zero ;
-            base.state = State.Default;
-            base.jump = 9f;
-        }
-
-    }
-}
->>>>>>> ebf8abeea43017c2ae9fa57036ea6c5800fb90b2
