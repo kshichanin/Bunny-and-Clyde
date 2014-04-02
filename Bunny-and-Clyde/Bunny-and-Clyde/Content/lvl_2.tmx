@@ -232,8 +232,8 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
+   <tile gid="0"/>
    <tile gid="15"/>
-   <tile gid="16"/>
    <tile gid="16"/>
    <tile gid="16"/>
    <tile gid="16"/>
@@ -643,11 +643,6 @@
     <property name="type" value="solid"/>
    </properties>
   </object>
-  <object name="platform8" x="224" y="256" width="32" height="64">
-   <properties>
-    <property name="type" value="solid"/>
-   </properties>
-  </object>
   <object name="platform7" x="256" y="256" width="224" height="32">
    <properties>
     <property name="type" value="solid"/>
@@ -663,7 +658,7 @@
     <property name="type" value="solid"/>
    </properties>
   </object>
-  <object name="platform12" x="192" y="288" width="32" height="32">
+  <object name="platform12" x="192" y="288" width="64" height="32">
    <properties>
     <property name="type" value="solid"/>
    </properties>

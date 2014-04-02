@@ -16,7 +16,7 @@ namespace Bunny_and_Clyde
 {
     class Level
     {
-        private TmxMap map;
+        public TmxMap map { get; private set; }
 
         // sprites
         private List<Sprite> worldSprites;
@@ -35,7 +35,7 @@ namespace Bunny_and_Clyde
         private Physics physics;
         private CollisionManager collisions;
         private InputManager inputManager;
-        private GraphicsDeviceManager graphics;
+        public GraphicsDeviceManager graphics { get; private set; }
 
         public bool isComplete { get; set; }
 
