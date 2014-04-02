@@ -13,8 +13,8 @@ namespace Bunny_and_Clyde
 {
     class GameGlobals
     {
-        public static int WINDOW_HEIGHT = 448;
-        public static int WINDOW_WIDTH = 1280;
+        public static int WINDOW_HEIGHT = 640;
+        public static int WINDOW_WIDTH = 1120;
 
         public static int BUNNY_MOVE_SPEED = 5;
         public static int CLYDE_MOVE_SPEED = 5;
