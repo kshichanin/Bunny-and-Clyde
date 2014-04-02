@@ -32,6 +32,18 @@ namespace Bunny_and_Clyde
             base.jump = 13f;
         }
 
+        public override void Update(GameTime gameTime)
+        {
+            if (base.state != Sprite.State.Airbourne)
+            {
+                base.HitBox = new Rectangle((int)Position.X, (int)Position.Y-10, Width, Height);
+            }
+            else
+            {
+                base.HitBox = new Rectangle((int)Position.X, (int)Position.Y, Width, Height);
+            }
+        }
+
         public override void Draw(SpriteBatch sb)
         {
 

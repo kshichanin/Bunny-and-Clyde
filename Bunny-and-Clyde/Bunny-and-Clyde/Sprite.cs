@@ -16,7 +16,7 @@ namespace Bunny_and_Clyde
         public int Width { get; set; }
         public int Height { get; set; }
         public Vector2 Velocity { get; set; }
-        public Rectangle HitBox { get; private set; }
+        public Rectangle HitBox { get; set; }
         public int Speed;
         public float jump { get; set; }
         public int currentFrame {get; set; }
