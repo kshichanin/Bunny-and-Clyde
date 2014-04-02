@@ -748,7 +748,7 @@
   </object>
   <object name="ramp" x="704" y="192" width="128" height="64">
    <properties>
-    <property name="imageName" value="platform_edge_left_tile.png"/>
+    <property name="imageName" value="switch_block_placeholder.png"/>
     <property name="type" value="ramp"/>
    </properties>
   </object>
