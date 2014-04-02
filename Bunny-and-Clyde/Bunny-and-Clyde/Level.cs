@@ -20,7 +20,7 @@ namespace Bunny_and_Clyde
 
         // sprites
         private List<Sprite> worldSprites;
-        private List<Sprite> platforms;
+        public List<Sprite> platforms{get; private set;}
         public List<Item> items {get; private set;}
         public Inventory inventory { get; private set; }
         private Sprite background;
@@ -104,7 +104,7 @@ namespace Bunny_and_Clyde
                     whiteKey  = new Key(c, this, o.X, o.Y, o.Width, o.Height);
                     currentObject  = whiteKey;
                 }
-                else if (o.Properties["type"] == "door")
+                else if (o.Properties["type"] == "goal_door")
                 {
                     System .Drawing .Color drawColor = System .Drawing .Color.FromName (o.Properties["color"]);
                     Color c = new Color (drawColor .R ,drawColor .G ,drawColor .B ,drawColor .A);
@@ -121,6 +121,13 @@ namespace Bunny_and_Clyde
                     System.Drawing.Color drawColor = System.Drawing.Color.FromName(o.Properties["color"]);
                     Color c = new Color(drawColor.R, drawColor.G, drawColor.B, drawColor.A);
                     currentObject = new Gate(c, o.X, o.Y, o.Width, o.Height);
+                    this.platforms.Add(currentObject);
+                }
+                else if (o.Properties["type"] == "door")
+                {
+                    System.Drawing.Color drawColor = System.Drawing.Color.FromName(o.Properties["color"]);
+                    Color c = new Color(drawColor.R, drawColor.G, drawColor.B, drawColor.A);
+                    currentObject = new Door(this, c, o.X, o.Y, o.Width, o.Height);
                     this.platforms.Add(currentObject);
                 }
                 else
