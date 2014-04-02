@@ -86,7 +86,7 @@ namespace Bunny_and_Clyde
                 }
             }
             return false;
-        }
+        }//
         public void Update(GameTime time)
         {
             foreach (Gravity worldObject in worldObjects)

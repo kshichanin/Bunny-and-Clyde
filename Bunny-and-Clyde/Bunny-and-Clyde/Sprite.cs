@@ -11,7 +11,7 @@ namespace Bunny_and_Clyde
 {
     class Sprite
     {
-        private Texture2D image;
+        protected Texture2D image {get; private set;}
         private string imageName;
         public int Width { get; private set; }
         public int Height { get; private set; }
@@ -69,7 +69,7 @@ namespace Bunny_and_Clyde
         //    sb.Draw(image, this.Position, null, Color.White, 0f, Vector2.Zero, this.scale, SpriteEffects.None, 0);
         //}
 
-        public void Draw(SpriteBatch sb)
+        public virtual void Draw(SpriteBatch sb)
         {
             sb.Draw(image, new Rectangle((int)Position.X, (int)Position.Y, Width, Height), Color.White);
         }
