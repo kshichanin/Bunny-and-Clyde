@@ -8,7 +8,7 @@ namespace Bunny_and_Clyde
 {
     class Key : Item 
     {
-        Color color;
+        public Color color { get; private set; }
         Level level;
         public Key(Color c, Level l, float x, float y, int width, int height) :
             base("key", x, y, width, height)

@@ -36,6 +36,10 @@ namespace Bunny_and_Clyde
 
         public void Update(GameTime gameTime)
         {
+            if (this.levels[this.currentLevelIndex].isComplete)
+            {
+                this.nextLevel();
+            }
             this.levels[this.currentLevelIndex].Update(gameTime);
         }
 

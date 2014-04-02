@@ -8,15 +8,15 @@ namespace Bunny_and_Clyde
     class Door : Item
     {
         private Level level;
-        private Key key;
+        private Color color;
         private bool bunnyTouching, clydeTouching;
-        public Door(Level l, Key k, float x, float y, int width, int height) :
+        public Door(Level l, Color c, float x, float y, int width, int height) :
             base("door", x, y, width, height)
         {
             this.bunnyTouching = false;
             this.clydeTouching = false;
             this.level = l;
-            this.key = k;
+            this.color = c;
         }
         public override  void activate (Sprite collider){
             if (collider.GetType() == typeof(Clyde))
@@ -27,9 +27,10 @@ namespace Bunny_and_Clyde
             {
                 bunnyTouching = true;
             }
-            if (bunnyTouching && clydeTouching && level.inventory.items.Contains(key))
+            if (bunnyTouching && clydeTouching && level.inventory.containsKey(color))
             {
                 //we won
+                level.isComplete = true;
                 Console.Out.WriteLine("we won");
             }
         }

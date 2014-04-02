@@ -37,11 +37,15 @@ namespace Bunny_and_Clyde
         private InputManager inputManager;
         private GraphicsDeviceManager graphics;
 
+        public bool isComplete { get; set; }
+
         public Bunny Bunny { get; private set; }
         public Clyde Clyde { get; private set; }
 
         public Level(string mapFile, GraphicsDeviceManager graphicsManager)
         {
+            this.isComplete = false;
+
             this.graphics = graphicsManager;
             this.map = new TmxMap(mapFile);
 
@@ -93,17 +97,21 @@ namespace Bunny_and_Clyde
                 }
                 else if (o.Properties["type"] == "white_key")
                 {
-                    whiteKey  = new Key(Color.AliceBlue, this, o.X, o.Y, o.Width, o.Height);
+                    System.Drawing.Color drawColor = System.Drawing.Color.FromName(o.Properties["color"]);
+                    Color c = new Color(drawColor.R, drawColor.G, drawColor.B, drawColor.A);
+                    whiteKey  = new Key(c, this, o.X, o.Y, o.Width, o.Height);
                     currentObject  = whiteKey;
                 }
                 else if (o.Properties["type"] == "white_door")
                 {
-                    currentObject = new Door(this, whiteKey, o.X, o.Y, o.Width, o.Height);
+                    System .Drawing .Color drawColor = System .Drawing .Color.FromName (o.Properties["color"]);
+                    Color c = new Color (drawColor .R ,drawColor .G ,drawColor .B ,drawColor .A);
+                    currentObject = new Door(this, c, o.X, o.Y, o.Width, o.Height);
                 }
                 else
                 {
                     //this shouldn't happen
-                    currentObject = new Door(this, whiteKey, o.X, o.Y, o.Width, o.Height);
+                    currentObject = new Water(o.X, o.Y, o.Width, o.Height);
                     Console.WriteLine(o.Properties["imageName"]);
                 }
                 this.worldSprites.Add(currentObject);
