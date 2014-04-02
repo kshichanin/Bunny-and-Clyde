@@ -29,5 +29,20 @@ namespace Bunny_and_Clyde
                 nextItemPosition += new Vector2(50, 0);
             }
         }
+        public bool containsKey(Color c)
+        {
+            foreach (Item i in items)
+            {
+                if (i.GetType() == typeof(Key))
+                {
+                    Key k = (Key)i;
+                    if (k.color == c)
+                    {
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
     }
 }

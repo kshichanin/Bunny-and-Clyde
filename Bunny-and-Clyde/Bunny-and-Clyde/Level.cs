@@ -16,7 +16,7 @@ namespace Bunny_and_Clyde
 {
     class Level
     {
-        private TmxMap map;
+        public TmxMap map { get; private set; }
 
         // sprites
         private List<Sprite> worldSprites;
@@ -35,13 +35,17 @@ namespace Bunny_and_Clyde
         private Physics physics;
         private CollisionManager collisions;
         private InputManager inputManager;
-        private GraphicsDeviceManager graphics;
+        public GraphicsDeviceManager graphics { get; private set; }
+
+        public bool isComplete { get; set; }
 
         public Bunny Bunny { get; private set; }
         public Clyde Clyde { get; private set; }
 
         public Level(string mapFile, GraphicsDeviceManager graphicsManager)
         {
+            this.isComplete = false;
+
             this.graphics = graphicsManager;
             this.map = new TmxMap(mapFile);
 
@@ -86,22 +90,41 @@ namespace Bunny_and_Clyde
             foreach (TmxObjectGroup.TmxObject o in mapObjectsDrawable.Objects)
             {
                 Item currentObject;
+                Key whiteKey = new Key(Color.AliceBlue, this, 0, 0, 0, 0);
                 if (o.Properties["type"] == "water")
                 {
                     currentObject = new Water( o.X, o.Y, o.Width, o.Height);
                 }
                 else if (o.Properties["type"] == "white_key")
                 {
-                    currentObject = new Key(Color.AliceBlue, this, o.X, o.Y, o.Width, o.Height);
+                    System.Drawing.Color drawColor = System.Drawing.Color.FromName(o.Properties["color"]);
+                    Color c = new Color(drawColor.R, drawColor.G, drawColor.B, drawColor.A);
+                    whiteKey  = new Key(c, this, o.X, o.Y, o.Width, o.Height);
+                    currentObject  = whiteKey;
                 }
                 else if (o.Properties["type"] == "white_door")
                 {
-                    currentObject = new Door(o.X, o.Y, o.Width, o.Height);
+                    System .Drawing .Color drawColor = System .Drawing .Color.FromName (o.Properties["color"]);
+                    Color c = new Color (drawColor .R ,drawColor .G ,drawColor .B ,drawColor .A);
+                    currentObject = new Door(this, c, o.X, o.Y, o.Width, o.Height);
+                }
+                else if (o.Properties["type"] == "switch")
+                {
+                    System.Drawing.Color drawColor = System.Drawing.Color.FromName(o.Properties["color"]);
+                    Color c = new Color(drawColor.R, drawColor.G, drawColor.B, drawColor.A);
+                    currentObject = new Switch(c,this, o.X, o.Y, o.Width, o.Height);
+                }
+                else if (o.Properties["type"] == "gate")
+                {
+                    System.Drawing.Color drawColor = System.Drawing.Color.FromName(o.Properties["color"]);
+                    Color c = new Color(drawColor.R, drawColor.G, drawColor.B, drawColor.A);
+                    currentObject = new Gate(c, o.X, o.Y, o.Width, o.Height);
+                    this.platforms.Add(currentObject);
                 }
                 else
                 {
                     //this shouldn't happen
-                    currentObject = new Door(o.X, o.Y, o.Width, o.Height);
+                    currentObject = new Water(o.X, o.Y, o.Width, o.Height);
                     Console.WriteLine(o.Properties["imageName"]);
                 }
                 this.worldSprites.Add(currentObject);
@@ -136,7 +159,19 @@ namespace Bunny_and_Clyde
                 s.LoadContent(content);
             }
         }
-
+        public Gate getGate(Color c)
+        {
+            foreach (Item i in this.items)
+            {
+                if(i.GetType () == typeof (Gate){
+                    Gate gate = (Gate)i;
+                    if(gate.color == c){
+                        return gate ;
+                    }
+                }
+            }
+            return null;
+        }
         public void Update(GameTime gameTime)
         {
             foreach (Sprite s in this.worldSprites)

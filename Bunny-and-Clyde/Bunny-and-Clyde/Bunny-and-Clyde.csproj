@@ -39,6 +39,8 @@
     <Compile Include="Bunny.cs" />
     <Compile Include="Clyde.cs" />
     <Compile Include="CollisionManager.cs" />
+    <Compile Include="Gate.cs" />
+    <Compile Include="Switch.cs" />
     <Compile Include="Door.cs" />
     <Compile Include="Game1.cs" />
     <Compile Include="GameGlobals.cs" />
@@ -72,6 +74,7 @@
     <Reference Include="Lidgren.Network">
       <HintPath>$(MSBuildExtensionsPath)\..\MonoGame\v3.0\Assemblies\WindowsGL\Lidgren.Network.dll</HintPath>
     </Reference>
+    <Reference Include="System.Drawing" />
     <Reference Include="Tao.Sdl">
       <HintPath>$(MSBuildExtensionsPath)\..\MonoGame\v3.0\Assemblies\WindowsGL\Tao.Sdl.dll</HintPath>
     </Reference>

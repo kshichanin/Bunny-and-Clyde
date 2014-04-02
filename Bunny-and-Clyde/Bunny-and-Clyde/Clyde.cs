@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ﻿using Microsoft.Xna.Framework;
+=======
+﻿﻿using Microsoft.Xna.Framework;
+>>>>>>> 4b8ebb9ba441976df5465cbee6babeb327f8a9f3
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using System;
@@ -11,12 +15,12 @@ using Microsoft.Xna.Framework.GamerServices;
 
 namespace Bunny_and_Clyde
 {
-    class Clyde : Sprite, Gravity 
+    class Clyde : Sprite, Gravity
     {
         static int CLYDE_WIDTH = 58, CLYDE_HEIGHT = 48;
         private Texture2D image;
         int currentFrame;
-        
+
         public bool isAirbourne() { return base.state == State.Airbourne; }
         //public enum State
         //{
@@ -30,7 +34,7 @@ namespace Bunny_and_Clyde
         public Clyde(float initialX, float initialY)
             : base("Turtle", initialX, initialY, CLYDE_WIDTH, CLYDE_HEIGHT)
         {
-            Velocity = Vector2 .Zero ;
+            Velocity = Vector2.Zero;
             base.state = State.Default;
             base.jump = 7f;
 
@@ -38,7 +42,7 @@ namespace Bunny_and_Clyde
 
         public override void Draw(SpriteBatch sb)
         {
-            
+
             int width = image.Width / 4;
             base.Width = width;
             int height = (image.Height / 3);
@@ -54,8 +58,16 @@ namespace Bunny_and_Clyde
         {
             string imageName = "Clyde.png";
             image = content.Load<Texture2D>(imageName);
+<<<<<<< HEAD
             currentFrame = 0;
         }
     }
 }
 
+=======
+            currentFrame = 3;
+        }
+
+    }
+}
+>>>>>>> 4b8ebb9ba441976df5465cbee6babeb327f8a9f3

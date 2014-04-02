@@ -16,13 +16,15 @@ namespace Bunny_and_Clyde
 {
     class LevelManager
     {
-        private List<Level> levels;
-        private int currentLevelIndex;
+        public List<Level> levels { get; private set; }
+        public int currentLevelIndex { get; private set; }
+        //public bool Resize { get; set; }
 
         public LevelManager(List<Level> levels)
         {
             this.levels = levels;
             this.currentLevelIndex = 0;
+            //this.Resize = false;
         }
 
         public void LoadContent(ContentManager content)
@@ -36,6 +38,10 @@ namespace Bunny_and_Clyde
 
         public void Update(GameTime gameTime)
         {
+            if (this.levels[this.currentLevelIndex].isComplete)
+            {
+                this.nextLevel();
+            }
             this.levels[this.currentLevelIndex].Update(gameTime);
         }
 
@@ -47,6 +53,7 @@ namespace Bunny_and_Clyde
         public void nextLevel()
         {
             this.currentLevelIndex++;
+            //this.Resize = true;
         }
     }
 }

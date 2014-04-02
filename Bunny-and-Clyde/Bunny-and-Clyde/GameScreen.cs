@@ -27,7 +27,7 @@ namespace Bunny_and_Clyde
         //private Sprite background;
         //private CollisionManager collisions;
         private Level lvl_1;
-        private LevelManager levelManager;
+        public LevelManager levelManager { get; private set; }
 
         public GameScreen(GraphicsDeviceManager graphics)
         {

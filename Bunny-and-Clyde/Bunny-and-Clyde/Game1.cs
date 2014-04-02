@@ -81,6 +81,17 @@ namespace Bunny_and_Clyde
                 Exit();
 
             // TODO: Add your update logic here
+            //if (world.levelManager.Resize)
+            //{
+            //    //graphics.PreferredBackBufferWidth = 400;
+            //    //graphics.PreferredBackBufferWidth = 400;
+
+            //    graphics.PreferredBackBufferWidth =
+            //        int.Parse(world.levelManager.levels[world.levelManager.currentLevelIndex].map.Properties["width"]);
+            //    graphics.PreferredBackBufferHeight =
+            //        int.Parse(world.levelManager.levels[world.levelManager.currentLevelIndex].map.Properties["height"]);
+            //    graphics.ApplyChanges();
+            //}
             world.Update(gameTime);
             base.Update(gameTime);
         }

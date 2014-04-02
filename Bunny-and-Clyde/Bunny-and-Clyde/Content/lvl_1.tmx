@@ -596,12 +596,14 @@
  <objectgroup name="drawable" width="40" height="14">
   <object name="white_key" x="640" y="160" width="32" height="32">
    <properties>
+    <property name="color" value="White"/>
     <property name="imageName" value="key_tile.png"/>
     <property name="type" value="white_key"/>
    </properties>
   </object>
   <object name="white_door" x="1088" y="224" width="64" height="96">
    <properties>
+    <property name="color" value="White"/>
     <property name="imageName" value="door_tile.png"/>
     <property name="type" value="white_door"/>
    </properties>

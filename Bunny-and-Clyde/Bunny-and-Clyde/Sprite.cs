@@ -59,7 +59,7 @@ namespace Bunny_and_Clyde
             image = content.Load<Texture2D>(imageName);
         }
 
-        public void Update(GameTime gameTime)
+        public virtual void Update(GameTime gameTime)
         {
             HitBox = new Rectangle((int)Position.X, (int)Position.Y, Width, Height);
         }
