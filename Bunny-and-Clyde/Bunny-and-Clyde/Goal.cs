@@ -5,12 +5,12 @@ using System.Text;
 using Microsoft.Xna.Framework;
 namespace Bunny_and_Clyde
 {
-    class Door : Item
+    class Goal : Item
     {
         private Level level;
         private Color color;
         private bool bunnyTouching, clydeTouching;
-        public Door(Level l, Color c, float x, float y, int width, int height) :
+        public Goal(Level l, Color c, float x, float y, int width, int height) :
             base("door", x, y, width, height)
         {
             this.bunnyTouching = false;
