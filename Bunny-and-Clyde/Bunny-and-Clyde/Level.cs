@@ -163,7 +163,7 @@ namespace Bunny_and_Clyde
         {
             foreach (Item i in this.items)
             {
-                if(i.GetType () == typeof (Gate){
+                if(i.GetType () == typeof (Gate)) {
                     Gate gate = (Gate)i;
                     if(gate.color == c){
                         return gate ;
