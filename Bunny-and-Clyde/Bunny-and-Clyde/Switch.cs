@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 namespace Bunny_and_Clyde
 {
     class Switch : Item 
@@ -29,6 +30,10 @@ namespace Bunny_and_Clyde
                 level.getGate(color).close();
             }
             activated = false;
+        }
+        public override void Draw(SpriteBatch sb)
+        {
+            sb.Draw(image, new Rectangle((int)Position.X, (int)Position.Y, Width, Height), this.color);
         }
     }
 }

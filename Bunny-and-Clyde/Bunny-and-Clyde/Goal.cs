@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 namespace Bunny_and_Clyde
 {
     class Goal : Item
@@ -39,6 +40,10 @@ namespace Bunny_and_Clyde
             base.Update(gt);
             bunnyTouching = false;
             clydeTouching = false;
+        }
+        public override void Draw(SpriteBatch sb)
+        {
+            sb.Draw(image, new Rectangle((int)Position.X, (int)Position.Y, Width, Height), this.color);
         }
     }
 }
