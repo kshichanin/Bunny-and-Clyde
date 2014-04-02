@@ -743,13 +743,20 @@
    <properties>
     <property name="color" value="White"/>
     <property name="imageName" value="door_tile.png"/>
-    <property name="type" value="white_door"/>
+    <property name="type" value="goal_door"/>
    </properties>
   </object>
   <object name="water1" x="321" y="560" width="413" height="79">
    <properties>
     <property name="imageName" value="blank.png"/>
     <property name="type" value="water"/>
+   </properties>
+  </object>
+  <object name="white_door" x="1024" y="416" width="64" height="96">
+   <properties>
+    <property name="color" value="White"/>
+    <property name="imageName" value="door_tile.png"/>
+    <property name="type" value="goal_door"/>
    </properties>
   </object>
  </objectgroup>

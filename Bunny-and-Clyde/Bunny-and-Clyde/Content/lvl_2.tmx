@@ -729,7 +729,7 @@
    <properties>
     <property name="color" value="Green"/>
     <property name="imageName" value="door_tile.png"/>
-    <property name="type" value="door"/>
+    <property name="type" value="goal_door"/>
    </properties>
   </object>
   <object name="switch_door" x="64" y="448" width="128" height="32">
