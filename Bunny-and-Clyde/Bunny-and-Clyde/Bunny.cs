@@ -50,7 +50,7 @@ namespace Bunny_and_Clyde
         {
             string imageName = "bunny.png";
             image = content.Load<Texture2D>(imageName);
-            currentFrame = 5;
+            currentFrame = 4;
         }
     }
 }

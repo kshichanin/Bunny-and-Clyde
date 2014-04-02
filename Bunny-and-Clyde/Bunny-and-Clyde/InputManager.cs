@@ -24,6 +24,7 @@ namespace Bunny_and_Clyde
         public List<Sprite> Platforms { get; private set; }
         public List<SoundEffect> sounds { get; private set; }
         private bool check = false;
+        private TimeSpan sum;
         private bool bunny = true;
         public InputManager(List<Sprite> worldSprites, Sprite activeCharacter, Sprite inactiveCharacter,List<Sprite> platforms, List<SoundEffect> sounds)
         {
@@ -33,10 +34,12 @@ namespace Bunny_and_Clyde
             this.Platforms = platforms;
             previousState = InactiveCharacter.state;
             this.sounds = sounds;
+            sum = TimeSpan.Zero;
         }
 
         public void Update(GameTime gameTime)
         {
+            sum += gameTime.ElapsedGameTime;
             //Left Right Direction check
             currentKeyboard = Keyboard.GetState();
             Vector2 direction;
@@ -112,53 +115,119 @@ namespace Bunny_and_Clyde
 
             // determine sprite animation
             if (currentKeyboard.IsKeyDown(Keys.Left) || GamePad.GetState(PlayerIndex.One).DPad.Left == ButtonState.Pressed && ActiveCharacter.state != Sprite.State.Airbourne)
-             {
-                 if (bunny)
-                 {
-                     ActiveCharacter.currentFrame = 1;
-                 }
-                 else
-                 {
-                     ActiveCharacter.currentFrame = 3;
-                 }
-             }
+            {
+                // turn left
+                if (bunny)
+                {
+                    if (ActiveCharacter.currentFrame == 1 && sum.Milliseconds > 100)
+                    {
+                        ActiveCharacter.currentFrame = 2;
+                        sum = TimeSpan.Zero;
+                    }
+                    else if (sum.Milliseconds > 100)
+                    {
+                        ActiveCharacter.currentFrame = 1;
+                        sum = TimeSpan.Zero;
+                    }
+                }
+                else
+                {
+                    if (ActiveCharacter.currentFrame == 3 && sum.Milliseconds > 100)
+                    {
+                        ActiveCharacter.currentFrame = 2;
+                        sum = TimeSpan.Zero;
+                    }
+                    else if (sum.Milliseconds > 100)
+                    {
+                        ActiveCharacter.currentFrame = 3;
+                        sum = TimeSpan.Zero;
+                    }
+                }
+            }
             else if (currentKeyboard.IsKeyDown(Keys.Right) || GamePad.GetState(PlayerIndex.One).DPad.Right == ButtonState.Pressed && ActiveCharacter.state != Sprite.State.Airbourne)
-             {
-                 if (bunny)
-                 {
-                     ActiveCharacter.currentFrame = 4;
-                 }
-                 else
-                 {
-                     ActiveCharacter.currentFrame = 0;
-                 }
-             }
-             else if (ActiveCharacter.state == Sprite.State.Airbourne) // jumping
-             {
-                 if (bunny)
-                 {
-                     if (ActiveCharacter.currentFrame == 4 || ActiveCharacter.currentFrame == 3)
-                     {
-                         ActiveCharacter.currentFrame = 5;
-                     }
-                     else
-                     {
-                         ActiveCharacter.currentFrame = 0;
-                     }
-                 }
-                 else
-                 {
-                     if (ActiveCharacter.currentFrame == 4 || ActiveCharacter.currentFrame == 3)
-                     {
-                         ActiveCharacter.currentFrame = 5;
-                     }
-                     else
-                     {
-                         ActiveCharacter.currentFrame = 0;
-                     }
-                 }
+            {
+                // turn right
+                if (bunny)
+                {
+                    if (ActiveCharacter.currentFrame == 4 && sum.Milliseconds > 100)
+                    {
+                        ActiveCharacter.currentFrame = 3;
+                        sum = TimeSpan.Zero;
+                    }
+                    else if (sum.Milliseconds > 100)
+                    {
+                        ActiveCharacter.currentFrame = 4;
+                        sum = TimeSpan.Zero;
+                    }
+                    
+                }
+                else
+                {
+                    if (ActiveCharacter.currentFrame == 0 && sum.Milliseconds > 100)
+                    {
+                        ActiveCharacter.currentFrame = 1;
+                        sum = TimeSpan.Zero;
+                    }
+                    else if (sum.Milliseconds > 100)
+                    {
+                        ActiveCharacter.currentFrame = 0;
+                        sum = TimeSpan.Zero;
+                    }
+                }
+            }
+            if (ActiveCharacter.state == Sprite.State.Airbourne) // jumping
+            {
+                // jump
+                if (bunny)
+                {
+                    if (ActiveCharacter.currentFrame == 4 || ActiveCharacter.currentFrame == 3 || ActiveCharacter.currentFrame == 5)
+                    {
+                        ActiveCharacter.currentFrame = 5;
+                    }
+                    else
+                    {
+                        ActiveCharacter.currentFrame = 0;
+                    }
+                }
+                else
+                {
+                    if (ActiveCharacter.currentFrame == 0 || ActiveCharacter.currentFrame == 1 || ActiveCharacter.currentFrame == 4)
+                    {
+                        ActiveCharacter.currentFrame = 4;
+                    }
+                    else
+                    {
+                        ActiveCharacter.currentFrame = 7;
+                    }
+                }
+            }
+            if (ActiveCharacter.state != Sprite.State.Airbourne)
+            {
+                // land from jump
+                if (bunny)
+                {
+                    if (ActiveCharacter.currentFrame == 5)
+                    {
+                        ActiveCharacter.currentFrame = 3;
+                    }
+                    else if (ActiveCharacter.currentFrame == 0)
+                    {
+                        ActiveCharacter.currentFrame = 1;
+                    }
+                }
+                else
+                {
+                    if (ActiveCharacter.currentFrame == 4 )
+                    {
+                        ActiveCharacter.currentFrame = 0;
+                    }
+                    else if (ActiveCharacter.currentFrame == 7)
+                    {
+                        ActiveCharacter.currentFrame = 3;
+                    }
+                }
+            }
 
-             }
             
 
             /*
