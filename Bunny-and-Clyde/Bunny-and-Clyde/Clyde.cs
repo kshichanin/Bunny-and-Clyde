@@ -1,8 +1,6 @@
-<<<<<<< HEAD
-﻿using Microsoft.Xna.Framework;
-=======
+﻿
 ﻿﻿using Microsoft.Xna.Framework;
->>>>>>> 4b8ebb9ba441976df5465cbee6babeb327f8a9f3
+
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using System;
@@ -58,16 +56,10 @@ namespace Bunny_and_Clyde
         {
             string imageName = "Clyde.png";
             image = content.Load<Texture2D>(imageName);
-<<<<<<< HEAD
             currentFrame = 0;
-        }
-    }
-}
-
-=======
-            currentFrame = 3;
         }
 
     }
 }
->>>>>>> 4b8ebb9ba441976df5465cbee6babeb327f8a9f3
+
+
