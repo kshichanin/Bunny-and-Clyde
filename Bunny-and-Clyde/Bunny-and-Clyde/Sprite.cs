@@ -13,8 +13,8 @@ namespace Bunny_and_Clyde
     {
         private Texture2D image;
         private string imageName;
-        public int Width { get; private set; }
-        public int Height { get; private set; }
+        public int Width { get; set; }
+        public int Height { get; set; }
         public Vector2 Velocity { get; set; }
         public Rectangle HitBox { get; private set; }
         public int Speed;
@@ -54,7 +54,7 @@ namespace Bunny_and_Clyde
             return new Rectangle((int)(X+Position.X) , (int)(Y+Position .Y), Width, Height);
         }
 
-        public void LoadContent(ContentManager content)
+        public virtual void LoadContent(ContentManager content)
         {
             image = content.Load<Texture2D>(imageName);
         }
@@ -69,7 +69,7 @@ namespace Bunny_and_Clyde
         //    sb.Draw(image, this.Position, null, Color.White, 0f, Vector2.Zero, this.scale, SpriteEffects.None, 0);
         //}
 
-        public void Draw(SpriteBatch sb)
+        public virtual void Draw(SpriteBatch sb)
         {
             sb.Draw(image, new Rectangle((int)Position.X, (int)Position.Y, Width, Height), Color.White);
         }
