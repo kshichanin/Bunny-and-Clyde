@@ -24,7 +24,7 @@ namespace Bunny_and_Clyde
         public override void Update(GameTime gameTime)
         {
             base.Update(gameTime);
-            if (!activated)
+            if (!activated && level.getGate(color) != null)
             {
                 level.getGate(color).close();
             }

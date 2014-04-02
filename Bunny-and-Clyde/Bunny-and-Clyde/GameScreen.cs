@@ -31,9 +31,9 @@ namespace Bunny_and_Clyde
 
         public GameScreen(GraphicsDeviceManager graphics)
         {
-            //this.lvl_1 = new Level("Content\\lvl_1.tmx", graphics);
+            this.lvl_1 = new Level("Content\\lvl_1.tmx", graphics);
             List<Level> levels = new List<Level>();
-            levels.Add(new Level("Content\\lvl_1.tmx", graphics));
+            //levels.Add(new Level("Content\\lvl_1.tmx", graphics));
             levels.Add(new Level("Content\\lvl_2.tmx", graphics));
             this.levelManager = new LevelManager(levels);
 
