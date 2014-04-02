@@ -5,7 +5,7 @@
   <property name="bunnySpawnX" value="25"/>
   <property name="bunnySpawnY" value="120"/>
   <property name="clydeSpawnX" value="43"/>
-  <property name="clydeSpawnY" value="276"/>
+  <property name="clydeSpawnY" value="270"/>
  </properties>
  <tileset firstgid="1" name="tileset_1x1" tilewidth="32" tileheight="32" spacing="1">
   <image source="tileset_1x1.png" width="230" height="98"/>
@@ -717,31 +717,29 @@
    <tile gid="10"/>
   </data>
  </layer>
- <objectgroup name="drawable" width="35" height="20" visible="0">
+ <objectgroup name="drawable" width="35" height="20">
   <object name="white_door" x="96" y="224" width="64" height="96">
    <properties>
     <property name="color" value="White"/>
     <property name="imageName" value="door_tile.png"/>
-    <property name="type" value="white_door"/>
+    <property name="type" value="door"/>
    </properties>
   </object>
   <object name="green_door" x="1056" y="224" width="64" height="96">
    <properties>
     <property name="color" value="Green"/>
     <property name="imageName" value="door_tile.png"/>
-    <property name="type" value="green_door"/>
+    <property name="type" value="door"/>
    </properties>
   </object>
   <object name="switch_door" x="64" y="448" width="128" height="32">
    <properties>
     <property name="color" value="White"/>
-    <property name="height" value="1"/>
-    <property name="imageName" value="switch_block_placeholder.png"/>
-    <property name="type" value="switch_door"/>
-    <property name="width" value="4"/>
+    <property name="imageName" value="gate_block.png"/>
+    <property name="type" value="switch_block"/>
    </properties>
   </object>
-  <object name="switch_block" x="352" y="352" width="32" height="32">
+  <object name="switch_block" x="416" y="224" width="32" height="32">
    <properties>
     <property name="color" value="White"/>
     <property name="imageName" value="log_vertical_top_tile.png"/>
@@ -758,14 +756,14 @@
    <properties>
     <property name="color" value="Green"/>
     <property name="imageName" value="key_tile.png"/>
-    <property name="type" value="green_key"/>
+    <property name="type" value="key"/>
    </properties>
   </object>
   <object name="white_key" x="672" y="224" width="32" height="32">
    <properties>
     <property name="color" value="White"/>
     <property name="imageName" value="key_tile.png"/>
-    <property name="type" value="white_key"/>
+    <property name="type" value="key"/>
    </properties>
   </object>
   <object name="water1" x="64" y="497" width="768" height="142">

@@ -97,14 +97,14 @@ namespace Bunny_and_Clyde
                 {
                     currentObject = new Water( o.X, o.Y, o.Width, o.Height);
                 }
-                else if (o.Properties["type"] == "white_key")
+                else if (o.Properties["type"] == "key")
                 {
                     System.Drawing.Color drawColor = System.Drawing.Color.FromName(o.Properties["color"]);
                     Color c = new Color(drawColor.R, drawColor.G, drawColor.B, drawColor.A);
                     whiteKey  = new Key(c, this, o.X, o.Y, o.Width, o.Height);
                     currentObject  = whiteKey;
                 }
-                else if (o.Properties["type"] == "white_door")
+                else if (o.Properties["type"] == "door")
                 {
                     System .Drawing .Color drawColor = System .Drawing .Color.FromName (o.Properties["color"]);
                     Color c = new Color (drawColor .R ,drawColor .G ,drawColor .B ,drawColor .A);
