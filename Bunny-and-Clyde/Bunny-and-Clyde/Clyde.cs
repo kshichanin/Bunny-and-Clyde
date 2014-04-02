@@ -21,7 +21,6 @@ namespace Bunny_and_Clyde
     {
         static int CLYDE_WIDTH = 58, CLYDE_HEIGHT = 48;
         private Texture2D image;
-        int currentFrame;
 
         public bool isAirbourne() { return base.state == State.Airbourne; }
         public imageshow die { get; set; }

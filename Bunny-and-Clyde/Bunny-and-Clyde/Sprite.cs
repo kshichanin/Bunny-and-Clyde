@@ -19,6 +19,7 @@ namespace Bunny_and_Clyde
         public Rectangle HitBox { get; private set; }
         public int Speed;
         public float jump { get; set; }
+        public int currentFrame {get; set; }
         public enum State
         {
             Default,

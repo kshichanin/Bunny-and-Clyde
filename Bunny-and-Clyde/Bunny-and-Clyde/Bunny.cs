@@ -19,7 +19,6 @@ namespace Bunny_and_Clyde
         public bool isAirbourne() { return base.state == State.Airbourne; }
 
         private Texture2D image;
-        int currentFrame;
 
         //public State BunnyState { get; set; }
         //public enum State { Default, Riding, Airbourne }
@@ -40,8 +39,8 @@ namespace Bunny_and_Clyde
             base.Width = width;
             int height = (image.Height / 2);
             base.Height = height;
-            int row = (int)((float)currentFrame / (float)4);
-            int column = currentFrame % 4;
+            int row = (int)((float)currentFrame / (float)3);
+            int column = currentFrame % 3;
             Rectangle sourceRectangle = new Rectangle((width * column), (height * row), width, height);
             sb.Draw(image, base.Position, sourceRectangle, Color.White);
             //sb.Draw(image, new Rectangle((int)base.Position.X, (int)base.Position.Y, base.Width, base.Height), Color.White);
@@ -51,7 +50,7 @@ namespace Bunny_and_Clyde
         {
             string imageName = "bunny.png";
             image = content.Load<Texture2D>(imageName);
-            currentFrame = 1;
+            currentFrame = 5;
         }
     }
 }

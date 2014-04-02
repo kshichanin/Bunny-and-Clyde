@@ -101,6 +101,58 @@ namespace Bunny_and_Clyde
                 ActiveCharacter.state = Sprite.State.Airbourne;
                 ActiveCharacter.Velocity -= new Vector2 (0, ActiveCharacter.jump);
             }
+
+            // determine sprite animation
+            if (currentKeyboard.IsKeyDown(Keys.Left) || GamePad.GetState(PlayerIndex.One).DPad.Left == ButtonState.Pressed && ActiveCharacter.state != Sprite.State.Airbourne)
+             {
+                 if (bunny)
+                 {
+                     ActiveCharacter.currentFrame = 1;
+                 }
+                 else
+                 {
+                     ActiveCharacter.currentFrame = 3;
+                 }
+             }
+            else if (currentKeyboard.IsKeyDown(Keys.Right) || GamePad.GetState(PlayerIndex.One).DPad.Right == ButtonState.Pressed && ActiveCharacter.state != Sprite.State.Airbourne)
+             {
+                 if (bunny)
+                 {
+                     ActiveCharacter.currentFrame = 4;
+                 }
+                 else
+                 {
+                     ActiveCharacter.currentFrame = 0;
+                 }
+             }
+             else if (ActiveCharacter.state == Sprite.State.Airbourne) // jumping
+             {
+                 if (bunny)
+                 {
+                     if (ActiveCharacter.currentFrame == 4 || ActiveCharacter.currentFrame == 3)
+                     {
+                         ActiveCharacter.currentFrame = 5;
+                     }
+                     else
+                     {
+                         ActiveCharacter.currentFrame = 0;
+                     }
+                 }
+                 else
+                 {
+                     if (ActiveCharacter.currentFrame == 4 || ActiveCharacter.currentFrame == 3)
+                     {
+                         ActiveCharacter.currentFrame = 5;
+                     }
+                     else
+                     {
+                         ActiveCharacter.currentFrame = 0;
+                     }
+                 }
+
+             }
+            
+
             /*
             if (ActiveCharacter.HitBox.Intersects(worldSprites[0].HitBox))
             {
