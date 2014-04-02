@@ -736,14 +736,14 @@
    <properties>
     <property name="color" value="White"/>
     <property name="imageName" value="gate_block.png"/>
-    <property name="type" value="switch_block"/>
+    <property name="type" value="switch_gate"/>
    </properties>
   </object>
   <object name="switch_block" x="416" y="224" width="32" height="32">
    <properties>
     <property name="color" value="White"/>
-    <property name="imageName" value="log_vertical_top_tile.png"/>
-    <property name="type" value="switch_block"/>
+    <property name="imageName" value="switch_block_placeholder.png"/>
+    <property name="type" value="switch_button"/>
    </properties>
   </object>
   <object name="ramp" x="704" y="192" width="128" height="64">
