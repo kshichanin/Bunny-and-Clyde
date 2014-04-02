@@ -34,7 +34,7 @@ namespace Bunny_and_Clyde
                 Console.Out.WriteLine("we won");
             }
         }
-        public void Update(GameTime gt)
+        public override void Update(GameTime gt)
         {
             base.Update(gt);
             bunnyTouching = false;

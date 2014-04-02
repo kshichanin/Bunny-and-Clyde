@@ -39,6 +39,8 @@
     <Compile Include="Bunny.cs" />
     <Compile Include="Clyde.cs" />
     <Compile Include="CollisionManager.cs" />
+    <Compile Include="Gate.cs" />
+    <Compile Include="Switch.cs" />
     <Compile Include="Door.cs" />
     <Compile Include="Game1.cs" />
     <Compile Include="GameGlobals.cs" />

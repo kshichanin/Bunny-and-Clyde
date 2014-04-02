@@ -108,6 +108,19 @@ namespace Bunny_and_Clyde
                     Color c = new Color (drawColor .R ,drawColor .G ,drawColor .B ,drawColor .A);
                     currentObject = new Door(this, c, o.X, o.Y, o.Width, o.Height);
                 }
+                else if (o.Properties["type"] == "switch")
+                {
+                    System.Drawing.Color drawColor = System.Drawing.Color.FromName(o.Properties["color"]);
+                    Color c = new Color(drawColor.R, drawColor.G, drawColor.B, drawColor.A);
+                    currentObject = new Switch(c,this, o.X, o.Y, o.Width, o.Height);
+                }
+                else if (o.Properties["type"] == "gate")
+                {
+                    System.Drawing.Color drawColor = System.Drawing.Color.FromName(o.Properties["color"]);
+                    Color c = new Color(drawColor.R, drawColor.G, drawColor.B, drawColor.A);
+                    currentObject = new Gate(c, o.X, o.Y, o.Width, o.Height);
+                    this.platforms.Add(currentObject);
+                }
                 else
                 {
                     //this shouldn't happen
@@ -146,7 +159,19 @@ namespace Bunny_and_Clyde
                 s.LoadContent(content);
             }
         }
-
+        public Gate getGate(Color c)
+        {
+            foreach (Item i in this.items)
+            {
+                if(i.GetType () == typeof (Gate){
+                    Gate gate = (Gate)i;
+                    if(gate.color == c){
+                        return gate ;
+                    }
+                }
+            }
+            return null;
+        }
         public void Update(GameTime gameTime)
         {
             foreach (Sprite s in this.worldSprites)
