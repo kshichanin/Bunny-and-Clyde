@@ -556,6 +556,7 @@
   </object>
   <object name="switch_door" x="64" y="448" width="128" height="32">
    <properties>
+    <property name="color" value="White"/>
     <property name="height" value="1"/>
     <property name="imageName" value="switch_block_placeholder.png"/>
     <property name="type" value="switch_door"/>
@@ -564,6 +565,7 @@
   </object>
   <object name="switch_block" x="288" y="352" width="32" height="32">
    <properties>
+    <property name="color" value="White"/>
     <property name="imageName" value="log_vertical_top_tile.png"/>
     <property name="type" value="switch_block"/>
    </properties>
@@ -595,7 +597,7 @@
    </properties>
   </object>
  </objectgroup>
- <objectgroup name="nondrawable" width="26" height="20" visible="0">
+ <objectgroup name="nondrawable" width="26" height="20">
   <object name="platform1" x="0" y="192" width="96" height="32">
    <properties>
     <property name="type" value="solid"/>
