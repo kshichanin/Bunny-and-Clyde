@@ -11,7 +11,7 @@ namespace Bunny_and_Clyde
 {
     class Sprite
     {
-        private Texture2D image;
+        protected Texture2D image {get; private set;}
         private string imageName;
         public int Width { get; set; }
         public int Height { get; set; }

@@ -21,7 +21,8 @@ namespace Bunny_and_Clyde
         // sprites
         private List<Sprite> worldSprites;
         private List<Sprite> platforms;
-        private List<Item> items;
+        public List<Item> items {get; private set;}
+        public Inventory inventory { get; private set; }
         private Sprite background;
 
         private List<SoundEffect> sounds;
@@ -51,6 +52,7 @@ namespace Bunny_and_Clyde
                 Single.Parse(map.Properties["clydeSpawnX"]),
                 Single.Parse(map.Properties["clydeSpawnY"]));
 
+            this.inventory = new Inventory(0, 0, 55, 55);
             this.worldSprites = new List<Sprite>();
             this.platforms = new List<Sprite>();
             this.items = new List<Item>();
@@ -84,15 +86,15 @@ namespace Bunny_and_Clyde
             foreach (TmxObjectGroup.TmxObject o in mapObjectsDrawable.Objects)
             {
                 Item currentObject;
-                if (o.Properties["imageName"] == "water")
+                if (o.Properties["type"] == "water")
                 {
                     currentObject = new Water( o.X, o.Y, o.Width, o.Height);
                 }
-                else if (o.Properties["imageName"] == "key_tile")
+                else if (o.Properties["type"] == "white_key")
                 {
-                    currentObject = new Key(Color.AliceBlue, o.X, o.Y, o.Width, o.Height);
+                    currentObject = new Key(Color.AliceBlue, this, o.X, o.Y, o.Width, o.Height);
                 }
-                else if (o.Properties["imageName"] == "door")
+                else if (o.Properties["type"] == "white_door")
                 {
                     currentObject = new Door(o.X, o.Y, o.Width, o.Height);
                 }
@@ -100,6 +102,7 @@ namespace Bunny_and_Clyde
                 {
                     //this shouldn't happen
                     currentObject = new Door(o.X, o.Y, o.Width, o.Height);
+                    Console.WriteLine(o.Properties["imageName"]);
                 }
                 this.worldSprites.Add(currentObject);
                 this.items.Add(currentObject);
@@ -115,10 +118,10 @@ namespace Bunny_and_Clyde
             this.physics = new Physics();
             this.physics.Add(this.Bunny);
             this.physics.Add(this.Clyde);
-            this.collisions = new CollisionManager(platforms, items, new List<Sprite>());
+            this.collisions = new CollisionManager(platforms, new List<Item>(items), new List<Sprite>());
             this.collisions.addMoving(this.Bunny);
             this.collisions.addMoving(this.Clyde);
-            this.worldSprites.Add(new Sprite("inventory", 0, 0, 55, 55));
+            this.worldSprites.Add(inventory);
         }
 
         public void LoadContent(ContentManager content)
