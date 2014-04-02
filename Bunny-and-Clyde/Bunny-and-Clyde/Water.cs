@@ -22,6 +22,7 @@ namespace Bunny_and_Clyde
             else if (collider.GetType() == typeof(Bunny))
             {
                 Bunny bunny = (Bunny)collider;
+                bunny.die.Width = 300;
                 bunny.Position = bunny.SpawnPoint;
                 bunny.Velocity = Vector2.Zero;
             }

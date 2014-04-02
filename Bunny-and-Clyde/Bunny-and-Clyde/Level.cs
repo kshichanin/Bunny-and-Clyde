@@ -24,6 +24,8 @@ namespace Bunny_and_Clyde
         public List<Item> items {get; private set;}
         public Inventory inventory { get; private set; }
         private Sprite background;
+        public imageshow imshow { get; private set; }
+        public imageshow imshow2 { get; private set; }
 
         private List<SoundEffect> sounds;
 
@@ -145,6 +147,11 @@ namespace Bunny_and_Clyde
             this.collisions.addMoving(this.Bunny);
             this.collisions.addMoving(this.Clyde);
             this.worldSprites.Add(inventory);
+            this.imshow2 = new imageshow("bunnydies", 470, 70, 0, 300);
+            this.worldSprites.Add(imshow2);
+            this.Bunny.die = imshow2;
+            this.imshow = new imageshow("mainlogo", 250, 10, 800, 400);
+            this.worldSprites.Add(imshow);
         }
 
         public void LoadContent(ContentManager content)

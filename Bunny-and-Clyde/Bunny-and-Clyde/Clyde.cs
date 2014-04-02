@@ -24,6 +24,7 @@ namespace Bunny_and_Clyde
         int currentFrame;
 
         public bool isAirbourne() { return base.state == State.Airbourne; }
+        public imageshow die { get; set; }
         //public enum State
         //{
         //    Default,

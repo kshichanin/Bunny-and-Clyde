@@ -40,6 +40,7 @@
     <Compile Include="Clyde.cs" />
     <Compile Include="CollisionManager.cs" />
     <Compile Include="Gate.cs" />
+    <Compile Include="imageshow.cs" />
     <Compile Include="Switch.cs" />
     <Compile Include="Door.cs" />
     <Compile Include="Game1.cs" />
@@ -97,6 +98,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\bunny.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\bunnydies.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\bunny_jump.wav">
@@ -175,6 +179,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\lvl_2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\mainlogo.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\mainthemetheone.wav">

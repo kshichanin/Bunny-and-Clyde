@@ -41,15 +41,25 @@ namespace Bunny_and_Clyde
             currentKeyboard = Keyboard.GetState();
             Vector2 direction;
             if (currentKeyboard.IsKeyDown(Keys.Left) || GamePad.GetState(PlayerIndex.One).DPad.Left == ButtonState.Pressed)
+            {
                 ActiveCharacter.Velocity = new Vector2(-ActiveCharacter.Speed, ActiveCharacter.Velocity.Y);
+                worldSprites[worldSprites.Count - 1].Width = 0;
+                worldSprites[worldSprites.Count - 2].Width = 0;
+            }
             else if (currentKeyboard.IsKeyDown(Keys.Right) || GamePad.GetState(PlayerIndex.One).DPad.Right == ButtonState.Pressed)
+            {
                 ActiveCharacter.Velocity = new Vector2(ActiveCharacter.Speed, ActiveCharacter.Velocity.Y);
+                worldSprites[worldSprites.Count - 1].Width = 0;
+                worldSprites[worldSprites.Count - 2].Width = 0;
+            }
             else
                 ActiveCharacter.Velocity = new Vector2(0, ActiveCharacter.Velocity.Y);
-            
+
             //Switch active characters
             if ((currentKeyboard.IsKeyDown(Keys.RightShift) || GamePad.GetState(PlayerIndex.One).Buttons.X == ButtonState.Pressed) && !check)
             {
+                worldSprites[worldSprites.Count - 1].Width = 0;
+                worldSprites[worldSprites.Count - 2].Width = 0;
                 //InactiveCharacter.state = previousState;
                 Sprite temp = ActiveCharacter;
                 ActiveCharacter = InactiveCharacter;
