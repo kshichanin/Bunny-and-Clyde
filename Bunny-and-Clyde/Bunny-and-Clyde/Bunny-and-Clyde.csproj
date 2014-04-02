@@ -42,7 +42,7 @@
     <Compile Include="Gate.cs" />
     <Compile Include="imageshow.cs" />
     <Compile Include="Switch.cs" />
-    <Compile Include="Door.cs" />
+    <Compile Include="Goal.cs" />
     <Compile Include="Game1.cs" />
     <Compile Include="GameGlobals.cs" />
     <Compile Include="GameScreen.cs" />

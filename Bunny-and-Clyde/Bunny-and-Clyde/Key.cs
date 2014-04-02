@@ -11,7 +11,7 @@ namespace Bunny_and_Clyde
         public Color color { get; private set; }
         Level level;
         public Key(Color c, Level l, float x, float y, int width, int height) :
-            base("key", x, y, width, height)
+            base("key_tile", x, y, width, height)
         {
             color = c;
             level = l;
@@ -22,6 +22,10 @@ namespace Bunny_and_Clyde
                 level.items.Remove(this);
                 level.inventory.addItem(this);
             }
+        }
+        public override void Draw(SpriteBatch sb)
+        {
+            sb.Draw(image, new Rectangle((int)Position.X, (int)Position.Y, Width, Height), this.color );
         }
     }
 }
