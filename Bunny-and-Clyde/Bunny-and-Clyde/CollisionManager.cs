@@ -46,6 +46,8 @@ namespace Bunny_and_Clyde
             foreach (Sprite mover in movingObjects)
             {
                 moveSprite(mover);
+                if (mover.state == Sprite.State.Swimming) { mover.state = Sprite.State.Default; }
+                checkItemCollisions(mover);
             }
         }
         public void moveSprite(Sprite sprite)
@@ -119,6 +121,7 @@ namespace Bunny_and_Clyde
                 }
             }
             if (r.X < 0 || r.X + r.Width > GameGlobals.WINDOW_WIDTH) return true;
+            if (r.Y + r.Height > GameGlobals.WINDOW_HEIGHT) return true;
             return false;
         }
 
