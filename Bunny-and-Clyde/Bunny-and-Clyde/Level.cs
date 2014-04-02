@@ -86,22 +86,24 @@ namespace Bunny_and_Clyde
             foreach (TmxObjectGroup.TmxObject o in mapObjectsDrawable.Objects)
             {
                 Item currentObject;
+                Key whiteKey = new Key(Color.AliceBlue, this, 0, 0, 0, 0);
                 if (o.Properties["type"] == "water")
                 {
                     currentObject = new Water( o.X, o.Y, o.Width, o.Height);
                 }
                 else if (o.Properties["type"] == "white_key")
                 {
-                    currentObject = new Key(Color.AliceBlue, this, o.X, o.Y, o.Width, o.Height);
+                    whiteKey  = new Key(Color.AliceBlue, this, o.X, o.Y, o.Width, o.Height);
+                    currentObject  = whiteKey;
                 }
                 else if (o.Properties["type"] == "white_door")
                 {
-                    currentObject = new Door(o.X, o.Y, o.Width, o.Height);
+                    currentObject = new Door(this, whiteKey, o.X, o.Y, o.Width, o.Height);
                 }
                 else
                 {
                     //this shouldn't happen
-                    currentObject = new Door(o.X, o.Y, o.Width, o.Height);
+                    currentObject = new Door(this, whiteKey, o.X, o.Y, o.Width, o.Height);
                     Console.WriteLine(o.Properties["imageName"]);
                 }
                 this.worldSprites.Add(currentObject);
