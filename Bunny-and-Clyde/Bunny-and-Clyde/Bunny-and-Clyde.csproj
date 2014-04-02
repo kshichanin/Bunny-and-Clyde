@@ -42,6 +42,7 @@
     <Compile Include="CollisionManager.cs" />
     <Compile Include="Gate.cs" />
     <Compile Include="imageshow.cs" />
+    <Compile Include="Ramp.cs" />
     <Compile Include="Switch.cs" />
     <Compile Include="Goal.cs" />
     <Compile Include="Game1.cs" />

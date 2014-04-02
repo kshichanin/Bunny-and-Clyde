@@ -130,6 +130,10 @@ namespace Bunny_and_Clyde
                     currentObject = new Door(this, c, o.X, o.Y, o.Width, o.Height);
                     this.platforms.Add(currentObject);
                 }
+                else if (o.Properties["type"] == "ramp")
+                {
+                    currentObject = new Ramp(o.X, o.Y, o.Width, o.Height);
+                }
                 else
                 {
                     //this shouldn't happen
@@ -145,7 +149,8 @@ namespace Bunny_and_Clyde
 
             this.worldSprites.Add(this.Bunny);
             this.worldSprites.Add(this.Clyde);
-
+            this.worldSprites.Add(this.Clyde.back);
+            this.platforms.Add(this.Clyde);
             this.inputManager = new InputManager(worldSprites, this.Bunny, this.Clyde, platforms, sounds);
             
             this.worldSprites.Add(inventory);
