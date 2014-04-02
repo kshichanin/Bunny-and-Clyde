@@ -735,7 +735,7 @@
   <object name="switch_door" x="64" y="448" width="128" height="32">
    <properties>
     <property name="color" value="White"/>
-    <property name="imageName" value="gate_block.png"/>
+    <property name="imageName" value="stone_block_4x1.png"/>
     <property name="type" value="switch_gate"/>
    </properties>
   </object>
@@ -748,7 +748,7 @@
   </object>
   <object name="ramp" x="736" y="160" width="96" height="32">
    <properties>
-    <property name="imageName" value="switch_block_placeholder.png"/>
+    <property name="imageName" value="gate_block.png"/>
     <property name="type" value="ramp"/>
    </properties>
   </object>
@@ -773,7 +773,7 @@
    </properties>
   </object>
  </objectgroup>
- <objectgroup name="nondrawable" width="35" height="20" visible="0">
+ <objectgroup name="nondrawable" width="35" height="20">
   <object name="platform1" x="0" y="192" width="128" height="32">
    <properties>
     <property name="type" value="solid"/>

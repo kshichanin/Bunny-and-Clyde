@@ -11,7 +11,7 @@ namespace Bunny_and_Clyde
         private int fullwidth;
         public Color color { get; private set; }
         public Gate(Color c, float x, float y, int width, int height)
-            : base("gate_block", x, y, width, height)
+            : base("stone_block_4x1", x, y, width, height)
         {
             fullwidth = width;
             color = c;
