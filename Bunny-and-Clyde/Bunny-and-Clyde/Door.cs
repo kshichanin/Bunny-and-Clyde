@@ -12,10 +12,9 @@ namespace Bunny_and_Clyde
         {
 
         }
-        public override void activate(Sprite collider)
-        {
-
-        }
+        public override  void activate (Sprite collider){
+    
+    }
 
     }
 }
