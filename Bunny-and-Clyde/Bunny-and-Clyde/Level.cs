@@ -119,7 +119,7 @@ namespace Bunny_and_Clyde
             }
 
             this.background = new Sprite(map.Properties["backgroundImage"], 0, 0,
-                int.Parse(map.Properties["width"]), int.Parse(map.Properties["height"]));
+                GameGlobals.WINDOW_WIDTH, GameGlobals.WINDOW_HEIGHT);
 
             this.worldSprites.Add(this.Bunny);
             this.worldSprites.Add(this.Clyde);
