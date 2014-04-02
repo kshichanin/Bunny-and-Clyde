@@ -39,7 +39,7 @@ namespace Bunny_and_Clyde
             Velocity = Vector2.Zero;
             base.state = State.Default;
             base.jump = 7f;
-            back = new ClydesBack(initialX, initialY - 3, CLYDE_WIDTH, 3);
+            back = new ClydesBack(initialX, initialY - 3, CLYDE_WIDTH, 10);
         }
 
 
@@ -66,7 +66,7 @@ namespace Bunny_and_Clyde
         public override void Update(GameTime gameTime)
         {
             base.Update(gameTime);
-            back.Position = this.Position + new Vector2(0, 3);
+            back.Position = this.Position - new Vector2(0, 10);
         }
     }
 }

@@ -43,6 +43,7 @@ namespace Bunny_and_Clyde
             //Left Right Direction check
             currentKeyboard = Keyboard.GetState();
             Vector2 direction;
+            InactiveCharacter.Velocity -= new Vector2(InactiveCharacter.Velocity.X, 0);
             if (currentKeyboard.IsKeyDown(Keys.Left) || GamePad.GetState(PlayerIndex.One).DPad.Left == ButtonState.Pressed)
             {
                 ActiveCharacter.Velocity = new Vector2(-ActiveCharacter.Speed, ActiveCharacter.Velocity.Y);
@@ -58,7 +59,7 @@ namespace Bunny_and_Clyde
                 ActiveCharacter.Velocity = new Vector2(ActiveCharacter.Speed, ActiveCharacter.Velocity.Y);
                 if (InactiveCharacter.state == Sprite.State.Riding)
                 {
-                    InactiveCharacter.Velocity = new Vector2(-ActiveCharacter.Speed, ActiveCharacter.Velocity.Y);
+                    InactiveCharacter.Velocity = new Vector2(ActiveCharacter.Speed, ActiveCharacter.Velocity.Y);
                 }
                 worldSprites[worldSprites.Count - 1].Width = 0;
                 worldSprites[worldSprites.Count - 2].Width = 0;
@@ -112,7 +113,10 @@ namespace Bunny_and_Clyde
                 ActiveCharacter.state = Sprite.State.Airbourne;
                 ActiveCharacter.Velocity -= new Vector2 (0, ActiveCharacter.jump);
             }
-
+            if (InactiveCharacter.state == Sprite.State.Riding)
+            {
+                InactiveCharacter.Velocity = ActiveCharacter.Velocity;
+            }
             // determine sprite animation
             if (currentKeyboard.IsKeyDown(Keys.Left) || GamePad.GetState(PlayerIndex.One).DPad.Left == ButtonState.Pressed && ActiveCharacter.state != Sprite.State.Airbourne)
             {

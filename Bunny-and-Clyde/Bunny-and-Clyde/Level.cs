@@ -150,6 +150,7 @@ namespace Bunny_and_Clyde
             this.worldSprites.Add(this.Bunny);
             this.worldSprites.Add(this.Clyde);
             this.worldSprites.Add(this.Clyde.back);
+            this.items.Add(this.Clyde.back);
             this.platforms.Add(this.Clyde);
             this.inputManager = new InputManager(worldSprites, this.Bunny, this.Clyde, platforms, sounds);
             
