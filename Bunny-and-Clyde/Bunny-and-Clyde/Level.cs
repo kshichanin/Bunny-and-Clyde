@@ -110,13 +110,13 @@ namespace Bunny_and_Clyde
                     Color c = new Color (drawColor .R ,drawColor .G ,drawColor .B ,drawColor .A);
                     currentObject = new Door(this, c, o.X, o.Y, o.Width, o.Height);
                 }
-                else if (o.Properties["type"] == "switch_block")
+                else if (o.Properties["type"] == "switch_button")
                 {
                     System.Drawing.Color drawColor = System.Drawing.Color.FromName(o.Properties["color"]);
                     Color c = new Color(drawColor.R, drawColor.G, drawColor.B, drawColor.A);
                     currentObject = new Switch(c,this, o.X, o.Y, o.Width, o.Height);
                 }
-                else if (o.Properties["type"] == "switch_door")
+                else if (o.Properties["type"] == "switch_gate")
                 {
                     System.Drawing.Color drawColor = System.Drawing.Color.FromName(o.Properties["color"]);
                     Color c = new Color(drawColor.R, drawColor.G, drawColor.B, drawColor.A);
