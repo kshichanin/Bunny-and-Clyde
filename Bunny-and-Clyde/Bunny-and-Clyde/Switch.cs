@@ -9,7 +9,6 @@ using Microsoft.Xna.Framework.Storage;
 using Microsoft.Xna.Framework.GamerServices;
 using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Media;
-using TiledSharp;
 #endregion
 
 namespace Bunny_and_Clyde

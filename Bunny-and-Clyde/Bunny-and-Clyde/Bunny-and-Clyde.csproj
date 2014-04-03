@@ -126,6 +126,9 @@
     <Content Include="Content\door_tile_open.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\goal_door_open.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Content\golddoor.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
