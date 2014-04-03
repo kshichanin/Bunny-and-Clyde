@@ -171,10 +171,11 @@ namespace Bunny_and_Clyde
             this.inputManager = new InputManager(worldSprites, this.Bunny, this.Clyde, platforms, sounds);
             
             this.worldSprites.Add(inventory);
-            this.imshow2 = new imageshow("bunnydies", 470, 70, 0, 300);
+            this.imshow2 = new imageshow("bunnydies", (map.TileWidth * map.Width) / 3, (map.TileHeight * map.Height) / 3, 0, (map.TileHeight * map.Height) / 3);
             this.worldSprites.Add(imshow2);
             this.Bunny.die = imshow2;
-            this.imshow = new imageshow("mainlogo", 250, 10, 800, 400);
+            this.Bunny.mapwidth = (map.TileWidth * map.Width) / 3;
+            this.imshow = new imageshow("mainlogo", (map.TileWidth * map.Width) / 4, (map.TileHeight * map.Height) / 4, (map.TileWidth * map.Width) / 2, (map.TileHeight * map.Height) / 2);
             this.worldSprites.Add(imshow);
         }
 

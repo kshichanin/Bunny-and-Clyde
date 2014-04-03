@@ -16,6 +16,7 @@ namespace Bunny_and_Clyde
         static int BUNNY_WIDTH = 74, BUNNY_HEIGHT = 73;
         public Vector2 SpawnPoint{get; private set;}
         public imageshow die { get; set; }
+        public int mapwidth { get; set; }
         public bool isAirbourne() { return base.state == State.Airbourne; }
 
         private Texture2D image;

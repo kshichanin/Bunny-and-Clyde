@@ -27,7 +27,7 @@ namespace Bunny_and_Clyde
             {
                 if (collider.state == State.Airbourne || collider.state == State.Default) { soundeffect.Play(); }
                 Bunny bunny = (Bunny)collider;
-                bunny.die.Width = 300;
+                bunny.die.Width = bunny.mapwidth;
                 bunny.Position = bunny.SpawnPoint;
                 bunny.Velocity = Vector2.Zero;
             }
