@@ -12,7 +12,7 @@ namespace Bunny_and_Clyde
     class Sprite
     {
         protected Texture2D image {get; private set;}
-        private string imageName;
+        protected string imageName;
         public int Width { get; set; }
         public int Height { get; set; }
         public Vector2 Velocity { get; set; }

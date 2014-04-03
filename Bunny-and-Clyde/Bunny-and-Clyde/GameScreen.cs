@@ -26,7 +26,6 @@ namespace Bunny_and_Clyde
         //private Physics physics;
         //private Sprite background;
         //private CollisionManager collisions;
-        private Level lvl_1;
         public LevelManager levelManager { get; private set; }
 
         public GameScreen(GraphicsDeviceManager graphics)
