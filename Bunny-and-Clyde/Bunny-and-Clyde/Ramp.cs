@@ -17,7 +17,7 @@ namespace Bunny_and_Clyde
         {
             //oh well...
             
-            soundeffect.Play();
+         //working buy is annoying right now since it plays during every collision   soundeffect.Play();
         }
     }
 }

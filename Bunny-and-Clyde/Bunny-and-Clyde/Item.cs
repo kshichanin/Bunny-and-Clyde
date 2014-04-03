@@ -11,6 +11,6 @@ namespace Bunny_and_Clyde
         : base(imageName , initialX, initialY, width, height){
            
         }
-        public abstract  void activate(Sprite collider);
+        public abstract void activate(Sprite collider);
     }
 }

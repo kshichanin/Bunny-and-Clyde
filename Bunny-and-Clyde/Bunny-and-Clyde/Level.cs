@@ -24,6 +24,8 @@ namespace Bunny_and_Clyde
         public List<Item> keys { get; private set; }
         public List<Item> ramps { get; private set; }
         public List<Item> items {get; private set;}
+        public List<Item> buttons { get; private set; }
+        public List<Item> waters { get; private set; }
         public Inventory inventory { get; private set; }
         private Sprite background;
         public imageshow imshow { get; private set; }
@@ -72,6 +74,8 @@ namespace Bunny_and_Clyde
             this.sounds = new List<SoundEffect>();
             this.keys = new List<Item>();
             this.ramps = new List<Item>();
+            this.buttons = new List<Item>();
+            this.waters = new List<Item>();
             this.physics = new Physics();
             this.physics.Add(this.Bunny);
             this.physics.Add(this.Clyde);
@@ -104,6 +108,7 @@ namespace Bunny_and_Clyde
                 if (o.Properties["type"] == "water")
                 {
                     currentObject = new Water( o.X, o.Y, o.Width, o.Height);
+                    this.waters.Add(currentObject);
                 }
                 else if (o.Properties["type"] == "key")
                 {
@@ -124,6 +129,7 @@ namespace Bunny_and_Clyde
                     System.Drawing.Color drawColor = System.Drawing.Color.FromName(o.Properties["color"]);
                     Color c = new Color(drawColor.R, drawColor.G, drawColor.B, drawColor.A);
                     currentObject = new Switch(c,this, o.X, o.Y, o.Width, o.Height);
+                    this.buttons.Add(currentObject);
                 }
                 else if (o.Properties["type"] == "switch_gate")
                 {
@@ -195,6 +201,14 @@ namespace Bunny_and_Clyde
             foreach (Ramp s in this.ramps)
             {
                 s.soundeffect = ramp;
+            }
+            foreach (Switch s in this.buttons)
+            {
+                s.soundeffect = button;
+            }
+            foreach (Water s in this.waters)
+            {
+                s.soundeffect = splash;
             }
         }
         public Gate getGate(Color c)
