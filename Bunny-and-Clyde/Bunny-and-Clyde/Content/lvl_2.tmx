@@ -772,11 +772,6 @@
     <property name="type" value="water"/>
    </properties>
   </object>
-  <object name="platform_test" x="928" y="384" width="64" height="32">
-   <properties>
-    <property name="type" value="solid"/>
-   </properties>
-  </object>
  </objectgroup>
  <objectgroup name="nondrawable" width="35" height="20">
   <object name="platform1" x="0" y="192" width="128" height="32">
@@ -850,6 +845,11 @@
    </properties>
   </object>
   <object name="platform11" x="192" y="448" width="160" height="32">
+   <properties>
+    <property name="type" value="solid"/>
+   </properties>
+  </object>
+  <object name="platform_test" x="928" y="384" width="64" height="32">
    <properties>
     <property name="type" value="solid"/>
    </properties>
