@@ -53,5 +53,20 @@ namespace Bunny_and_Clyde
             image = content.Load<Texture2D>(imageName);
             currentFrame = 4;
         }
+
+        public override void Update(GameTime gameTime)
+        {
+            base.Update(gameTime);
+            HitBox = new Rectangle((int)Position.X, (int)Position.Y, Width, Height);
+            if (Velocity.Y < -13)
+            {
+                Velocity = new Vector2(Velocity.X, -13);
+            }
+        }
+
+        public override Rectangle testBox(float X, float Y)
+        {
+            return new Rectangle((int)(Position.X + X + 13), (int)(Position.Y + Y + 10), Width-26, Height-10);
+        }
     }
 }
