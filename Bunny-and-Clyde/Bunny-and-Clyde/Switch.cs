@@ -12,7 +12,7 @@ namespace Bunny_and_Clyde
         private Level level;
         private bool activated;
         public Switch (Color c, Level l, float x, float y, int width, int height)
-            :base("switch_block_placeholder.png", x, y, width, height){
+            :base("switch_button.png", x, y, width, height){
                 color = c;
                 activated = false;
                 level = l;

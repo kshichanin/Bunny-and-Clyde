@@ -225,6 +225,9 @@
     <Content Include="Content\switch_block_placeholder.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\switch_button.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Content\tileset_1x1.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
