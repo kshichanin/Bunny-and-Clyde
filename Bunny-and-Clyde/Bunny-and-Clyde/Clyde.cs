@@ -77,7 +77,7 @@ namespace Bunny_and_Clyde
 
         public override Rectangle testBox(float X, float Y)
         {
-            return new Rectangle((int)(Position.X + X), (int)(Position.Y + Y), Width, Height);
+            return new Rectangle((int)(Position.X + X), (int)(Position.Y + Y + 10), Width, Height-10);
         }
     }
 }
