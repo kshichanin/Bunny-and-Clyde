@@ -51,13 +51,9 @@ namespace Bunny_and_Clyde
             jump = 0;
         }
 
-<<<<<<< HEAD
-        public Rectangle testBox(float X, float Y) {
-            return new Rectangle((int)(X+Position.X) , (int)(Y+Position.Y), Width, Height);
-=======
+
         public virtual Rectangle testBox(float X, float Y) {
             return new Rectangle((int)(X+Position.X) , (int)(Y+Position .Y), Width, Height);
->>>>>>> Fixed hitboxes and eliminated super jumps
         }
 
         public virtual void LoadContent(ContentManager content)
