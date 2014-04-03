@@ -3,7 +3,7 @@
  <properties>
   <property name="backgroundImage" value="lvl_2.png"/>
   <property name="bunnySpawnX" value="25"/>
-  <property name="bunnySpawnY" value="120"/>
+  <property name="bunnySpawnY" value="115"/>
   <property name="clydeSpawnX" value="25"/>
   <property name="clydeSpawnY" value="270"/>
  </properties>
