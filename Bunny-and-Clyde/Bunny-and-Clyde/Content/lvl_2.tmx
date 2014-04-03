@@ -742,7 +742,7 @@
   <object name="switch_block" x="448" y="224" width="32" height="32">
    <properties>
     <property name="color" value="White"/>
-    <property name="imageName" value="switch_block_placeholder.png"/>
+    <property name="imageName" value="switch_button.png"/>
     <property name="type" value="switch_button"/>
    </properties>
   </object>
