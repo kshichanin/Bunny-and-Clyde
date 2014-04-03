@@ -19,13 +19,13 @@ namespace Bunny_and_Clyde
         {
             if (collider.GetType() == typeof(Clyde))
             {
-                if (collider.state == State.Airbourne){soundeffect.Play();}
+                if (collider.state == State.Airbourne) { soundeffect.Play(); }
                 collider.state = State.Swimming;
                 collider.Velocity = Vector2.Zero;
             }
             else if (collider.GetType() == typeof(Bunny))
             {
-                if (collider.state == State.Airbourne) { soundeffect.Play(); }
+                if (collider.state == State.Airbourne || collider.state == State.Default) { soundeffect.Play(); }
                 Bunny bunny = (Bunny)collider;
                 bunny.die.Width = 300;
                 bunny.Position = bunny.SpawnPoint;
