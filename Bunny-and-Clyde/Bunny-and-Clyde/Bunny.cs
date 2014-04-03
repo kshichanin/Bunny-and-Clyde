@@ -57,7 +57,7 @@ namespace Bunny_and_Clyde
         public override void Update(GameTime gameTime)
         {
             base.Update(gameTime);
-            HitBox = new Rectangle((int)Position.X, (int)Position.Y, Width, Height);
+            HitBox = new Rectangle((int)Position.X+13, (int)Position.Y+10, Width-26, Height-10);
             if (Velocity.Y < -jump)
             {
                 Velocity = new Vector2(Velocity.X, -jump);

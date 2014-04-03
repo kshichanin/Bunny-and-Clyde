@@ -26,7 +26,8 @@ namespace Bunny_and_Clyde
             Airbourne,
             Swimming,
             Diving,
-            Riding
+            Riding,
+            Pushing
         }
         public State state { get; set; }
         //private float scale;
