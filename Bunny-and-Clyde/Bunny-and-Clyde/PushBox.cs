@@ -11,11 +11,11 @@ namespace Bunny_and_Clyde
         public PushBox(Ramp r, float x, float y, int width, int height)
             : base("blank",x, y, width, height)
         {
-
+            connectedRamp = r;
         }
         public override void activate(Sprite collider)
         {
-            throw new NotImplementedException();
+            collider.state = State.Pushing;
         }
     }
 }
