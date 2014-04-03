@@ -736,7 +736,7 @@
    <properties>
     <property name="color" value="White"/>
     <property name="imageName" value="key_tile.png"/>
-    <property name="type" value="white_key"/>
+    <property name="type" value="key"/>
    </properties>
   </object>
   <object name="white_door" x="1024" y="416" width="64" height="96">
