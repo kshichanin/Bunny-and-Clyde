@@ -14,7 +14,7 @@ namespace Bunny_and_Clyde
         private bool opened;
         private ContentManager contentManager;
         public Door(Level l, Color c, float x, float y, int width, int height) :
-            base("door", x, y, width, height)
+            base("door_tile_open", x, y, width, height)
         {
             this.opened = false;
             this.level = l;
@@ -37,7 +37,7 @@ namespace Bunny_and_Clyde
             if (level.inventory.containsKey(color) && !this.opened)
             {
                 level.platforms.Remove(this);
-                this.imageName = "door_tile_open.png";
+                this.imageName = "door_tile.png";
                 this.LoadContent(this.contentManager);
             }
         }
