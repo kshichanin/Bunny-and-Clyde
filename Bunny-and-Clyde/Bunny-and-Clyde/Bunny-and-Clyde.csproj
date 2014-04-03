@@ -278,6 +278,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Compile Include="Door.cs" />
+    <Content Include="Content\win.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Icon.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

@@ -40,7 +40,16 @@ namespace Bunny_and_Clyde
         {
             if (this.levels[this.currentLevelIndex].isComplete)
             {
-                this.nextLevel();
+                if (this.currentLevelIndex + 1 != this.levels.Count)
+                {
+                    this.nextLevel();
+                }
+                else
+                {
+                    
+                    //show image and quit
+                    this.levels[this.currentLevelIndex].imshow3.Width = this.levels[this.currentLevelIndex].map.TileWidth * this.levels[this.currentLevelIndex].map.Width;
+                }
             }
             this.levels[this.currentLevelIndex].Update(gameTime);
         }

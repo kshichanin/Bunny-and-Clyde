@@ -31,6 +31,7 @@ namespace Bunny_and_Clyde
         private Sprite background;
         public imageshow imshow { get; private set; }
         public imageshow imshow2 { get; private set; }
+        public imageshow imshow3 { get; private set; }
         public SoundEffect takekey { get; private set; }
         public SoundEffect ramp { get; private set; }
         public SoundEffect riding { get; private set; }
@@ -184,6 +185,8 @@ namespace Bunny_and_Clyde
             this.Bunny.mapwidth = (map.TileWidth * map.Width) / 3;
             this.imshow = new imageshow("mainlogo", (map.TileWidth * map.Width) / 4, (map.TileHeight * map.Height) / 4, (map.TileWidth * map.Width) / 2, (map.TileHeight * map.Height) / 2);
             this.worldSprites.Add(imshow);
+            this.imshow3 = new imageshow("win", 0, 0, 0, (map.TileHeight * map.Height));
+            this.worldSprites.Add(imshow3);
         }
 
         public void LoadContent(ContentManager content)
