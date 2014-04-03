@@ -148,6 +148,7 @@ namespace Bunny_and_Clyde
                 else if (o.Properties["type"] == "ramp")
                 {
                     currentObject = new Ramp(o.X, o.Y, o.Width, o.Height);
+                    this.platforms.Add(currentObject);
                     this.ramps.Add(currentObject);
                 }
                 else
