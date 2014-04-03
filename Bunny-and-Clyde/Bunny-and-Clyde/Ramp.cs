@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
+using Microsoft.Xna.Framework.Audio;
+using Microsoft.Xna.Framework.Media;
 namespace Bunny_and_Clyde
 {
     class Ramp : Item
     {
+        public SoundEffect soundeffect { get; set; }
         public Ramp(float x, float y, int width, int height)
         :base("gate_block",x,y,width,height)
         {
@@ -14,6 +16,8 @@ namespace Bunny_and_Clyde
         public override void activate(Sprite collider)
         {
             //oh well...
+            
+            soundeffect.Play();
         }
     }
 }

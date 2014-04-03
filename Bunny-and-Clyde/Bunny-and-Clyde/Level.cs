@@ -22,6 +22,7 @@ namespace Bunny_and_Clyde
         private List<Sprite> worldSprites;
         public List<Sprite> platforms {get; private set;}
         public List<Item> keys { get; private set; }
+        public List<Item> ramps { get; private set; }
         public List<Item> items {get; private set;}
         public Inventory inventory { get; private set; }
         private Sprite background;
@@ -70,7 +71,7 @@ namespace Bunny_and_Clyde
             this.items = new List<Item>();
             this.sounds = new List<SoundEffect>();
             this.keys = new List<Item>();
-
+            this.ramps = new List<Item>();
             this.physics = new Physics();
             this.physics.Add(this.Bunny);
             this.physics.Add(this.Clyde);
@@ -141,6 +142,7 @@ namespace Bunny_and_Clyde
                 else if (o.Properties["type"] == "ramp")
                 {
                     currentObject = new Ramp(o.X, o.Y, o.Width, o.Height);
+                    this.ramps.Add(currentObject);
                 }
                 else
                 {
@@ -189,6 +191,10 @@ namespace Bunny_and_Clyde
             foreach (Key s in this.keys)
             {
                 s.soundeffect = takekey;
+            }
+            foreach (Ramp s in this.ramps)
+            {
+                s.soundeffect = ramp;
             }
         }
         public Gate getGate(Color c)
