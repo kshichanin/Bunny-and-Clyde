@@ -39,7 +39,7 @@ namespace Bunny_and_Clyde
             Velocity = Vector2.Zero;
             base.state = State.Default;
             base.jump = 8.3f;
-            back = new ClydesBack(initialX, initialY - 3, CLYDE_WIDTH, 1);
+            back = new ClydesBack(initialX, initialY - 3, CLYDE_WIDTH, 5);
         }
 
 
@@ -67,7 +67,7 @@ namespace Bunny_and_Clyde
         public override void Update(GameTime gameTime)
         {
             base.Update(gameTime);
-            back.Position = this.Position - new Vector2(0, -9);
+            back.Position = this.Position - new Vector2(0, -5);
             HitBox = new Rectangle((int)Position.X, (int)Position.Y+10, Width, Height-10);
             if (Velocity.Y < -jump)
             {
