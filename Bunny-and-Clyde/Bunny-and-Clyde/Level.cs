@@ -20,12 +20,18 @@ namespace Bunny_and_Clyde
 
         // sprites
         private List<Sprite> worldSprites;
-        public List<Sprite> platforms{get; private set;}
+        public List<Sprite> platforms {get; private set;}
+        public List<Item> keys { get; private set; }
         public List<Item> items {get; private set;}
         public Inventory inventory { get; private set; }
         private Sprite background;
         public imageshow imshow { get; private set; }
         public imageshow imshow2 { get; private set; }
+        public SoundEffect takekey { get; private set; }
+        public SoundEffect ramp { get; private set; }
+        public SoundEffect riding { get; private set; }
+        public SoundEffect splash { get; private set; }
+        public SoundEffect button { get; private set; }
 
         private List<SoundEffect> sounds;
 
@@ -63,6 +69,7 @@ namespace Bunny_and_Clyde
             this.platforms = new List<Sprite>();
             this.items = new List<Item>();
             this.sounds = new List<SoundEffect>();
+            this.keys = new List<Item>();
 
             this.physics = new Physics();
             this.physics.Add(this.Bunny);
@@ -101,8 +108,9 @@ namespace Bunny_and_Clyde
                 {
                     System.Drawing.Color drawColor = System.Drawing.Color.FromName(o.Properties["color"]);
                     Color c = new Color(drawColor.R, drawColor.G, drawColor.B, drawColor.A);
-                    whiteKey  = new Key(c, this, o.X, o.Y, o.Width, o.Height);
+                    whiteKey = new Key(c, this, o.X, o.Y, o.Width, o.Height);
                     currentObject  = whiteKey;
+                    this.keys.Add(currentObject);
                 }
                 else if (o.Properties["type"] == "goal_door")
                 {
@@ -167,11 +175,20 @@ namespace Bunny_and_Clyde
             this.background.LoadContent(content);
             SoundEffect jumpBunny = content.Load<SoundEffect>("bunny_jump.wav");
             SoundEffect jumpClyde = content.Load<SoundEffect>("clyde_jump.wav");
+            takekey = content.Load<SoundEffect>("key.wav");
+            ramp = content.Load<SoundEffect>("ramp.wav");
+            riding = content.Load<SoundEffect>("riding.wav");
+            splash = content.Load<SoundEffect>("splash.wav");
+            button = content.Load<SoundEffect>("button.wav");
             sounds.Add(jumpBunny);
             sounds.Add(jumpClyde);
             foreach (Sprite s in this.worldSprites)
             {
                 s.LoadContent(content);
+            }
+            foreach (Key s in this.keys)
+            {
+                s.soundeffect = takekey;
             }
         }
         public Gate getGate(Color c)
