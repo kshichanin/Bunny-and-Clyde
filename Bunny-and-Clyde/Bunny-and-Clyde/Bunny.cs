@@ -58,9 +58,9 @@ namespace Bunny_and_Clyde
         {
             base.Update(gameTime);
             HitBox = new Rectangle((int)Position.X, (int)Position.Y, Width, Height);
-            if (Velocity.Y < -13)
+            if (Velocity.Y < -jump)
             {
-                Velocity = new Vector2(Velocity.X, -13);
+                Velocity = new Vector2(Velocity.X, -jump);
             }
         }
 

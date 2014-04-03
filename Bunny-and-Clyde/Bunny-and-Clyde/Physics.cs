@@ -16,7 +16,7 @@ namespace Bunny_and_Clyde
         private Bunny bunny;
         private Clyde clyde;
         const float gravityStrength = 0.6f;
-        const float buoyancy = 0.1f;
+        const float buoyancy = 0.6f;
         List<Sprite> platforms;
         List<Gravity> worldObjects;
         public Physics()
