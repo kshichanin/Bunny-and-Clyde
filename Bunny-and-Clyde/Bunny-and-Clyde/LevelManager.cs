@@ -46,7 +46,6 @@ namespace Bunny_and_Clyde
                 }
                 else
                 {
-                    
                     //show image and quit
                     this.levels[this.currentLevelIndex].imshow3.Width = this.levels[this.currentLevelIndex].map.TileWidth * this.levels[this.currentLevelIndex].map.Width;
                 }
