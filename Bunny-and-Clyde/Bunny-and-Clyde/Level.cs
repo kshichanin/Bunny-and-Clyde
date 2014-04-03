@@ -24,6 +24,7 @@ namespace Bunny_and_Clyde
         public List<Item> keys { get; private set; }
         public List<Item> ramps { get; private set; }
         public List<Item> items {get; private set;}
+        public List<Item> gates { get; private set; }
         public List<Item> buttons { get; private set; }
         public List<Item> waters { get; private set; }
         public Inventory inventory { get; private set; }
@@ -35,6 +36,8 @@ namespace Bunny_and_Clyde
         public SoundEffect riding { get; private set; }
         public SoundEffect splash { get; private set; }
         public SoundEffect button { get; private set; }
+        public SoundEffect opengate { get; private set; }
+        public SoundEffect closegate { get; private set; }
 
         private List<SoundEffect> sounds;
 
@@ -76,6 +79,7 @@ namespace Bunny_and_Clyde
             this.ramps = new List<Item>();
             this.buttons = new List<Item>();
             this.waters = new List<Item>();
+            this.gates = new List<Item>();
             this.physics = new Physics();
             this.physics.Add(this.Bunny);
             this.physics.Add(this.Clyde);
@@ -137,6 +141,7 @@ namespace Bunny_and_Clyde
                     Color c = new Color(drawColor.R, drawColor.G, drawColor.B, drawColor.A);
                     currentObject = new Gate(c, o.X, o.Y, o.Width, o.Height);
                     this.platforms.Add(currentObject);
+                    this.gates.Add(currentObject);
                 }
                 else if (o.Properties["type"] == "door")
                 {
@@ -190,6 +195,8 @@ namespace Bunny_and_Clyde
             riding = content.Load<SoundEffect>("riding.wav");
             splash = content.Load<SoundEffect>("splash.wav");
             button = content.Load<SoundEffect>("button.wav");
+            opengate = content.Load<SoundEffect>("opengate.wav");
+            closegate = content.Load<SoundEffect>("closegate.wav");
             sounds.Add(jumpBunny);
             sounds.Add(jumpClyde);
             foreach (Sprite s in this.worldSprites)
@@ -211,6 +218,11 @@ namespace Bunny_and_Clyde
             foreach (Water s in this.waters)
             {
                 s.soundeffect = splash;
+            }
+            foreach (Gate s in this.gates)
+            {
+                s.soundeffect1 = opengate;
+                s.soundeffect2 = closegate;
             }
         }
         public Gate getGate(Color c)
