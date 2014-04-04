@@ -36,7 +36,7 @@ namespace Bunny_and_Clyde
             levels.Add(new Level("Content\\lvl_3.tmx", graphics));
             this.levelManager = new LevelManager(levels);
 
-            //this.WorldSprites = new List<Sprite>();
+            
             //this.platforms = new List<Sprite>();
             //this.items = new List<Sprite>();
             //this.sounds = new List<SoundEffect>();
