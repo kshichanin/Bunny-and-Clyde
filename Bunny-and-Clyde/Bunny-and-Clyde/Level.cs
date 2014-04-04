@@ -57,6 +57,7 @@ namespace Bunny_and_Clyde
         public Bunny Bunny { get; private set; }
         public Clyde Clyde { get; private set; }
 
+
         public Level(string mapFile, GraphicsDeviceManager graphicsManager)
         {
             this.isComplete = false;
@@ -153,10 +154,14 @@ namespace Bunny_and_Clyde
                 }
                 else if (o.Properties["type"] == "ramp")
                 {
-                    currentObject = new Ramp(o.X, o.Y, o.Width, o.Height);
-                    this.physics.Add((Ramp)currentObject);
+                    Ramp r =new Ramp( o.X, o.Y, o.Width, o.Height);
+                    currentObject = r;
+                    this.items.Add(r.pushBox);
+                    this.worldSprites.Add(r.pushBox);
+                    this.physics.Add(r);
                     this.platforms.Add(currentObject);
                     this.ramps.Add(currentObject);
+                    this.collisions.addMoving(currentObject);
                 }
                 else
                 {
@@ -170,7 +175,6 @@ namespace Bunny_and_Clyde
 
             this.background = new Sprite(map.Properties["backgroundImage"], 0, 0,
                 GameGlobals.WINDOW_WIDTH, GameGlobals.WINDOW_HEIGHT);
-
             this.worldSprites.Add(this.Bunny);
             this.worldSprites.Add(this.Clyde);
             this.worldSprites.Add(this.Clyde.back);

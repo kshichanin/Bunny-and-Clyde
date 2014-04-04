@@ -23,6 +23,7 @@ namespace Bunny_and_Clyde
         public Sprite.State previousState { get; set; }
         public List<Sprite> Platforms { get; private set; }
         public List<SoundEffect> sounds { get; private set; }
+        public Ramp pushedRamp { get; set; }
         private bool check = false;
         private TimeSpan sum;
         private bool bunny = true;
@@ -126,6 +127,7 @@ namespace Bunny_and_Clyde
             {
                 InactiveCharacter.Velocity = ActiveCharacter.Velocity;
             }
+
             // determine sprite animation
             if (currentKeyboard.IsKeyDown(Keys.Left) || GamePad.GetState(PlayerIndex.One).DPad.Left == ButtonState.Pressed && ActiveCharacter.state != Sprite.State.Airbourne)
             {

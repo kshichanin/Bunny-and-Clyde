@@ -12,6 +12,10 @@ namespace Bunny_and_Clyde
         List<Sprite> movingObjects;
         public void checkItemCollisions(Sprite active) { 
             foreach(Item item in stationaryobjects ){
+               /* if (item.GetType() == typeof(PushBox))
+                {
+                    Console.Out.WriteLine("pushbox: " + item.Position);
+                }*/
                 if(item.HitBox .Intersects (active .HitBox )){
                     item.activate(active);
                 }
@@ -88,11 +92,13 @@ namespace Bunny_and_Clyde
             else
             {
                 sprite.Position += new Vector2 (0, velocity .Y);
+                
             }
             if (removed)
             {
                 solids.Add(sprite);
             }
+           // sprite.Velocity = new Vector2(0.5f * sprite .Velocity .X, sprite.Velocity.Y);
         }
         public void resolveCollision(Sprite s, Vector2 velocity)
         {
