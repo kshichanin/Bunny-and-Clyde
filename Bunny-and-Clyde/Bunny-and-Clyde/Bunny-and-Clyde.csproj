@@ -205,6 +205,9 @@
     <Content Include="Content\mainthemetheone.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\mainthemetheone2.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Content\opengate.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

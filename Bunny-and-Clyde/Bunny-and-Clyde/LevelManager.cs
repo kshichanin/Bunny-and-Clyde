@@ -37,8 +37,12 @@ namespace Bunny_and_Clyde
             //do lists of songs later
             Song main0 = (content.Load<Song>("mainthemetheone.wav"));
             maintheme.Add(main0);  // Put the name of your song here instead of "song_title"
-            Song main1 = (content.Load<Song>("mainthemetheone.wav"));
+            Song main1 = (content.Load<Song>("mainthemetheone2.wav"));
             maintheme.Add(main1);  // Put the name of your song here instead of "song_title"
+            Song main2 = (content.Load<Song>("mainthemetheone2.wav"));
+            maintheme.Add(main2);  // Put the name of your song here instead of "song_title"
+            Song main3 = (content.Load<Song>("mainthemetheone2.wav"));
+            maintheme.Add(main3);  // Put the name of your song here instead of "song_title"
             MediaPlayer.IsRepeating = true;
             MediaPlayer.Volume = 0.25f;
             playing = false;
@@ -62,10 +66,10 @@ namespace Bunny_and_Clyde
             }
             if (this.levels[this.currentLevelIndex].isComplete)
             {
+                MediaPlayer.Stop();
+                MediaPlayer.Play(maintheme[this.currentLevelIndex + 1]);
                 if (this.currentLevelIndex + 1 != this.levels.Count)
                 {
-                    MediaPlayer.Stop();
-                    MediaPlayer.Play(maintheme[this.currentLevelIndex]);
                     this.nextLevel();
                 }
                 else
