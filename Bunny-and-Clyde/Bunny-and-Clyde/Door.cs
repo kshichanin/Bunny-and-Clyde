@@ -41,5 +41,9 @@ namespace Bunny_and_Clyde
                 this.LoadContent(this.contentManager);
             }
         }
+        public override void Draw(SpriteBatch sb)
+        {
+            sb.Draw(image, new Rectangle((int)Position.X, (int)Position.Y, Width, Height), this.color);
+        }
     }
 }
