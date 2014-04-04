@@ -39,9 +39,9 @@ namespace Bunny_and_Clyde
             maintheme.Add(main0);  // Put the name of your song here instead of "song_title"
             Song main1 = (content.Load<Song>("mainthemetheone2.wav"));
             maintheme.Add(main1);  // Put the name of your song here instead of "song_title"
-            Song main2 = (content.Load<Song>("mainthemetheone2.wav"));
+            Song main2 = (content.Load<Song>("mainthemetheone3.wav"));
             maintheme.Add(main2);  // Put the name of your song here instead of "song_title"
-            Song main3 = (content.Load<Song>("mainthemetheone2.wav"));
+            Song main3 = (content.Load<Song>("mainthemetheone4.wav"));
             maintheme.Add(main3);  // Put the name of your song here instead of "song_title"
             MediaPlayer.IsRepeating = true;
             MediaPlayer.Volume = 0.25f;
@@ -66,14 +66,21 @@ namespace Bunny_and_Clyde
             }
             if (this.levels[this.currentLevelIndex].isComplete)
             {
-                MediaPlayer.Stop();
-                MediaPlayer.Play(maintheme[this.currentLevelIndex + 1]);
+                
                 if (this.currentLevelIndex + 1 != this.levels.Count)
                 {
+                    MediaPlayer.Stop();
+                    MediaPlayer.Play(maintheme[this.currentLevelIndex + 1]);
                     this.nextLevel();
                 }
                 else
                 {
+                    if (playing == true)
+                    {
+                        MediaPlayer.Stop();
+                        MediaPlayer.Play(maintheme[this.currentLevelIndex + 1]);
+                    }
+                    playing = false;
                     //show image and quit
                     this.levels[this.currentLevelIndex].imshow3.Width = this.levels[this.currentLevelIndex].map.TileWidth * this.levels[this.currentLevelIndex].map.Width;
                 }
