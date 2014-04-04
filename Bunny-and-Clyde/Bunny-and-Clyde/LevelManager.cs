@@ -18,7 +18,7 @@ namespace Bunny_and_Clyde
     class LevelManager
     {
         public List<Level> levels { get; private set; }
-        public Song maintheme { get; private set; }
+        public List<Song> maintheme { get; private set; }
         public int currentLevelIndex { get; private set; }
         public bool playing { get; private set; }
         //public bool Resize { get; set; }
@@ -27,13 +27,18 @@ namespace Bunny_and_Clyde
         {
             this.levels = levels;
             this.currentLevelIndex = 0;
+
+            this.maintheme = new List<Song>();
             //this.Resize = false;
         }
 
         public void LoadContent(ContentManager content)
         {
             //do lists of songs later
-            maintheme = content.Load<Song>("mainthemetheone.wav");  // Put the name of your song here instead of "song_title"
+            Song main0 = (content.Load<Song>("mainthemetheone.wav"));
+            maintheme.Add(main0);  // Put the name of your song here instead of "song_title"
+            Song main1 = (content.Load<Song>("mainthemetheone.wav"));
+            maintheme.Add(main1);  // Put the name of your song here instead of "song_title"
             MediaPlayer.IsRepeating = true;
             MediaPlayer.Volume = 0.25f;
             playing = false;
@@ -51,7 +56,7 @@ namespace Bunny_and_Clyde
                 if (playing == false)
                 {
                     MediaPlayer.Stop();
-                    MediaPlayer.Play(maintheme);
+                    MediaPlayer.Play(maintheme[0]);
                     playing = true;
                 }
             }
@@ -60,7 +65,7 @@ namespace Bunny_and_Clyde
                 if (this.currentLevelIndex + 1 != this.levels.Count)
                 {
                     MediaPlayer.Stop();
-                    MediaPlayer.Play(maintheme);
+                    MediaPlayer.Play(maintheme[this.currentLevelIndex]);
                     this.nextLevel();
                 }
                 else
