@@ -9,6 +9,7 @@ using Microsoft.Xna.Framework.Storage;
 using Microsoft.Xna.Framework.GamerServices;
 using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Media;
+
 using TiledSharp;
 #endregion
 
@@ -17,7 +18,9 @@ namespace Bunny_and_Clyde
     class LevelManager
     {
         public List<Level> levels { get; private set; }
+        public Song maintheme { get; private set; }
         public int currentLevelIndex { get; private set; }
+        public bool playing { get; private set; }
         //public bool Resize { get; set; }
 
         public LevelManager(List<Level> levels)
@@ -29,6 +32,11 @@ namespace Bunny_and_Clyde
 
         public void LoadContent(ContentManager content)
         {
+            //do lists of songs later
+            maintheme = content.Load<Song>("mainthemetheone.wav");  // Put the name of your song here instead of "song_title"
+            MediaPlayer.IsRepeating = true;
+            MediaPlayer.Volume = 0.25f;
+            playing = false;
             //this.levels[this.currentLevelIndex].LoadContent(content);
             foreach (Level lvl in levels)
             {
@@ -38,10 +46,21 @@ namespace Bunny_and_Clyde
 
         public void Update(GameTime gameTime)
         {
+            if (this.currentLevelIndex == 0)
+            {
+                if (playing == false)
+                {
+                    MediaPlayer.Stop();
+                    MediaPlayer.Play(maintheme);
+                    playing = true;
+                }
+            }
             if (this.levels[this.currentLevelIndex].isComplete)
             {
                 if (this.currentLevelIndex + 1 != this.levels.Count)
                 {
+                    MediaPlayer.Stop();
+                    MediaPlayer.Play(maintheme);
                     this.nextLevel();
                 }
                 else
@@ -51,6 +70,7 @@ namespace Bunny_and_Clyde
                 }
             }
             this.levels[this.currentLevelIndex].Update(gameTime);
+            
         }
 
         public void Draw(SpriteBatch sb)

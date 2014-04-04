@@ -229,10 +229,7 @@ namespace Bunny_and_Clyde
                 s.soundeffect1 = opengate;
                 s.soundeffect2 = closegate;
             }
-            Song maintheme = content.Load<Song>("mainthemetheone.wav");  // Put the name of your song here instead of "song_title"
-            MediaPlayer.IsRepeating = true;
-            MediaPlayer.Volume = 0.25f;
-            MediaPlayer.Play(maintheme);
+            
         }
         public Gate getGate(Color c)
         {
