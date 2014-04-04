@@ -18,8 +18,11 @@ namespace Bunny_and_Clyde
         }
         public override void activate(Sprite collider)
         {
-            connectedRamp.Velocity = new Vector2 (collider.Velocity.X , connectedRamp .Velocity.Y);
-            collider.state = State.Pushing;
+            if (collider.Velocity.X > 0 && collider .GetType ()==typeof (Bunny))
+            {
+                connectedRamp.Velocity = new Vector2(collider.Velocity.X, connectedRamp.Velocity.Y);
+                collider.state = State.Pushing;
+            }
         }
     }
 }
