@@ -758,14 +758,14 @@
   </object>
   <object name="switch_door" x="0" y="416" width="128" height="32">
    <properties>
-    <property name="color" value="White"/>
+    <property name="color" value="SpringGreen"/>
     <property name="imageName" value="stone_block_4x1.png"/>
     <property name="type" value="switch_gate"/>
    </properties>
   </object>
   <object name="switch_block" x="640" y="224" width="32" height="32">
    <properties>
-    <property name="color" value="White"/>
+    <property name="color" value="SpringGreen"/>
     <property name="imageName" value="switch_button.png"/>
     <property name="type" value="switch_button"/>
    </properties>
@@ -778,7 +778,7 @@
    </properties>
   </object>
  </objectgroup>
- <objectgroup name="nondrawable" width="35" height="20" visible="0">
+ <objectgroup name="nondrawable" width="35" height="20">
   <object x="0" y="192" width="160" height="32">
    <properties>
     <property name="type" value="solid"/>
