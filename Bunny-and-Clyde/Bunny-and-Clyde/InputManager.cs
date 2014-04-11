@@ -45,12 +45,12 @@ namespace Bunny_and_Clyde
             currentKeyboard = Keyboard.GetState();
             Vector2 direction;
             InactiveCharacter.Velocity -= new Vector2(InactiveCharacter.Velocity.X, 0);
-
-
+            if (currentKeyboard.IsKeyDown(Keys.Enter) || GamePad.GetState(PlayerIndex.One).Buttons.Start == ButtonState.Pressed){
+                worldSprites[worldSprites.Count - 2].Width = 0;
+            }
             if (currentKeyboard.IsKeyDown(Keys.Left) || GamePad.GetState(PlayerIndex.One).DPad.Left == ButtonState.Pressed)
             {
                 worldSprites[worldSprites.Count - 1].Width = 0;
-                worldSprites[worldSprites.Count - 2].Width = 0;
                 ActiveCharacter.Velocity = new Vector2(-ActiveCharacter.Speed, ActiveCharacter.Velocity.Y);
                 if (InactiveCharacter.state == Sprite.State.Riding)
                 {
@@ -61,7 +61,6 @@ namespace Bunny_and_Clyde
             else if (currentKeyboard.IsKeyDown(Keys.Right) || GamePad.GetState(PlayerIndex.One).DPad.Right == ButtonState.Pressed)
             {
                 worldSprites[worldSprites.Count - 1].Width = 0;
-                worldSprites[worldSprites.Count - 2].Width = 0;
                 ActiveCharacter.Velocity = new Vector2(ActiveCharacter.Speed, ActiveCharacter.Velocity.Y);
                 if (InactiveCharacter.state == Sprite.State.Riding)
                 {
@@ -75,7 +74,6 @@ namespace Bunny_and_Clyde
             if ((currentKeyboard.IsKeyDown(Keys.RightShift) || GamePad.GetState(PlayerIndex.One).Buttons.X == ButtonState.Pressed) && !check)
             {
                 worldSprites[worldSprites.Count - 1].Width = 0;
-                worldSprites[worldSprites.Count - 2].Width = 0;
                 //InactiveCharacter.state = previousState;
                 Sprite temp = ActiveCharacter;
                 ActiveCharacter = InactiveCharacter;
@@ -89,7 +87,6 @@ namespace Bunny_and_Clyde
             if ((currentKeyboard.IsKeyDown(Keys.Up) || GamePad.GetState(PlayerIndex.One).DPad .Up  == ButtonState.Pressed) )
             {
                 worldSprites[worldSprites.Count - 1].Width = 0;
-                worldSprites[worldSprites.Count - 2].Width = 0;
                 if (ActiveCharacter.state == Sprite.State.Swimming)
                 {
                     ActiveCharacter.Velocity += new Vector2(0, -ActiveCharacter.Speed);
@@ -98,7 +95,7 @@ namespace Bunny_and_Clyde
             if ((currentKeyboard.IsKeyDown(Keys.Down) || GamePad.GetState(PlayerIndex.One).DPad.Down == ButtonState.Pressed))
             {
                 worldSprites[worldSprites.Count - 1].Width = 0;
-                worldSprites[worldSprites.Count - 2].Width = 0;
+                
                 if (ActiveCharacter.state == Sprite.State.Swimming)
                 {
                     ActiveCharacter.Velocity += new Vector2(0, ActiveCharacter.Speed);
@@ -111,7 +108,7 @@ namespace Bunny_and_Clyde
             if ((currentKeyboard.IsKeyDown(Keys.Space) || GamePad .GetState (PlayerIndex.One).Buttons .A == ButtonState.Pressed) && (ActiveCharacter.state == Sprite.State.Default || ActiveCharacter.state ==  Sprite.State.Riding ))
             {
                 worldSprites[worldSprites.Count - 1].Width = 0;
-                worldSprites[worldSprites.Count - 2].Width = 0;
+                
                 if (bunny)
                  {
                     sounds[0].Play();
