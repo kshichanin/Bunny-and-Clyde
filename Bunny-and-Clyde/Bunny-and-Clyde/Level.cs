@@ -86,6 +86,7 @@ namespace Bunny_and_Clyde
             this.physics.Add(this.Bunny);
             this.physics.Add(this.Clyde);
             this.collisions = new CollisionManager(platforms, items, new List<Sprite>());
+            
             this.collisions.addMoving(this.Bunny);
             this.collisions.addMoving(this.Clyde);
 
@@ -156,8 +157,10 @@ namespace Bunny_and_Clyde
                 {
                     Ramp r =new Ramp( o.X, o.Y, o.Width, o.Height);
                     currentObject = r;
-                    this.items.Add(r.pushBox);
-                    this.worldSprites.Add(r.pushBox);
+                    this.items.Add(r.leftPushBox);
+                    this.worldSprites.Add(r.leftPushBox);
+                    this.items.Add(r.rightPushBox);
+                    this.worldSprites.Add(r.rightPushBox);
                     this.physics.Add(r);
                     this.platforms.Add(currentObject);
                     this.ramps.Add(currentObject);

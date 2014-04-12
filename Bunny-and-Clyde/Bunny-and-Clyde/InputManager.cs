@@ -71,7 +71,7 @@ namespace Bunny_and_Clyde
                 ActiveCharacter.Velocity = new Vector2(0, ActiveCharacter.Velocity.Y);
 
             //Switch active characters
-            if ((currentKeyboard.IsKeyDown(Keys.RightShift) || GamePad.GetState(PlayerIndex.One).Buttons.X == ButtonState.Pressed) && !check)
+            if ((currentKeyboard.IsKeyDown(Keys.RightShift) || currentKeyboard.IsKeyDown(Keys.LeftShift) || GamePad.GetState(PlayerIndex.One).Buttons.X == ButtonState.Pressed) && !check)
             {
                 worldSprites[worldSprites.Count - 1].Width = 0;
                 //InactiveCharacter.state = previousState;
@@ -81,7 +81,7 @@ namespace Bunny_and_Clyde
                 check = true;
                 //InactiveCharacter.state = Sprite.State.Default;
                 bunny = !bunny;
-            } else if (currentKeyboard .IsKeyUp ( Keys.RightShift ) || GamePad .GetState (PlayerIndex .One ).Buttons.X == ButtonState.Pressed ) {
+            } else if (currentKeyboard .IsKeyUp (Keys.RightShift ) && currentKeyboard.IsKeyUp(Keys.LeftShift) && GamePad .GetState (PlayerIndex .One ).Buttons.X == ButtonState.Released) {
                 check = false;
             }
             if ((currentKeyboard.IsKeyDown(Keys.Up) || GamePad.GetState(PlayerIndex.One).DPad .Up  == ButtonState.Pressed) )
