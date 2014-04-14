@@ -36,7 +36,7 @@ namespace Bunny_and_Clyde
             }
             else
             {
-                leftPushBox.Position = this.Position + new Vector2(-3, 3);
+                leftPushBox.Position = this.Position + new Vector2(-5, 3);
                 rightPushBox.Position = this.Position + new Vector2(Width, 3);
             }
         }
