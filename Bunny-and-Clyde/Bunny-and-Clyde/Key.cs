@@ -12,10 +12,12 @@ namespace Bunny_and_Clyde
     {
         public Color color { get; private set; }
         Level level;
+        public Vector2 SpawnPoint { get; private set; }
         public SoundEffect soundeffect { get; set; }
         public Key(Color c, Level l, float x, float y, int width, int height) :
             base("key_tile", x, y, width, height)
         {
+            this.SpawnPoint = new Vector2(x, y);
             color = c;
             level = l;
         }

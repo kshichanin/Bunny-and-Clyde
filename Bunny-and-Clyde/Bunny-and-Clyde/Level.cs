@@ -23,7 +23,9 @@ namespace Bunny_and_Clyde
         public List<Sprite> platforms {get; private set;}
         public List<Item> keys { get; private set; }
         public List<Item> ramps { get; private set; }
+        public List<Item> doors { get; private set; }
         public List<Item> items {get; private set;}
+        public List<Item> goal { get; private set; }
         public List<Item> gates { get; private set; }
         public List<Item> buttons { get; private set; }
         public List<Item> waters { get; private set; }
@@ -53,7 +55,7 @@ namespace Bunny_and_Clyde
         public GraphicsDeviceManager graphics { get; private set; }
 
         public bool isComplete { get; set; }
-
+        public bool bunnydead { get; set; }
         public Bunny Bunny { get; private set; }
         public Clyde Clyde { get; private set; }
 
@@ -61,7 +63,7 @@ namespace Bunny_and_Clyde
         public Level(string mapFile, GraphicsDeviceManager graphicsManager)
         {
             this.isComplete = false;
-
+            this.bunnydead = false;
             this.graphics = graphicsManager;
             this.map = new TmxMap(mapFile);
 
@@ -79,8 +81,10 @@ namespace Bunny_and_Clyde
             this.sounds = new List<SoundEffect>();
             this.keys = new List<Item>();
             this.ramps = new List<Item>();
+            this.doors = new List<Item>();
             this.buttons = new List<Item>();
             this.waters = new List<Item>();
+            this.goal = new List<Item>();
             this.gates = new List<Item>();
             this.physics = new Physics();
             this.physics.Add(this.Bunny);
@@ -114,7 +118,7 @@ namespace Bunny_and_Clyde
                 Key whiteKey = new Key(Color.AliceBlue, this, 0, 0, 0, 0);
                 if (o.Properties["type"] == "water")
                 {
-                    currentObject = new Water( o.X, o.Y, o.Width, o.Height);
+                    currentObject = new Water( o.X, o.Y, o.Width, o.Height, this);
                     this.waters.Add(currentObject);
                 }
                 else if (o.Properties["type"] == "key")
@@ -130,6 +134,7 @@ namespace Bunny_and_Clyde
                     System .Drawing .Color drawColor = System .Drawing .Color.FromName (o.Properties["color"]);
                     Color c = new Color (drawColor .R ,drawColor .G ,drawColor .B ,drawColor .A);
                     currentObject = new Goal(this, c, o.X, o.Y, o.Width, o.Height);
+                    this.goal.Add(currentObject);
                 }
                 else if (o.Properties["type"] == "switch_button")
                 {
@@ -152,6 +157,7 @@ namespace Bunny_and_Clyde
                     Color c = new Color(drawColor.R, drawColor.G, drawColor.B, drawColor.A);
                     currentObject = new Door(this, c, o.X, o.Y, o.Width, o.Height);
                     this.platforms.Add(currentObject);
+                    this.doors.Add(currentObject);
                 }
                 else if (o.Properties["type"] == "ramp")
                 {
@@ -169,7 +175,7 @@ namespace Bunny_and_Clyde
                 else
                 {
                     //this shouldn't happen
-                    currentObject = new Water(o.X, o.Y, o.Width, o.Height);
+                    currentObject = new Water(o.X, o.Y, o.Width, o.Height, this);
                     Console.WriteLine(o.Properties["imageName"]);
                 }
                 this.worldSprites.Add(currentObject);
@@ -196,7 +202,37 @@ namespace Bunny_and_Clyde
             this.worldSprites.Add(imshow);
             
         }
+        public void restart()
+        {
+            this.Bunny.Position = this.Bunny.SpawnPoint;
+            this.Clyde.Position = this.Clyde.SpawnPoint;
+            foreach (Key s in this.keys)
+            {
+                this.inventory.removeItem(s);
+                s.Position = s.SpawnPoint;
+            }
+            foreach (Ramp s in this.ramps)
+            {
+                s.Position = s.SpawnPoint;
+            }
+            foreach (Door s in this.doors)
+            {
+                if (s.opened){
+                    s.Close();
+                }
+            }
+            foreach (Goal s in this.goal)
+            {
+                if (s.opened)
+                {
+                    s.Close();
+                }
+            }
 
+
+            /*
+            reset goal door*/
+        }
         public void LoadContent(ContentManager content)
         {
             this.background.LoadContent(content);

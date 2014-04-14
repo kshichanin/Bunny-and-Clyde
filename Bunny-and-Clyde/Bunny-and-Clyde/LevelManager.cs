@@ -64,6 +64,15 @@ namespace Bunny_and_Clyde
                     playing = true;
                 }
             }
+            if (this.levels[this.currentLevelIndex].bunnydead)
+            {
+                this.levels[this.currentLevelIndex].bunnydead = false;
+                MediaPlayer.Stop();
+                MediaPlayer.Play(maintheme[this.currentLevelIndex]);
+                this.levels[this.currentLevelIndex].restart();
+              
+            }
+
             if (this.levels[this.currentLevelIndex].isComplete)
             {
                 
