@@ -18,5 +18,8 @@ namespace Bunny_and_Clyde
 
         public static int BUNNY_MOVE_SPEED = 5;
         public static int CLYDE_MOVE_SPEED = 5;
+
+        public static int OFFSCREEN_X = -500;
+        public static int OFFSCREEN_Y = 0;
     }
 }

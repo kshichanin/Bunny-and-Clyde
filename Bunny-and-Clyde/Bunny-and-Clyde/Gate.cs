@@ -11,15 +11,15 @@ namespace Bunny_and_Clyde
 {
     class Gate : Item
     {
-        private int fullwidth;
-
+        private Vector2  defaultPosition;
+        bool isopen;
         public SoundEffect soundeffect1 { get; set; }
         public SoundEffect soundeffect2 { get; set; }
         public Color color { get; private set; }
-        public Gate(Color c, float x, float y, int width, int height)
-            : base("stone_block_4x1", x, y, width, height)
+        public Gate(String imagename, Color c, float x, float y, int width, int height)
+            : base(imagename, x, y, width, height)
         {
-            fullwidth = width;
+            defaultPosition = this.Position;
             color = c;
         }
         public override void activate(Sprite collider)
@@ -28,20 +28,21 @@ namespace Bunny_and_Clyde
         }
         public void open()
         {
-            if (Width != 0)
+            if (!isopen)
             {
                 soundeffect1.Play();
             }
-            Width = 0;
-            
+            this.Position  = new Vector2 (GameGlobals.OFFSCREEN_X, GameGlobals.OFFSCREEN_Y);
+            isopen = true;
         }
         public void close()
         {
-            if (Width == 0)
+            if (isopen)
             {
                 soundeffect2.Play();
             }
-            Width = fullwidth;
+            isopen = false;
+            this.Position  = this.defaultPosition;
         }
         public override void Draw(SpriteBatch sb)
         {

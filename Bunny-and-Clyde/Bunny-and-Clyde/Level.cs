@@ -142,7 +142,7 @@ namespace Bunny_and_Clyde
                 {
                     System.Drawing.Color drawColor = System.Drawing.Color.FromName(o.Properties["color"]);
                     Color c = new Color(drawColor.R, drawColor.G, drawColor.B, drawColor.A);
-                    currentObject = new Gate(c, o.X, o.Y, o.Width, o.Height);
+                    currentObject = new Gate(o.Properties ["imageName"],c, o.X, o.Y, o.Width, o.Height);
                     this.platforms.Add(currentObject);
                     this.gates.Add(currentObject);
                 }
