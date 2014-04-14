@@ -15,8 +15,8 @@ namespace Bunny_and_Clyde
         public Ramp(float x, float y, int width, int height)
         :base("gate_block",x,y,width,height)
         {
-            leftPushBox = new PushBox( this, x - 3f, y+3, 2, height-6, true );
-            rightPushBox = new PushBox(this, x + width, y + 3, 2, height - 6, false);
+            leftPushBox = new PushBox( this, x - 3f, y+3, 5, height-6, true );
+            rightPushBox = new PushBox(this, x + width, y + 3, 5, height - 6, false);
         }
         public override void activate(Sprite collider)
         {

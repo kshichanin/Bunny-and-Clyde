@@ -70,8 +70,8 @@ namespace Bunny_and_Clyde
 
             }
             else {
-                solids.Remove(problem);
-                removedProblem = true;
+             //   solids.Remove(problem);
+              //  removedProblem = true;
             }
             if (checkPlatformCollision(sprite.testBox(velocity.X, 0)))
             {

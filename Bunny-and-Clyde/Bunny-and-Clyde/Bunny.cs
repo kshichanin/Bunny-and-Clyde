@@ -31,6 +31,7 @@ namespace Bunny_and_Clyde
             Velocity = new Vector2 (0,0);
             base.state = State.Default;
             base.jump = 13f;
+            //base.Speed = 1;
         }
 
         public override void Draw(SpriteBatch sb)
