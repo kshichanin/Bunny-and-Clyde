@@ -259,6 +259,12 @@
     <Content Include="Content\stone_block.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\stone_block_1x3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\stone_block_1x4.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Content\stone_block_3x1.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
