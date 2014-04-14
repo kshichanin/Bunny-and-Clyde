@@ -20,10 +20,10 @@ namespace Bunny_and_Clyde
 
         // sprites
         private List<Sprite> worldSprites;
-        public List<Sprite> platforms {get; private set;}
+        public List<Sprite> platforms { get; private set; }
         public List<Item> keys { get; private set; }
         public List<Item> ramps { get; private set; }
-        public List<Item> items {get; private set;}
+        public List<Item> items { get; private set; }
         public List<Item> gates { get; private set; }
         public List<Item> buttons { get; private set; }
         public List<Item> waters { get; private set; }
@@ -86,7 +86,7 @@ namespace Bunny_and_Clyde
             this.physics.Add(this.Bunny);
             this.physics.Add(this.Clyde);
             this.collisions = new CollisionManager(platforms, items, new List<Sprite>());
-            
+
             this.collisions.addMoving(this.Bunny);
             this.collisions.addMoving(this.Clyde);
 
@@ -114,7 +114,7 @@ namespace Bunny_and_Clyde
                 Key whiteKey = new Key(Color.AliceBlue, this, 0, 0, 0, 0);
                 if (o.Properties["type"] == "water")
                 {
-                    currentObject = new Water( o.X, o.Y, o.Width, o.Height);
+                    currentObject = new Water(o.X, o.Y, o.Width, o.Height);
                     this.waters.Add(currentObject);
                 }
                 else if (o.Properties["type"] == "key")
@@ -122,27 +122,27 @@ namespace Bunny_and_Clyde
                     System.Drawing.Color drawColor = System.Drawing.Color.FromName(o.Properties["color"]);
                     Color c = new Color(drawColor.R, drawColor.G, drawColor.B, drawColor.A);
                     whiteKey = new Key(c, this, o.X, o.Y, o.Width, o.Height);
-                    currentObject  = whiteKey;
+                    currentObject = whiteKey;
                     this.keys.Add(currentObject);
                 }
                 else if (o.Properties["type"] == "goal_door")
                 {
-                    System .Drawing .Color drawColor = System .Drawing .Color.FromName (o.Properties["color"]);
-                    Color c = new Color (drawColor .R ,drawColor .G ,drawColor .B ,drawColor .A);
+                    System.Drawing.Color drawColor = System.Drawing.Color.FromName(o.Properties["color"]);
+                    Color c = new Color(drawColor.R, drawColor.G, drawColor.B, drawColor.A);
                     currentObject = new Goal(this, c, o.X, o.Y, o.Width, o.Height);
                 }
                 else if (o.Properties["type"] == "switch_button")
                 {
                     System.Drawing.Color drawColor = System.Drawing.Color.FromName(o.Properties["color"]);
                     Color c = new Color(drawColor.R, drawColor.G, drawColor.B, drawColor.A);
-                    currentObject = new Switch(c,this, o.X, o.Y, o.Width, o.Height);
+                    currentObject = new Switch(c, this, o.X, o.Y, o.Width, o.Height);
                     this.buttons.Add(currentObject);
                 }
                 else if (o.Properties["type"] == "switch_gate")
                 {
                     System.Drawing.Color drawColor = System.Drawing.Color.FromName(o.Properties["color"]);
                     Color c = new Color(drawColor.R, drawColor.G, drawColor.B, drawColor.A);
-                    currentObject = new Gate(o.Properties ["imageName"],c, o.X, o.Y, o.Width, o.Height);
+                    currentObject = new Gate(o.Properties["imageName"], c, o.X, o.Y, o.Width, o.Height);
                     this.platforms.Add(currentObject);
                     this.gates.Add(currentObject);
                 }
@@ -155,7 +155,7 @@ namespace Bunny_and_Clyde
                 }
                 else if (o.Properties["type"] == "ramp")
                 {
-                    Ramp r =new Ramp( o.X, o.Y, o.Width, o.Height);
+                    Ramp r = new Ramp(o.X, o.Y, o.Width, o.Height);
                     currentObject = r;
                     this.items.Add(r.leftPushBox);
                     this.worldSprites.Add(r.leftPushBox);
@@ -165,6 +165,10 @@ namespace Bunny_and_Clyde
                     this.platforms.Add(currentObject);
                     this.ramps.Add(currentObject);
                     this.collisions.addMoving(currentObject);
+                }
+                else if (o.Properties["type"] == "cloud")
+                {
+                    currentObject = new Cloud(o.Properties["imageName"], o.X, o.Y, o.Width, o.Height);
                 }
                 else
                 {
@@ -184,7 +188,7 @@ namespace Bunny_and_Clyde
             this.items.Add(this.Clyde.back);
             this.platforms.Add(this.Clyde);
             this.inputManager = new InputManager(worldSprites, this.Bunny, this.Clyde, platforms, sounds);
-            
+
             this.worldSprites.Add(inventory);
             this.imshow3 = new imageshow("win", 0, 0, 0, (map.TileHeight * map.Height));
             this.worldSprites.Add(imshow3);
@@ -194,7 +198,7 @@ namespace Bunny_and_Clyde
             this.Bunny.mapwidth = (map.TileWidth * map.Width) / 3;
             this.imshow = new imageshow("mainlogo", (map.TileWidth * map.Width) / 4, (map.TileHeight * map.Height) / 4, (map.TileWidth * map.Width) / 2, (map.TileHeight * map.Height) / 2);
             this.worldSprites.Add(imshow);
-            
+
         }
 
         public void LoadContent(ContentManager content)
@@ -236,16 +240,18 @@ namespace Bunny_and_Clyde
                 s.soundeffect1 = opengate;
                 s.soundeffect2 = closegate;
             }
-            
+
         }
         public Gate getGate(Color c)
         {
             foreach (Item i in this.items)
             {
-                if(i.GetType () == typeof (Gate)){
+                if (i.GetType() == typeof(Gate))
+                {
                     Gate gate = (Gate)i;
-                    if(gate.color == c){
-                        return gate ;
+                    if (gate.color == c)
+                    {
+                        return gate;
                     }
                 }
             }

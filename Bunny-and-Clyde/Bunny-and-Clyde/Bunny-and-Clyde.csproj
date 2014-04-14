@@ -37,6 +37,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Bunny.cs" />
+    <Compile Include="Cloud.cs" />
     <Compile Include="Clyde.cs" />
     <Compile Include="ClydesBack.cs" />
     <Compile Include="CollisionManager.cs" />
@@ -113,6 +114,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\closegate.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\cloud.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Clyde.png">
