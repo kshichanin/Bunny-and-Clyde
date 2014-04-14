@@ -11,7 +11,7 @@ namespace Bunny_and_Clyde
         private Ramp connectedRamp;
         private bool direction;
         public PushBox( Ramp r, float x, float y, int width, int height, bool direction)
-            : base("blank",x, y, width, height)
+            : base("door_tile",x, y, width, height)
         {
             connectedRamp = r;
             this.direction = direction;
