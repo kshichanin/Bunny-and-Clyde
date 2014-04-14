@@ -9,11 +9,12 @@ namespace Bunny_and_Clyde
 {//
     class Water : Item
     {
+        private Level level;
         public SoundEffect soundeffect { get; set; }
-        public Water(float x, float y, int width, int height) :
+        public Water(float x, float y, int width, int height, Level l) :
             base("blank", x, y, width, height)
         {
-
+            this.level = l;
         }
         public override void activate(Sprite collider)
         {
@@ -27,6 +28,8 @@ namespace Bunny_and_Clyde
             {
                 if (collider.state == State.Airbourne || collider.state == State.Default) { soundeffect.Play(); }
                 Bunny bunny = (Bunny)collider;
+                level.bunnydead = true;
+                
                 bunny.die.Width = bunny.mapwidth;
                 bunny.Position = bunny.SpawnPoint;
                 bunny.Velocity = Vector2.Zero;

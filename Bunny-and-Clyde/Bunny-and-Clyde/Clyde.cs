@@ -1,4 +1,5 @@
 ﻿
+
 ﻿
 ﻿﻿using Microsoft.Xna.Framework;
 
@@ -20,6 +21,8 @@ namespace Bunny_and_Clyde
     {
         static int CLYDE_WIDTH = 58, CLYDE_HEIGHT = 48;
         private Texture2D image;
+
+        public Vector2 SpawnPoint { get; private set; }
         public ClydesBack back { get; private set; }
         public bool isAirbourne() { return base.state == State.Airbourne; }
         public imageshow die { get; set; }
@@ -35,6 +38,7 @@ namespace Bunny_and_Clyde
         public Clyde(float initialX, float initialY)
             : base("Turtle", initialX, initialY, CLYDE_WIDTH, CLYDE_HEIGHT)
         {
+            this.SpawnPoint = new Vector2(initialX, initialY);
             Velocity = Vector2.Zero;
             base.state = State.Default;
             base.jump = 8.3f;
