@@ -130,6 +130,10 @@ namespace Bunny_and_Clyde
             {
                 InactiveCharacter.Velocity = ActiveCharacter.Velocity;
             }
+            if (ActiveCharacter.state == Sprite.State.Riding)
+            {
+                ActiveCharacter.Velocity = new Vector2 (ActiveCharacter.Velocity .X, InactiveCharacter.Velocity.Y);
+            }
 
             // determine sprite animation
             if (currentKeyboard.IsKeyDown(Keys.Left) || GamePad.GetState(PlayerIndex.One).DPad.Left == ButtonState.Pressed && ActiveCharacter.state != Sprite.State.Airbourne)

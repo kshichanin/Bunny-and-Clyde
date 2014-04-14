@@ -87,9 +87,10 @@ namespace Bunny_and_Clyde
             this.physics.Add(this.Clyde);
             this.collisions = new CollisionManager(platforms, items, new List<Sprite>());
             
-            this.collisions.addMoving(this.Bunny);
+            
             this.collisions.addMoving(this.Clyde);
-
+            this.collisions.addMoving(this.Bunny);
+            
             this.mapObjectsDrawable = map.ObjectGroups["drawable"];
             this.mapObjectsNonDrawable = map.ObjectGroups["nondrawable"];
 
