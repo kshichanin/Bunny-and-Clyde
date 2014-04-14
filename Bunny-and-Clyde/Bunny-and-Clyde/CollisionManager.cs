@@ -58,10 +58,20 @@ namespace Bunny_and_Clyde
         {
             Vector2 velocity = sprite.Velocity;
             bool removed = false;
+            bool removedProblem = false;
             if (solids.Contains(sprite))
             {
                 removed = true;
                 solids.Remove(sprite);
+            }
+            Sprite problem = getInitialCollision(sprite.testBox(0, 0));
+            if (problem == null)
+            {
+
+            }
+            else {
+                solids.Remove(problem);
+                removedProblem = true;
             }
             if (checkPlatformCollision(sprite.testBox(velocity.X, 0)))
             {
@@ -97,6 +107,10 @@ namespace Bunny_and_Clyde
             if (removed)
             {
                 solids.Add(sprite);
+            }
+            if (removedProblem)
+            {
+                solids.Add(problem);
             }
            // sprite.Velocity = new Vector2(0.5f * sprite .Velocity .X, sprite.Velocity.Y);
         }
@@ -140,6 +154,17 @@ namespace Bunny_and_Clyde
             if (r.Y + r.Height > GameGlobals.WINDOW_HEIGHT) return true;
             return false;
         }
+        public Sprite getInitialCollision(Rectangle r)
+        {
+            foreach (Sprite s in solids)
+            {
+                if (r.Intersects(s.HitBox))
+                {
+                    return s;
+                }
+            }
 
+            return null;
+        }
     }
 }

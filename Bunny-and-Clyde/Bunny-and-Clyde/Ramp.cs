@@ -12,7 +12,7 @@ namespace Bunny_and_Clyde
         public SoundEffect soundeffect { get; set; }
         public PushBox leftPushBox { get; set; }
         public PushBox rightPushBox { get; set; }
-        public Ramp( float x, float y, int width, int height)
+        public Ramp(float x, float y, int width, int height)
         :base("gate_block",x,y,width,height)
         {
             leftPushBox = new PushBox( this, x - 3f, y+3, 2, height-6, true );
