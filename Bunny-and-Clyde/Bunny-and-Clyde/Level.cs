@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Content;
+using Microsoft.Xna.Framework.Content;mo
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Storage;
@@ -11,7 +11,6 @@ using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Media;
 using TiledSharp;
 #endregion
-
 namespace Bunny_and_Clyde
 {
     class Level
@@ -20,10 +19,12 @@ namespace Bunny_and_Clyde
 
         // sprites
         private List<Sprite> worldSprites;
-        public List<Sprite> platforms {get; private set;}
+        public List<Sprite> platforms { get; private set; }
         public List<Item> keys { get; private set; }
         public List<Item> ramps { get; private set; }
-        public List<Item> items {get; private set;}
+        public List<Item> doors { get; private set; }
+        public List<Item> items { get; private set; }
+        public List<Item> goal { get; private set; }
         public List<Item> gates { get; private set; }
         public List<Item> buttons { get; private set; }
         public List<Item> waters { get; private set; }
@@ -53,7 +54,7 @@ namespace Bunny_and_Clyde
         public GraphicsDeviceManager graphics { get; private set; }
 
         public bool isComplete { get; set; }
-
+        public bool bunnydead { get; set; }
         public Bunny Bunny { get; private set; }
         public Clyde Clyde { get; private set; }
 
@@ -61,7 +62,7 @@ namespace Bunny_and_Clyde
         public Level(string mapFile, GraphicsDeviceManager graphicsManager)
         {
             this.isComplete = false;
-
+            this.bunnydead = false;
             this.graphics = graphicsManager;
             this.map = new TmxMap(mapFile);
 
@@ -79,18 +80,19 @@ namespace Bunny_and_Clyde
             this.sounds = new List<SoundEffect>();
             this.keys = new List<Item>();
             this.ramps = new List<Item>();
+            this.doors = new List<Item>();
             this.buttons = new List<Item>();
             this.waters = new List<Item>();
+            this.goal = new List<Item>();
             this.gates = new List<Item>();
             this.physics = new Physics();
             this.physics.Add(this.Bunny);
             this.physics.Add(this.Clyde);
             this.collisions = new CollisionManager(platforms, items, new List<Sprite>());
-            
-            
             this.collisions.addMoving(this.Clyde);
+
             this.collisions.addMoving(this.Bunny);
-            
+
             this.mapObjectsDrawable = map.ObjectGroups["drawable"];
             this.mapObjectsNonDrawable = map.ObjectGroups["nondrawable"];
 
@@ -115,7 +117,7 @@ namespace Bunny_and_Clyde
                 Key whiteKey = new Key(Color.AliceBlue, this, 0, 0, 0, 0);
                 if (o.Properties["type"] == "water")
                 {
-                    currentObject = new Water( o.X, o.Y, o.Width, o.Height);
+                    currentObject = new Water(o.X, o.Y, o.Width, o.Height, this);
                     this.waters.Add(currentObject);
                 }
                 else if (o.Properties["type"] == "key")
@@ -123,27 +125,28 @@ namespace Bunny_and_Clyde
                     System.Drawing.Color drawColor = System.Drawing.Color.FromName(o.Properties["color"]);
                     Color c = new Color(drawColor.R, drawColor.G, drawColor.B, drawColor.A);
                     whiteKey = new Key(c, this, o.X, o.Y, o.Width, o.Height);
-                    currentObject  = whiteKey;
+                    currentObject = whiteKey;
                     this.keys.Add(currentObject);
                 }
                 else if (o.Properties["type"] == "goal_door")
                 {
-                    System .Drawing .Color drawColor = System .Drawing .Color.FromName (o.Properties["color"]);
-                    Color c = new Color (drawColor .R ,drawColor .G ,drawColor .B ,drawColor .A);
+                    System.Drawing.Color drawColor = System.Drawing.Color.FromName(o.Properties["color"]);
+                    Color c = new Color(drawColor.R, drawColor.G, drawColor.B, drawColor.A);
                     currentObject = new Goal(this, c, o.X, o.Y, o.Width, o.Height);
+                    this.goal.Add(currentObject);
                 }
                 else if (o.Properties["type"] == "switch_button")
                 {
                     System.Drawing.Color drawColor = System.Drawing.Color.FromName(o.Properties["color"]);
                     Color c = new Color(drawColor.R, drawColor.G, drawColor.B, drawColor.A);
-                    currentObject = new Switch(c,this, o.X, o.Y, o.Width, o.Height);
+                    currentObject = new Switch(c, this, o.X, o.Y, o.Width, o.Height);
                     this.buttons.Add(currentObject);
                 }
                 else if (o.Properties["type"] == "switch_gate")
                 {
                     System.Drawing.Color drawColor = System.Drawing.Color.FromName(o.Properties["color"]);
                     Color c = new Color(drawColor.R, drawColor.G, drawColor.B, drawColor.A);
-                    currentObject = new Gate(o.Properties ["imageName"],c, o.X, o.Y, o.Width, o.Height);
+                    currentObject = new Gate(o.Properties["imageName"], c, o.X, o.Y, o.Width, o.Height);
                     this.platforms.Add(currentObject);
                     this.gates.Add(currentObject);
                 }
@@ -153,10 +156,11 @@ namespace Bunny_and_Clyde
                     Color c = new Color(drawColor.R, drawColor.G, drawColor.B, drawColor.A);
                     currentObject = new Door(this, c, o.X, o.Y, o.Width, o.Height);
                     this.platforms.Add(currentObject);
+                    this.doors.Add(currentObject);
                 }
                 else if (o.Properties["type"] == "ramp")
                 {
-                    Ramp r =new Ramp( o.X, o.Y, o.Width, o.Height);
+                    Ramp r = new Ramp(o.X, o.Y, o.Width, o.Height);
                     currentObject = r;
                     this.items.Add(r.leftPushBox);
                     this.worldSprites.Add(r.leftPushBox);
@@ -167,10 +171,14 @@ namespace Bunny_and_Clyde
                     this.ramps.Add(currentObject);
                     this.collisions.addMoving(currentObject);
                 }
+                else if (o.Properties["type"] == "cloud")
+                {
+                    currentObject = new Cloud(o.Properties["imageName"], o.X, o.Y, o.Width, o.Height);
+                }
                 else
                 {
                     //this shouldn't happen
-                    currentObject = new Water(o.X, o.Y, o.Width, o.Height);
+                    currentObject = new Water(o.X, o.Y, o.Width, o.Height, this);
                     Console.WriteLine(o.Properties["imageName"]);
                 }
                 this.worldSprites.Add(currentObject);
@@ -184,8 +192,8 @@ namespace Bunny_and_Clyde
             this.worldSprites.Add(this.Clyde.back);
             this.items.Add(this.Clyde.back);
             this.platforms.Add(this.Clyde);
-            this.inputManager = new InputManager(worldSprites, this.Bunny, this.Clyde, platforms, sounds);
-            
+            this.inputManager = new InputManager(worldSprites, this.Bunny, this.Clyde, platforms, sounds, this);
+
             this.worldSprites.Add(inventory);
             this.imshow3 = new imageshow("win", 0, 0, 0, (map.TileHeight * map.Height));
             this.worldSprites.Add(imshow3);
@@ -195,9 +203,40 @@ namespace Bunny_and_Clyde
             this.Bunny.mapwidth = (map.TileWidth * map.Width) / 3;
             this.imshow = new imageshow("mainlogo", (map.TileWidth * map.Width) / 4, (map.TileHeight * map.Height) / 4, (map.TileWidth * map.Width) / 2, (map.TileHeight * map.Height) / 2);
             this.worldSprites.Add(imshow);
-            
-        }
 
+        }
+        public void restart()
+        {
+            this.Bunny.Position = this.Bunny.SpawnPoint;
+            this.Clyde.Position = this.Clyde.SpawnPoint;
+            foreach (Key s in this.keys)
+            {
+                this.inventory.removeItem(s);
+                s.Position = s.SpawnPoint;
+            }
+            foreach (Ramp s in this.ramps)
+            {
+                s.Position = s.SpawnPoint;
+            }
+            foreach (Door s in this.doors)
+            {
+                if (s.opened)
+                {
+                    s.Close();
+                }
+            }
+            foreach (Goal s in this.goal)
+            {
+                if (s.opened)
+                {
+                    s.Close();
+                }
+            }
+
+
+            /*
+            reset goal door*/
+        }
         public void LoadContent(ContentManager content)
         {
             this.background.LoadContent(content);
@@ -237,16 +276,18 @@ namespace Bunny_and_Clyde
                 s.soundeffect1 = opengate;
                 s.soundeffect2 = closegate;
             }
-            
+
         }
         public Gate getGate(Color c)
         {
             foreach (Item i in this.items)
             {
-                if(i.GetType () == typeof (Gate)){
+                if (i.GetType() == typeof(Gate))
+                {
                     Gate gate = (Gate)i;
-                    if(gate.color == c){
-                        return gate ;
+                    if (gate.color == c)
+                    {
+                        return gate;
                     }
                 }
             }
