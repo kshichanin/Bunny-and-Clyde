@@ -23,12 +23,14 @@ namespace Bunny_and_Clyde
         public Sprite.State previousState { get; set; }
         public List<Sprite> Platforms { get; private set; }
         public List<SoundEffect> sounds { get; private set; }
+        public Level level { get; private set; }
         public Ramp pushedRamp { get; set; }
         private bool check = false;
         private TimeSpan sum;
         private bool bunny = true;
-        public InputManager(List<Sprite> worldSprites, Sprite activeCharacter, Sprite inactiveCharacter,List<Sprite> platforms, List<SoundEffect> sounds)
+        public InputManager(List<Sprite> worldSprites, Sprite activeCharacter, Sprite inactiveCharacter,List<Sprite> platforms, List<SoundEffect> sounds, Level l)
         {
+            this.level = l;
             this.worldSprites = worldSprites;
             ActiveCharacter = activeCharacter;
             InactiveCharacter = inactiveCharacter;
@@ -47,6 +49,10 @@ namespace Bunny_and_Clyde
             InactiveCharacter.Velocity -= new Vector2(InactiveCharacter.Velocity.X, 0);
             if (currentKeyboard.IsKeyDown(Keys.Enter) || GamePad.GetState(PlayerIndex.One).Buttons.Start == ButtonState.Pressed){
                 worldSprites[worldSprites.Count - 2].Width = 0;
+            }
+            if (currentKeyboard.IsKeyDown(Keys.R))
+            {
+                this.level.restart();
             }
             if (currentKeyboard.IsKeyDown(Keys.Left) || GamePad.GetState(PlayerIndex.One).DPad.Left == ButtonState.Pressed)
             {
