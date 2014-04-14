@@ -714,7 +714,7 @@
    <tile gid="12"/>
   </data>
  </layer>
- <objectgroup name="drawable" width="35" height="20" visible="0">
+ <objectgroup name="drawable" width="35" height="20">
   <object name="white_switch_gate" x="128" y="32" width="32" height="96">
    <properties>
     <property name="color" value="White"/>
@@ -799,6 +799,24 @@
    <properties>
     <property name="imageName" value="blank.png"/>
     <property name="type" value="water"/>
+   </properties>
+  </object>
+  <object x="224" y="32" width="96" height="64">
+   <properties>
+    <property name="imageName" value="cloud.png"/>
+    <property name="type" value="cloud"/>
+   </properties>
+  </object>
+  <object x="960" y="32" width="96" height="64">
+   <properties>
+    <property name="imageName" value="cloud.png"/>
+    <property name="type" value="cloud"/>
+   </properties>
+  </object>
+  <object x="480" y="32" width="96" height="64">
+   <properties>
+    <property name="imageName" value="cloud.png"/>
+    <property name="type" value="cloud"/>
    </properties>
   </object>
  </objectgroup>

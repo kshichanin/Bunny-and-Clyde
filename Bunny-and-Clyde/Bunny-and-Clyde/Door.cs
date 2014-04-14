@@ -11,7 +11,7 @@ namespace Bunny_and_Clyde
     {
         private Level level;
         private Color color;
-        private bool opened;
+        public bool opened;
         private ContentManager contentManager;
         public Door(Level l, Color c, float x, float y, int width, int height) :
             base("door_tile_open", x, y, width, height)
@@ -19,6 +19,7 @@ namespace Bunny_and_Clyde
             this.opened = false;
             this.level = l;
             this.color = c;
+            
         }
 
         public override void LoadContent(ContentManager content)
@@ -39,11 +40,19 @@ namespace Bunny_and_Clyde
                 level.platforms.Remove(this);
                 this.imageName = "door_tile.png";
                 this.LoadContent(this.contentManager);
+                this.opened = true;
             }
         }
         public override void Draw(SpriteBatch sb)
         {
             sb.Draw(image, new Rectangle((int)Position.X, (int)Position.Y, Width, Height), this.color);
+        }
+        public void Close()
+        {
+            this.opened = false;
+            level.platforms.Add(this);
+            this.imageName = "door_tile_open.png";
+            this.LoadContent(this.contentManager);
         }
     }
 }

@@ -8,7 +8,7 @@
   <property name="clydeSpawnY" value="150"/>
  </properties>
  <tileset firstgid="1" name="tileset_1x1" tilewidth="32" tileheight="32" spacing="1">
-  <image source="tileset_1x1.png" width="230" height="98"/>
+  <image source="tileset_1x1.png" width="230" height="164"/>
  </tileset>
  <layer name="background" width="35" height="20">
   <data>
@@ -754,7 +754,7 @@
   </object>
   <object name="white_door" x="1024" y="416" width="64" height="96">
    <properties>
-    <property name="color" value="White"/>
+    <property name="color" value="Gold"/>
     <property name="imageName" value="door_tile.png"/>
     <property name="type" value="goal_door"/>
    </properties>

@@ -12,11 +12,13 @@ namespace Bunny_and_Clyde
     {
         private Level level;
         private Color color;
+        public bool opened;
         private ContentManager contentManager;
         private bool bunnyTouching, clydeTouching;
         public Goal(Level l, Color c, float x, float y, int width, int height) :
             base("door", x, y, width, height)
         {
+            this.opened = false;
             this.bunnyTouching = false;
             this.clydeTouching = false;
             this.level = l;
@@ -55,11 +57,18 @@ namespace Bunny_and_Clyde
             {
                 this.imageName = "goal_door_open.png";
                 this.LoadContent(this.contentManager);
+                this.opened = true;
             }
         }
         public override void Draw(SpriteBatch sb)
         {
             sb.Draw(image, new Rectangle((int)Position.X, (int)Position.Y, Width, Height), this.color);
+        }
+        public void Close()
+        {
+            this.opened = false;
+            this.imageName = "gold_door_tile.png";
+            this.LoadContent(this.contentManager);
         }
     }
 }

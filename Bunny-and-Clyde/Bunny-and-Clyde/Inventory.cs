@@ -18,6 +18,10 @@ namespace Bunny_and_Clyde
         {
             this.items.Add(item);
         }
+        public void removeItem(Sprite item)
+        {
+            this.items.Remove(item);
+        }
         public override void Draw(SpriteBatch sb)
         {
             base.Draw(sb);
