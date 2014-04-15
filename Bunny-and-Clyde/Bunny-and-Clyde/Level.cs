@@ -160,7 +160,7 @@ namespace Bunny_and_Clyde
                 }
                 else if (o.Properties["type"] == "ramp")
                 {
-                    Ramp r = new Ramp(o.X, o.Y, o.Width, o.Height);
+                    Ramp r = new Ramp(o.X, o.Y, o.Width, o.Height, this);
                     currentObject = r;
                     this.items.Add(r.leftPushBox);
                     this.worldSprites.Add(r.leftPushBox);
@@ -261,7 +261,8 @@ namespace Bunny_and_Clyde
             }
             foreach (Ramp s in this.ramps)
             {
-                s.soundeffect = ramp;
+                s.leftPushBox.soundeffect = ramp;
+                s.rightPushBox.soundeffect = ramp;
             }
             foreach (Switch s in this.buttons)
             {

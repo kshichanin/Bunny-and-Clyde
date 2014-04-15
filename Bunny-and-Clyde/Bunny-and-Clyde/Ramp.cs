@@ -9,16 +9,16 @@ namespace Bunny_and_Clyde
 {
     class Ramp : Item, Gravity
     {
-        public SoundEffect soundeffect { get; set; }
+       
         public PushBox leftPushBox { get; set; }
         public PushBox rightPushBox { get; set; }
         public Vector2 SpawnPoint { get; private set; }
-        public Ramp(float x, float y, int width, int height)
+        public Ramp(float x, float y, int width, int height, Level l)
         :base("gate_block",x,y,width,height)
         {
 
             this.SpawnPoint = new Vector2(x, y);
-            leftPushBox = new PushBox( this, x - 3f, y+3, 5, height-6, true );
+            leftPushBox = new PushBox( this, x - 3f, y+3, 5, height-6, true);
             rightPushBox = new PushBox(this, x + width, y + 3, 5, height - 6, false);
         }
         public override void activate(Sprite collider)

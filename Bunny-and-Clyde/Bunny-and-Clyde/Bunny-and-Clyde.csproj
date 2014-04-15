@@ -328,6 +328,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="inventory.png" />
+    <Content Include="ramp.mp3" />
     <Content Include="TiledSharp.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
