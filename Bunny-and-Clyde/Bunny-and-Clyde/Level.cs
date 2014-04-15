@@ -201,7 +201,12 @@ namespace Bunny_and_Clyde
             this.worldSprites.Add(imshow2);
             this.Bunny.die = imshow2;
             this.Bunny.mapwidth = (map.TileWidth * map.Width) / 3;
-            this.imshow = new imageshow("mainlogo", (map.TileWidth * map.Width) / 4, (map.TileHeight * map.Height) / 4, (map.TileWidth * map.Width) / 2, (map.TileHeight * map.Height) / 2);
+            String logoImage = "mainlogo";
+            if (GamePad.GetState(PlayerIndex.One).IsConnected)
+            {
+                logoImage = "mainlogo_controller";
+            }
+            this.imshow = new imageshow(logoImage, (map.TileWidth * map.Width) / 4, (map.TileHeight * map.Height) / 4, (map.TileWidth * map.Width) / 2, (map.TileHeight * map.Height) / 2);
             this.worldSprites.Add(imshow);
 
         }

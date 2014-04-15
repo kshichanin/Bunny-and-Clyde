@@ -21,8 +21,11 @@ namespace Bunny_and_Clyde
             if (collider.GetType() == typeof(Clyde))
             {
                 if (collider.state == State.Airbourne) { soundeffect.Play(); }
+
+                    collider.Velocity = Vector2.Zero;
+                
                 collider.state = State.Swimming;
-                collider.Velocity = Vector2.Zero;
+                
             }
             else if (collider.GetType() == typeof(Bunny))
             {

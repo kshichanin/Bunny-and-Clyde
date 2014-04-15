@@ -26,6 +26,7 @@ namespace Bunny_and_Clyde
         public Level level { get; private set; }
         public Ramp pushedRamp { get; set; }
         private bool check = false;
+        private bool rKeyEdge = false;
         private TimeSpan sum;
         private bool bunny = true;
         public InputManager(List<Sprite> worldSprites, Sprite activeCharacter, Sprite inactiveCharacter,List<Sprite> platforms, List<SoundEffect> sounds, Level l)
@@ -50,9 +51,14 @@ namespace Bunny_and_Clyde
             if (currentKeyboard.IsKeyDown(Keys.Enter) || GamePad.GetState(PlayerIndex.One).Buttons.Start == ButtonState.Pressed){
                 worldSprites[worldSprites.Count - 2].Width = 0;
             }
-            if (currentKeyboard.IsKeyDown(Keys.R))
+            if (!rKeyEdge && (currentKeyboard.IsKeyDown(Keys.R) || GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed))
             {
+                rKeyEdge = true;
                 this.level.restart();
+            }
+            else if (currentKeyboard.IsKeyUp(Keys.R) && GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Released)
+            {
+                rKeyEdge = false;
             }
             if (currentKeyboard.IsKeyDown(Keys.Left) || GamePad.GetState(PlayerIndex.One).DPad.Left == ButtonState.Pressed)
             {

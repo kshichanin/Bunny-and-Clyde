@@ -21,6 +21,7 @@ namespace Bunny_and_Clyde
         public List<Song> maintheme { get; private set; }
         public int currentLevelIndex { get; private set; }
         public bool playing { get; private set; }
+
         //public bool Resize { get; set; }
 
         public LevelManager(List<Level> levels)
@@ -61,6 +62,11 @@ namespace Bunny_and_Clyde
 
         public void Update(GameTime gameTime)
         {
+            if (Keyboard.GetState().IsKeyDown(Keys.P))
+            {
+                this.levels[this.currentLevelIndex].restart();
+                startOver();
+            }
             if (this.currentLevelIndex == 0)
             {
                 if (playing == false)
@@ -81,7 +87,7 @@ namespace Bunny_and_Clyde
 
             if (this.levels[this.currentLevelIndex].isComplete)
             {
-                
+                this.levels[this.currentLevelIndex].isComplete = false;   
                 if (this.currentLevelIndex + 1 != this.levels.Count)
                 {
                     MediaPlayer.Stop();
@@ -108,9 +114,14 @@ namespace Bunny_and_Clyde
         {
             this.levels[this.currentLevelIndex].Draw(sb);
         }
-
+        public void startOver()
+        {
+            this.currentLevelIndex = 0;
+            
+        }
         public void nextLevel()
         {
+            this.levels[this.currentLevelIndex].restart();
             this.currentLevelIndex++;
             //this.Resize = true;
         }
