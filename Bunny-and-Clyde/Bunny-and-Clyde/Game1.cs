@@ -40,6 +40,7 @@ namespace Bunny_and_Clyde
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
+            Window.SetPosition(new Point(0, 0));
             world = new GameScreen(graphics);
             base.Initialize();
             TiledTest test = new TiledTest();

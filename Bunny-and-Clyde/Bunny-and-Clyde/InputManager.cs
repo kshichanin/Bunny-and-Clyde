@@ -25,6 +25,7 @@ namespace Bunny_and_Clyde
         public List<SoundEffect> sounds { get; private set; }
         public Level level { get; private set; }
         public Ramp pushedRamp { get; set; }
+        public PlayerIcon playerIcon { get; set; }
         private bool check = false;
         private bool rKeyEdge = false;
         private TimeSpan sum;
@@ -39,6 +40,7 @@ namespace Bunny_and_Clyde
             previousState = InactiveCharacter.state;
             this.sounds = sounds;
             sum = TimeSpan.Zero;
+            this.playerIcon = playerIcon;
         }
 
         public void Update(GameTime gameTime)
@@ -91,6 +93,7 @@ namespace Bunny_and_Clyde
                 ActiveCharacter = InactiveCharacter;
                 InactiveCharacter = temp;
                 check = true;
+                level.PlayerIcon.ChangeImage();
                 //InactiveCharacter.state = Sprite.State.Default;
                 bunny = !bunny;
             } else if (currentKeyboard .IsKeyUp (Keys.RightShift ) && currentKeyboard.IsKeyUp(Keys.LeftShift) && GamePad .GetState (PlayerIndex .One ).Buttons.X == ButtonState.Released) {

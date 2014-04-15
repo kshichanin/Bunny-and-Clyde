@@ -41,6 +41,7 @@ namespace Bunny_and_Clyde
         public SoundEffect opengate { get; private set; }
         public SoundEffect closegate { get; private set; }
         public Song maintheme { get; private set; }
+        public PlayerIcon PlayerIcon { get; set; }
         private List<SoundEffect> sounds;
 
         // map objects
@@ -185,6 +186,7 @@ namespace Bunny_and_Clyde
                 this.items.Add(currentObject);
             }
 
+            this.PlayerIcon = new PlayerIcon("BunnyCurrentsmall", "ClydeCurrentsmall");
             this.background = new Sprite(map.Properties["backgroundImage"], 0, 0,
                 GameGlobals.WINDOW_WIDTH, GameGlobals.WINDOW_HEIGHT);
             this.worldSprites.Add(this.Bunny);
@@ -282,6 +284,7 @@ namespace Bunny_and_Clyde
                 s.soundeffect1 = opengate;
                 s.soundeffect2 = closegate;
             }
+            this.PlayerIcon.LoadContent(content);
 
         }
         public Gate getGate(Color c)
@@ -319,6 +322,7 @@ namespace Bunny_and_Clyde
             {
                 s.Draw(sb);
             }
+            PlayerIcon.Draw(sb);
         }
     }
 }

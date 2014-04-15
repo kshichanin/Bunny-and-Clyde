@@ -41,8 +41,10 @@
     <Compile Include="Clyde.cs" />
     <Compile Include="ClydesBack.cs" />
     <Compile Include="CollisionManager.cs" />
+    <Compile Include="GameWindowExtensions.cs" />
     <Compile Include="Gate.cs" />
     <Compile Include="imageshow.cs" />
+    <Compile Include="PlayerIcon.cs" />
     <Compile Include="PushBox.cs" />
     <Compile Include="Ramp.cs" />
     <Compile Include="Switch.cs" />
@@ -104,6 +106,9 @@
     <Content Include="Content\bunny.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\BunnyCurrentsmall.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Content\bunnydies.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -120,6 +125,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Clyde.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\ClydeCurrentsmall.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\clyde_jump.wav">
