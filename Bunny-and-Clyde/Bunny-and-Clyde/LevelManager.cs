@@ -41,8 +41,14 @@ namespace Bunny_and_Clyde
             maintheme.Add(main1);  // Put the name of your song here instead of "song_title"
             Song main2 = (content.Load<Song>("mainthemetheone3.wav"));
             maintheme.Add(main2);  // Put the name of your song here instead of "song_title"
-            Song main3 = (content.Load<Song>("mainthemetheone4.wav"));
+            Song main3 = (content.Load<Song>("mainthemetheone5.wav"));
             maintheme.Add(main3);  // Put the name of your song here instead of "song_title"
+            Song main4 = (content.Load<Song>("mainthemetheone6.wav"));
+            maintheme.Add(main4);  // Put the name of your song here instead of "song_title"
+            Song main5 = (content.Load<Song>("mainthemetheone7.wav"));
+            maintheme.Add(main5);  // Put the name of your song here instead of "song_title"
+            Song main6 = (content.Load<Song>("mainthemetheone4.wav"));
+            maintheme.Add(main6);  // Put the name of your song here instead of "song_title"
             MediaPlayer.IsRepeating = true;
             MediaPlayer.Volume = 0.25f;
             playing = false;
