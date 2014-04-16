@@ -199,6 +199,10 @@ namespace Bunny_and_Clyde
             this.inputManager = new InputManager(worldSprites, this.Bunny, this.Clyde, platforms, sounds, this);
 
             this.worldSprites.Add(inventory);
+
+            String resetImage = "reset_keyboard.png";
+            this.resetImshow = new imageshow(resetImage, GameGlobals.WINDOW_WIDTH - 150, 0, 94, 31);
+            this.worldSprites.Add(resetImshow);
             this.imshow3 = new imageshow("win", 0, 0, 0, (map.TileHeight * map.Height));
             this.worldSprites.Add(imshow3);
             this.imshow2 = new imageshow("bunnydies", (map.TileWidth * map.Width) / 3, (map.TileHeight * map.Height) / 4, 0, (map.TileHeight * map.Height) / 2);
@@ -206,7 +210,6 @@ namespace Bunny_and_Clyde
             this.Bunny.die = imshow2;
             this.Bunny.mapwidth = (map.TileWidth * map.Width) / 3;
             String logoImage = "mainlogo";
-            String resetImage = "reset_keyboard.png";
             if (GamePad.GetState(PlayerIndex.One).IsConnected)
             {
                 logoImage = "mainlogo_controller";
@@ -214,8 +217,7 @@ namespace Bunny_and_Clyde
             }
             this.imshow = new imageshow(logoImage, (map.TileWidth * map.Width) / 4, (map.TileHeight * map.Height) / 4, (map.TileWidth * map.Width) / 2, (map.TileHeight * map.Height) / 2);
             this.worldSprites.Add(imshow);
-            this.resetImshow = new imageshow(resetImage, GameGlobals.WINDOW_WIDTH - 150, 0, 94, 31);
-            this.worldSprites.Add(resetImshow);
+            
 
         }
         public void restart()
