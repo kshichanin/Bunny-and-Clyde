@@ -67,20 +67,37 @@ namespace Bunny_and_Clyde
                 if (currentKeyboard.IsKeyDown(Keys.Left) || GamePad.GetState(PlayerIndex.One).DPad.Left == ButtonState.Pressed)
                 {
                     worldSprites[worldSprites.Count - 1].Width = 0;
+                    
+                    if (bunny)
+                    {
+                        Bunny b = (Bunny)ActiveCharacter;
+                        b.SavePoint = b.Position;
+                    }
                     ActiveCharacter.Velocity = new Vector2(-ActiveCharacter.Speed, ActiveCharacter.Velocity.Y);
                     if (InactiveCharacter.state == Sprite.State.Riding)
                     {
                         InactiveCharacter.Velocity = new Vector2(-ActiveCharacter.Speed, ActiveCharacter.Velocity.Y);
+                        Bunny b = (Bunny)InactiveCharacter;
+                        b.SavePoint = b.Position;
+                          
                     }
 
                 }
                 else if (currentKeyboard.IsKeyDown(Keys.Right) || GamePad.GetState(PlayerIndex.One).DPad.Right == ButtonState.Pressed)
                 {
                     worldSprites[worldSprites.Count - 1].Width = 0;
+                    if (bunny)
+                    {
+                        Bunny b = (Bunny)ActiveCharacter;
+                        b.SavePoint = b.Position;
+                    }
                     ActiveCharacter.Velocity = new Vector2(ActiveCharacter.Speed, ActiveCharacter.Velocity.Y);
+
                     if (InactiveCharacter.state == Sprite.State.Riding)
                     {
                         InactiveCharacter.Velocity = new Vector2(ActiveCharacter.Speed, ActiveCharacter.Velocity.Y);
+                        Bunny b = (Bunny)InactiveCharacter;
+                        b.SavePoint = b.Position;
                     }
                 }
                 else
