@@ -66,6 +66,8 @@ namespace Bunny_and_Clyde
             {
                 this.levels[this.currentLevelIndex].restart();
                 startOver();
+                MediaPlayer.Stop();
+                MediaPlayer.Play(maintheme[0]);
             }
             if (this.currentLevelIndex == 0)
             {
