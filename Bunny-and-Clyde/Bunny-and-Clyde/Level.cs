@@ -219,6 +219,8 @@ namespace Bunny_and_Clyde
         }
         public void restart()
         {
+            this.imshow.Width = 0;
+            this.imshow3.Width = 0;
             this.Bunny.Position = this.Bunny.SpawnPoint;
             this.Clyde.Position = this.Clyde.SpawnPoint;
             foreach (Key s in this.keys)
