@@ -30,6 +30,7 @@ namespace Bunny_and_Clyde
         public List<Item> waters { get; private set; }
         public Inventory inventory { get; private set; }
         private Sprite background;
+        public imageshow reset { get; private set; }
         public imageshow imshow { get; private set; }
         public imageshow imshow2 { get; private set; }
         public imageshow imshow3 { get; private set; }
@@ -141,7 +142,7 @@ namespace Bunny_and_Clyde
                 {
                     System.Drawing.Color drawColor = System.Drawing.Color.FromName(o.Properties["color"]);
                     Color c = new Color(drawColor.R, drawColor.G, drawColor.B, drawColor.A);
-                    currentObject = new Switch(c, this, o.X, o.Y, o.Width, o.Height);
+                    currentObject = new Switch(c, this, o.X, o.Y, o.Width, o.Height, false);
                     this.buttons.Add(currentObject);
                 }
                 else if (o.Properties["type"] == "switch_gate")
@@ -205,12 +206,15 @@ namespace Bunny_and_Clyde
             this.Bunny.die = imshow2;
             this.Bunny.mapwidth = (map.TileWidth * map.Width) / 3;
             String logoImage = "mainlogo";
+            String resetImage = "reset_keyboard.png";
             if (GamePad.GetState(PlayerIndex.One).IsConnected)
             {
                 logoImage = "mainlogo_controller";
+                resetImage = "reset_controller";
             }
             this.imshow = new imageshow(logoImage, (map.TileWidth * map.Width) / 4, (map.TileHeight * map.Height) / 4, (map.TileWidth * map.Width) / 2, (map.TileHeight * map.Height) / 2);
             this.worldSprites.Add(imshow);
+            
 
         }
         public void restart()

@@ -16,7 +16,7 @@ namespace Bunny_and_Clyde
         public SoundEffect soundeffect { get; set; }
         public Vector2 SpawnPoint { get; private set; }
         public PushBox( Ramp r, float x, float y, int width, int height, bool direction)
-            : base("door_tile",x, y, width, height)
+            : base("blank",x, y, width, height)
         {
             this.SpawnPoint = new Vector2(x, y);
             connectedRamp = r;

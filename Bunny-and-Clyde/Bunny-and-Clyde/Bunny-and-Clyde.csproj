@@ -277,6 +277,7 @@
     <Content Include="Content\ramp.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\reset_keyboard.png" />
     <Content Include="Content\riding.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

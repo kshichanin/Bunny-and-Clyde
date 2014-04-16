@@ -70,7 +70,7 @@ namespace Bunny_and_Clyde
         public override void Update(GameTime gameTime)
         {
             base.Update(gameTime);
-            back.Position = this.Position + new Vector2(10, 5);
+            back.Position = this.Position + new Vector2(15, 5);
             HitBox = new Rectangle((int)Position.X, (int)Position.Y+10, Width, Height-10);
             back.Update(gameTime);
             if (Velocity.Y < -jump)

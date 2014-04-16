@@ -21,8 +21,9 @@ namespace Bunny_and_Clyde
         private Level level;
         private bool activated;
         private bool activatedonce;
+        private bool reverseGate;
         private ContentManager contentManager;
-        public Switch (Color c, Level l, float x, float y, int width, int height)
+        public Switch (Color c, Level l, float x, float y, int width, int height, bool reverse)
             :base("switch_button.png", x, y, width, height){
                 color = c;
                 activated = false;
@@ -44,7 +45,14 @@ namespace Bunny_and_Clyde
                 activatedonce = true;
           //not working for some reason      soundeffect.Play();
             }
-            level.getGate(color).open();
+            if (reverseGate)
+            {
+                level.getGate(color).close();
+            }
+            else
+            {
+                level.getGate(color).open();
+            }
             this.imageName = "switch_button_pressed.png";
             this.LoadContent(this.contentManager);
         }
@@ -53,9 +61,17 @@ namespace Bunny_and_Clyde
             base.Update(gameTime);
             if (!activated && level.getGate(color) != null)
             {
-                level.getGate(color).close();
+                
                 this.imageName = "switch_button.png";
                 this.LoadContent(this.contentManager);
+                if (reverseGate)
+                {
+                    level.getGate(color).open();
+                }
+                else
+                {
+                    level.getGate(color).close();
+                }
             }
             activated = false;
         }

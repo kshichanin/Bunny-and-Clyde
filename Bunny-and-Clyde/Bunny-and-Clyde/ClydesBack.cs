@@ -9,7 +9,7 @@ namespace Bunny_and_Clyde
     {
         public Clyde clyde;
         public ClydesBack(Clyde c, float x, float y, int width, int height)
-            : base("door_tile.png", x, y, width, height)
+            : base("blank.png", x, y, width, height)
         {
             clyde = c;
         }
