@@ -29,6 +29,7 @@ namespace Bunny_and_Clyde
                 activated = false;
                 activatedonce = false;
                 level = l;
+                reverseGate = reverse;
         }
 
         public override void LoadContent(ContentManager content)
