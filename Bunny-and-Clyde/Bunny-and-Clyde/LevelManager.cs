@@ -65,9 +65,51 @@ namespace Bunny_and_Clyde
             if (Keyboard.GetState().IsKeyDown(Keys.P))
             {
                 this.levels[this.currentLevelIndex].restart();
-                startOver();
+                startOver(0);
                 MediaPlayer.Stop();
                 MediaPlayer.Play(maintheme[0]);
+            }
+            if (Keyboard.GetState().IsKeyDown(Keys.NumPad0))
+            {
+                this.levels[this.currentLevelIndex].restart();
+                startOver(0);
+                MediaPlayer.Stop();
+                MediaPlayer.Play(maintheme[0]);
+            }
+            if (Keyboard.GetState().IsKeyDown(Keys.NumPad1))
+            {
+                this.levels[this.currentLevelIndex].restart();
+                startOver(1);
+                MediaPlayer.Stop();
+                MediaPlayer.Play(maintheme[1]);
+            }
+            if (Keyboard.GetState().IsKeyDown(Keys.NumPad2))
+            {
+                this.levels[this.currentLevelIndex].restart();
+                startOver(2);
+                MediaPlayer.Stop();
+                MediaPlayer.Play(maintheme[2]);
+            }
+            if (Keyboard.GetState().IsKeyDown(Keys.NumPad3))
+            {
+                this.levels[this.currentLevelIndex].restart();
+                startOver(3);
+                MediaPlayer.Stop();
+                MediaPlayer.Play(maintheme[3]);
+            }
+            if (Keyboard.GetState().IsKeyDown(Keys.NumPad4))
+            {
+                this.levels[this.currentLevelIndex].restart();
+                startOver(4);
+                MediaPlayer.Stop();
+                MediaPlayer.Play(maintheme[4]);
+            }
+            if (Keyboard.GetState().IsKeyDown(Keys.NumPad5))
+            {
+                this.levels[this.currentLevelIndex].restart();
+                startOver(5);
+                MediaPlayer.Stop();
+                MediaPlayer.Play(maintheme[5]);
             }
             if (this.currentLevelIndex == 0)
             {
@@ -116,9 +158,9 @@ namespace Bunny_and_Clyde
         {
             this.levels[this.currentLevelIndex].Draw(sb);
         }
-        public void startOver()
+        public void startOver(int num)
         {
-            this.currentLevelIndex = 0;
+            this.currentLevelIndex = num;
             
         }
         public void nextLevel()
