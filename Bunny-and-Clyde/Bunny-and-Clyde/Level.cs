@@ -163,7 +163,7 @@ namespace Bunny_and_Clyde
                 }
                 else if (o.Properties["type"] == "ramp")
                 {
-                    Ramp r = new Ramp(o.Properties["imageName"], o.X, o.Y, o.Width, o.Height, this);
+                    Ramp r = new Ramp(o.X, o.Y, o.Width, o.Height, this);
                     currentObject = r;
                     this.items.Add(r.leftPushBox);
                     this.worldSprites.Add(r.leftPushBox);

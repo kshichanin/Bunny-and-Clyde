@@ -731,7 +731,7 @@
   </object>
   <object name="ramp" x="160" y="352" width="64" height="32">
    <properties>
-    <property name="imageName" value="gate_block_2x1.png"/>
+    <property name="imageName" value="gate_block.png"/>
     <property name="type" value="ramp"/>
    </properties>
   </object>

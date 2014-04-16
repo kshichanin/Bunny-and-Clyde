@@ -731,7 +731,7 @@
   </object>
   <object name="ramp2" x="352" y="96" width="64" height="32">
    <properties>
-    <property name="imageName" value="gate_block_2x1.png"/>
+    <property name="imageName" value="gate_block.png"/>
     <property name="type" value="ramp"/>
    </properties>
   </object>
@@ -772,13 +772,13 @@
   </object>
   <object name="ramp1" x="320" y="352" width="64" height="32">
    <properties>
-    <property name="imageName" value="gate_block_2x1.png"/>
+    <property name="imageName" value="gate_block.png"/>
     <property name="type" value="ramp"/>
    </properties>
   </object>
   <object name="ramp3" x="544" y="320" width="96" height="32">
    <properties>
-    <property name="imageName" value="gate_block_3x1.png"/>
+    <property name="imageName" value="gate_block.png"/>
     <property name="type" value="ramp"/>
    </properties>
   </object>
