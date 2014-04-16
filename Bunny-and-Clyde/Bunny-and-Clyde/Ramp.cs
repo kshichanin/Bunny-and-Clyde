@@ -9,24 +9,24 @@ namespace Bunny_and_Clyde
 {
     class Ramp : Item, Gravity
     {
-       
+
         public PushBox leftPushBox { get; set; }
         public PushBox rightPushBox { get; set; }
         public Vector2 SpawnPoint { get; private set; }
         public SoundEffect soundeffect { get; set; }
-        public Ramp(float x, float y, int width, int height, Level l)
-        :base("gate_block",x,y,width,height)
+        public Ramp(string imageName, float x, float y, int width, int height, Level l)
+            : base(imageName, x, y, width, height)
         {
 
             this.SpawnPoint = new Vector2(x, y);
-            leftPushBox = new PushBox( this, x - 3f, y+3, 5, height-6, true);
+            leftPushBox = new PushBox(this, x - 3f, y + 3, 5, height - 6, true);
             rightPushBox = new PushBox(this, x + width, y + 3, 5, height - 6, false);
         }
         public override void activate(Sprite collider)
         {
             //oh well...
-            
-         //working buy is annoying right now since it plays during every collision   soundeffect.Play();
+
+            //working buy is annoying right now since it plays during every collision   soundeffect.Play();
         }
         public override void Update(Microsoft.Xna.Framework.GameTime gameTime)
         {
