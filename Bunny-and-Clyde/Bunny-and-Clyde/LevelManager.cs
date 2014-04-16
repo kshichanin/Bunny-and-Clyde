@@ -65,58 +65,82 @@ namespace Bunny_and_Clyde
             if (Keyboard.GetState().IsKeyDown(Keys.P))
             {
                 this.levels[this.currentLevelIndex].restart();
+                this.levels[this.currentLevelIndex].imshow2.Width = 0;
                 startOver(0);
                 MediaPlayer.Stop();
                 MediaPlayer.Play(maintheme[0]);
+                MediaPlayer.IsRepeating = true;
+
             }
             if (Keyboard.GetState().IsKeyDown(Keys.NumPad0))
             {
                 this.levels[this.currentLevelIndex].restart();
+                this.levels[this.currentLevelIndex].imshow2.Width = 0;
                 startOver(0);
                 MediaPlayer.Stop();
                 MediaPlayer.Play(maintheme[0]);
+                MediaPlayer.IsRepeating = true;
+
             }
             if (Keyboard.GetState().IsKeyDown(Keys.NumPad1))
             {
                 this.levels[this.currentLevelIndex].restart();
+                this.levels[this.currentLevelIndex].imshow2.Width = 0;
                 startOver(1);
                 MediaPlayer.Stop();
                 MediaPlayer.Play(maintheme[1]);
+                MediaPlayer.IsRepeating = true;
+
             }
             if (Keyboard.GetState().IsKeyDown(Keys.NumPad2))
             {
                 this.levels[this.currentLevelIndex].restart();
+                this.levels[this.currentLevelIndex].imshow2.Width = 0;
                 startOver(2);
                 MediaPlayer.Stop();
                 MediaPlayer.Play(maintheme[2]);
+                MediaPlayer.IsRepeating = true;
+
             }
             if (Keyboard.GetState().IsKeyDown(Keys.NumPad3))
             {
                 this.levels[this.currentLevelIndex].restart();
+                this.levels[this.currentLevelIndex].imshow2.Width = 0;
                 startOver(3);
                 MediaPlayer.Stop();
                 MediaPlayer.Play(maintheme[3]);
+                MediaPlayer.IsRepeating = true;
+
             }
             if (Keyboard.GetState().IsKeyDown(Keys.NumPad4))
             {
                 this.levels[this.currentLevelIndex].restart();
+                this.levels[this.currentLevelIndex].imshow2.Width = 0;
                 startOver(4);
                 MediaPlayer.Stop();
                 MediaPlayer.Play(maintheme[4]);
+                MediaPlayer.IsRepeating = true;
+
             }
             if (Keyboard.GetState().IsKeyDown(Keys.NumPad5))
             {
                 this.levels[this.currentLevelIndex].restart();
+                this.levels[this.currentLevelIndex].imshow2.Width = 0;
                 startOver(5);
                 MediaPlayer.Stop();
                 MediaPlayer.Play(maintheme[5]);
+                MediaPlayer.IsRepeating = true;
+
             }
             if (this.currentLevelIndex == 0)
             {
                 if (playing == false)
                 {
                     MediaPlayer.Stop();
+                    this.levels[0].imshow.Width = this.levels[0].imshoww; 
                     MediaPlayer.Play(maintheme[0]);
+                    MediaPlayer.IsRepeating = true;
+
                     playing = true;
                 }
             }
@@ -125,6 +149,8 @@ namespace Bunny_and_Clyde
                 this.levels[this.currentLevelIndex].bunnydead = false;
                 MediaPlayer.Stop();
                 MediaPlayer.Play(maintheme[this.currentLevelIndex]);
+                MediaPlayer.IsRepeating = true;
+
                 this.levels[this.currentLevelIndex].restart();
               
             }
@@ -136,6 +162,8 @@ namespace Bunny_and_Clyde
                 {
                     MediaPlayer.Stop();
                     MediaPlayer.Play(maintheme[this.currentLevelIndex + 1]);
+                    MediaPlayer.IsRepeating = true;
+
                     this.nextLevel();
                 }
                 else
@@ -144,6 +172,8 @@ namespace Bunny_and_Clyde
                     {
                         MediaPlayer.Stop();
                         MediaPlayer.Play(maintheme[this.currentLevelIndex + 1]);
+                        MediaPlayer.IsRepeating = true;
+
                     }
                     playing = false;
                     //show image and quit

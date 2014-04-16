@@ -35,6 +35,7 @@ namespace Bunny_and_Clyde
         public imageshow imshow2 { get; private set; }
         public imageshow imshow3 { get; private set; }
         public SoundEffect takekey { get; private set; }
+        public int imshoww { get; private set; }
         public SoundEffect ramp { get; private set; }
         public SoundEffect fall { get; private set; }
         public SoundEffect riding { get; private set; }
@@ -219,13 +220,16 @@ namespace Bunny_and_Clyde
                 logoImage = "mainlogo_controller";
                 resetImage = "reset_controller";
             }
-            this.imshow = new imageshow(logoImage, (map.TileWidth * map.Width) / 4, (map.TileHeight * map.Height) / 4, (map.TileWidth * map.Width) / 2, (map.TileHeight * map.Height) / 2);
+            this.imshow = new imageshow(logoImage, (map.TileWidth * map.Width) / 4, (map.TileHeight * map.Height) / 4, 0, (map.TileHeight * map.Height) / 2);
+            this.imshoww = (map.TileWidth * map.Width) / 2;
             this.worldSprites.Add(imshow);
             
 
         }
         public void restart()
         {
+            this.imshow.Width = 0;
+            this.imshow3.Width = 0;
             this.Bunny.Position = this.Bunny.SpawnPoint;
             this.Clyde.Position = this.Clyde.SpawnPoint;
             foreach (Key s in this.keys)
