@@ -5,7 +5,7 @@
   <property name="bunnySpawnX" value="600"/>
   <property name="bunnySpawnY" value="200"/>
   <property name="clydeSpawnX" value="130"/>
-  <property name="clydeSpawnY" value="64"/>
+  <property name="clydeSpawnY" value="65"/>
  </properties>
  <tileset firstgid="1" name="tiles" tilewidth="32" tileheight="32" spacing="1">
   <image source="tileset_1x1.png" width="230" height="164"/>
@@ -128,15 +128,15 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
-   <tile gid="24"/>
-   <tile gid="16"/>
-   <tile gid="16"/>
-   <tile gid="16"/>
-   <tile gid="16"/>
-   <tile gid="16"/>
-   <tile gid="16"/>
-   <tile gid="16"/>
-   <tile gid="22"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -197,42 +197,7 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="15"/>
-   <tile gid="16"/>
-   <tile gid="16"/>
-   <tile gid="17"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
+   <tile gid="18"/>
    <tile gid="18"/>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -245,11 +210,10 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
-   <tile gid="24"/>
-   <tile gid="16"/>
-   <tile gid="16"/>
-   <tile gid="16"/>
-   <tile gid="22"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -262,12 +226,13 @@
    <tile gid="0"/>
    <tile gid="15"/>
    <tile gid="16"/>
+   <tile gid="16"/>
    <tile gid="17"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
-   <tile gid="0"/>
+   <tile gid="19"/>
    <tile gid="19"/>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -280,6 +245,41 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
+   <tile gid="24"/>
+   <tile gid="16"/>
+   <tile gid="16"/>
+   <tile gid="16"/>
+   <tile gid="22"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="15"/>
+   <tile gid="16"/>
+   <tile gid="17"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="20"/>
+   <tile gid="19"/>
+   <tile gid="28"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
    <tile gid="18"/>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -304,7 +304,7 @@
    <tile gid="16"/>
    <tile gid="17"/>
    <tile gid="20"/>
-   <tile gid="0"/>
+   <tile gid="28"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -714,7 +714,7 @@
    <tile gid="12"/>
   </data>
  </layer>
- <objectgroup name="drawable" width="35" height="20">
+ <objectgroup name="drawable" width="35" height="20" visible="0">
   <object name="goal_door" x="128" y="448" width="64" height="96">
    <properties>
     <property name="color" value="Gold"/>
@@ -735,7 +735,7 @@
     <property name="type" value="ramp"/>
    </properties>
   </object>
-  <object name="red_key" x="256" y="224" width="32" height="32">
+  <object name="red_key" x="224" y="224" width="32" height="32">
    <properties>
     <property name="color" value="Red"/>
     <property name="imageName" value="key_tile.png"/>
@@ -784,12 +784,6 @@
     <property name="type" value="switch_gate"/>
    </properties>
   </object>
-  <object name="ramp" x="352" y="64" width="128" height="32">
-   <properties>
-    <property name="imageName" value="gate_block.png"/>
-    <property name="type" value="ramp"/>
-   </properties>
-  </object>
   <object name="blue_switch" x="64" y="128" width="32" height="32">
    <properties>
     <property name="color" value="CornflowerBlue"/>
@@ -803,7 +797,7 @@
     <property name="type" value="water"/>
    </properties>
   </object>
-  <object x="176" y="32" width="96" height="64">
+  <object x="192" y="0" width="96" height="64">
    <properties>
     <property name="imageName" value="cloud.png"/>
     <property name="type" value="cloud"/>
@@ -821,6 +815,32 @@
     <property name="type" value="cloud"/>
    </properties>
   </object>
+  <object name="white_switch_gate_reverse" x="192" y="160" width="128" height="32">
+   <properties>
+    <property name="color" value="White"/>
+    <property name="imageName" value="stone_block_4x1.png"/>
+    <property name="type" value="switch_gate"/>
+   </properties>
+  </object>
+  <object name="white_reverse_switch" x="640" y="256" width="32" height="32">
+   <properties>
+    <property name="color" value="White"/>
+    <property name="imageName" value="switch_button.png"/>
+    <property name="type" value="reverse_switch"/>
+   </properties>
+  </object>
+  <object x="512" y="32" width="96" height="64">
+   <properties>
+    <property name="imageName" value="cloud.png"/>
+    <property name="type" value="cloud"/>
+   </properties>
+  </object>
+  <object x="352" y="32" width="96" height="64">
+   <properties>
+    <property name="imageName" value="cloud.png"/>
+    <property name="type" value="cloud"/>
+   </properties>
+  </object>
  </objectgroup>
  <objectgroup name="nondrawable" width="35" height="20" visible="0">
   <object x="32" y="160" width="160" height="32"/>
@@ -828,7 +848,7 @@
   <object x="96" y="224" width="96" height="32"/>
   <object x="128" y="256" width="224" height="32"/>
   <object x="96" y="96" width="32" height="64"/>
-  <object x="352" y="192" width="32" height="96"/>
+  <object x="352" y="160" width="32" height="128"/>
   <object x="352" y="288" width="96" height="32"/>
   <object x="544" y="288" width="192" height="32"/>
   <object x="736" y="224" width="32" height="96"/>
@@ -836,7 +856,6 @@
   <object x="768" y="0" width="160" height="96"/>
   <object x="928" y="0" width="64" height="64"/>
   <object x="992" y="0" width="128" height="32"/>
-  <object x="352" y="96" width="288" height="32"/>
   <object x="0" y="480" width="64" height="160"/>
   <object x="64" y="544" width="160" height="96"/>
   <object x="224" y="608" width="288" height="32"/>
@@ -845,5 +864,7 @@
   <object x="96" y="384" width="128" height="32"/>
   <object x="896" y="512" width="224" height="32"/>
   <object x="1024" y="544" width="96" height="32"/>
+  <object x="384" y="224" width="32" height="64"/>
+  <object x="320" y="160" width="32" height="96"/>
  </objectgroup>
 </map>
