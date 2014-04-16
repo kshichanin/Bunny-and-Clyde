@@ -137,6 +137,7 @@ namespace Bunny_and_Clyde
                 if (playing == false)
                 {
                     MediaPlayer.Stop();
+                    this.levels[0].imshow.Width = this.levels[0].imshoww; 
                     MediaPlayer.Play(maintheme[0]);
                     MediaPlayer.IsRepeating = true;
 
