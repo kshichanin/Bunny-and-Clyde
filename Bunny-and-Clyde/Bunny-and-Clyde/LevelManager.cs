@@ -68,6 +68,8 @@ namespace Bunny_and_Clyde
                 startOver(0);
                 MediaPlayer.Stop();
                 MediaPlayer.Play(maintheme[0]);
+                MediaPlayer.IsRepeating = true;
+
             }
             if (Keyboard.GetState().IsKeyDown(Keys.NumPad0))
             {
@@ -75,6 +77,8 @@ namespace Bunny_and_Clyde
                 startOver(0);
                 MediaPlayer.Stop();
                 MediaPlayer.Play(maintheme[0]);
+                MediaPlayer.IsRepeating = true;
+
             }
             if (Keyboard.GetState().IsKeyDown(Keys.NumPad1))
             {
@@ -82,6 +86,8 @@ namespace Bunny_and_Clyde
                 startOver(1);
                 MediaPlayer.Stop();
                 MediaPlayer.Play(maintheme[1]);
+                MediaPlayer.IsRepeating = true;
+
             }
             if (Keyboard.GetState().IsKeyDown(Keys.NumPad2))
             {
@@ -89,6 +95,8 @@ namespace Bunny_and_Clyde
                 startOver(2);
                 MediaPlayer.Stop();
                 MediaPlayer.Play(maintheme[2]);
+                MediaPlayer.IsRepeating = true;
+
             }
             if (Keyboard.GetState().IsKeyDown(Keys.NumPad3))
             {
@@ -96,6 +104,8 @@ namespace Bunny_and_Clyde
                 startOver(3);
                 MediaPlayer.Stop();
                 MediaPlayer.Play(maintheme[3]);
+                MediaPlayer.IsRepeating = true;
+
             }
             if (Keyboard.GetState().IsKeyDown(Keys.NumPad4))
             {
@@ -103,6 +113,8 @@ namespace Bunny_and_Clyde
                 startOver(4);
                 MediaPlayer.Stop();
                 MediaPlayer.Play(maintheme[4]);
+                MediaPlayer.IsRepeating = true;
+
             }
             if (Keyboard.GetState().IsKeyDown(Keys.NumPad5))
             {
@@ -110,6 +122,8 @@ namespace Bunny_and_Clyde
                 startOver(5);
                 MediaPlayer.Stop();
                 MediaPlayer.Play(maintheme[5]);
+                MediaPlayer.IsRepeating = true;
+
             }
             if (this.currentLevelIndex == 0)
             {
@@ -117,6 +131,8 @@ namespace Bunny_and_Clyde
                 {
                     MediaPlayer.Stop();
                     MediaPlayer.Play(maintheme[0]);
+                    MediaPlayer.IsRepeating = true;
+
                     playing = true;
                 }
             }
@@ -125,6 +141,8 @@ namespace Bunny_and_Clyde
                 this.levels[this.currentLevelIndex].bunnydead = false;
                 MediaPlayer.Stop();
                 MediaPlayer.Play(maintheme[this.currentLevelIndex]);
+                MediaPlayer.IsRepeating = true;
+
                 this.levels[this.currentLevelIndex].restart();
               
             }
@@ -136,6 +154,8 @@ namespace Bunny_and_Clyde
                 {
                     MediaPlayer.Stop();
                     MediaPlayer.Play(maintheme[this.currentLevelIndex + 1]);
+                    MediaPlayer.IsRepeating = true;
+
                     this.nextLevel();
                 }
                 else
@@ -144,6 +164,8 @@ namespace Bunny_and_Clyde
                     {
                         MediaPlayer.Stop();
                         MediaPlayer.Play(maintheme[this.currentLevelIndex + 1]);
+                        MediaPlayer.IsRepeating = true;
+
                     }
                     playing = false;
                     //show image and quit
