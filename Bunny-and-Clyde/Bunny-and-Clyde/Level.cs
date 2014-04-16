@@ -145,6 +145,13 @@ namespace Bunny_and_Clyde
                     currentObject = new Switch(c, this, o.X, o.Y, o.Width, o.Height, false);
                     this.buttons.Add(currentObject);
                 }
+                else if (o.Properties["type"] == "reverse_switch")
+                {
+                    System.Drawing.Color drawColor = System.Drawing.Color.FromName(o.Properties["color"]);
+                    Color c = new Color(drawColor.R, drawColor.G, drawColor.B, drawColor.A);
+                    currentObject = new Switch(c, this, o.X, o.Y, o.Width, o.Height, true);
+                    this.buttons.Add(currentObject);
+                }
                 else if (o.Properties["type"] == "switch_gate")
                 {
                     System.Drawing.Color drawColor = System.Drawing.Color.FromName(o.Properties["color"]);
