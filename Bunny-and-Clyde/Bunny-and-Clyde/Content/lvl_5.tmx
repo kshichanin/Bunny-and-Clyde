@@ -5,7 +5,7 @@
   <property name="bunnySpawnX" value="600"/>
   <property name="bunnySpawnY" value="200"/>
   <property name="clydeSpawnX" value="130"/>
-  <property name="clydeSpawnY" value="65"/>
+  <property name="clydeSpawnY" value="64"/>
  </properties>
  <tileset firstgid="1" name="tiles" tilewidth="32" tileheight="32" spacing="1">
   <image source="tileset_1x1.png" width="230" height="164"/>
