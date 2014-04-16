@@ -65,6 +65,7 @@ namespace Bunny_and_Clyde
             if (Keyboard.GetState().IsKeyDown(Keys.P))
             {
                 this.levels[this.currentLevelIndex].restart();
+                this.levels[this.currentLevelIndex].imshow2.Width = 0;
                 startOver(0);
                 MediaPlayer.Stop();
                 MediaPlayer.Play(maintheme[0]);
@@ -72,6 +73,8 @@ namespace Bunny_and_Clyde
             if (Keyboard.GetState().IsKeyDown(Keys.NumPad0))
             {
                 this.levels[this.currentLevelIndex].restart();
+                this.levels[this.currentLevelIndex].imshow2.Width = 0;
+
                 startOver(0);
                 MediaPlayer.Stop();
                 MediaPlayer.Play(maintheme[0]);
@@ -79,6 +82,8 @@ namespace Bunny_and_Clyde
             if (Keyboard.GetState().IsKeyDown(Keys.NumPad1))
             {
                 this.levels[this.currentLevelIndex].restart();
+                this.levels[this.currentLevelIndex].imshow2.Width = 0;
+
                 startOver(1);
                 MediaPlayer.Stop();
                 MediaPlayer.Play(maintheme[1]);
@@ -86,6 +91,8 @@ namespace Bunny_and_Clyde
             if (Keyboard.GetState().IsKeyDown(Keys.NumPad2))
             {
                 this.levels[this.currentLevelIndex].restart();
+                this.levels[this.currentLevelIndex].imshow2.Width = 0;
+
                 startOver(2);
                 MediaPlayer.Stop();
                 MediaPlayer.Play(maintheme[2]);
@@ -93,6 +100,8 @@ namespace Bunny_and_Clyde
             if (Keyboard.GetState().IsKeyDown(Keys.NumPad3))
             {
                 this.levels[this.currentLevelIndex].restart();
+                this.levels[this.currentLevelIndex].imshow2.Width = 0;
+
                 startOver(3);
                 MediaPlayer.Stop();
                 MediaPlayer.Play(maintheme[3]);
@@ -100,6 +109,7 @@ namespace Bunny_and_Clyde
             if (Keyboard.GetState().IsKeyDown(Keys.NumPad4))
             {
                 this.levels[this.currentLevelIndex].restart();
+                this.levels[this.currentLevelIndex].imshow2.Width = 0;
                 startOver(4);
                 MediaPlayer.Stop();
                 MediaPlayer.Play(maintheme[4]);
@@ -107,6 +117,7 @@ namespace Bunny_and_Clyde
             if (Keyboard.GetState().IsKeyDown(Keys.NumPad5))
             {
                 this.levels[this.currentLevelIndex].restart();
+                this.levels[this.currentLevelIndex].imshow2.Width = 0;
                 startOver(5);
                 MediaPlayer.Stop();
                 MediaPlayer.Play(maintheme[5]);
@@ -126,6 +137,7 @@ namespace Bunny_and_Clyde
                 MediaPlayer.Stop();
                 MediaPlayer.Play(maintheme[this.currentLevelIndex]);
                 this.levels[this.currentLevelIndex].restart();
+
               
             }
 

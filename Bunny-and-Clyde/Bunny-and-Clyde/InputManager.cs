@@ -49,91 +49,118 @@ namespace Bunny_and_Clyde
             //Left Right Direction check
             currentKeyboard = Keyboard.GetState();
             Vector2 direction;
-            InactiveCharacter.Velocity -= new Vector2(InactiveCharacter.Velocity.X, 0);
+            
+                InactiveCharacter.Velocity -= new Vector2(InactiveCharacter.Velocity.X, 0);
+            
             if (currentKeyboard.IsKeyDown(Keys.Enter) || GamePad.GetState(PlayerIndex.One).Buttons.Start == ButtonState.Pressed){
                 worldSprites[worldSprites.Count - 2].Width = 0;
             }
+             
             if (!rKeyEdge && (currentKeyboard.IsKeyDown(Keys.R) || GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed))
             {
+                level.imshow2.Width = 0;
+
                 rKeyEdge = true;
                 this.level.restart();
+
             }
             else if (currentKeyboard.IsKeyUp(Keys.R) && GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Released)
             {
                 rKeyEdge = false;
             }
+             if (worldSprites[worldSprites.Count - 2].Width == 0)
+                {
             if (currentKeyboard.IsKeyDown(Keys.Left) || GamePad.GetState(PlayerIndex.One).DPad.Left == ButtonState.Pressed)
             {
-                worldSprites[worldSprites.Count - 1].Width = 0;
-                ActiveCharacter.Velocity = new Vector2(-ActiveCharacter.Speed, ActiveCharacter.Velocity.Y);
-                if (InactiveCharacter.state == Sprite.State.Riding)
-                {
-                    InactiveCharacter.Velocity = new Vector2(-ActiveCharacter.Speed, ActiveCharacter.Velocity.Y);
-                }
+                    worldSprites[worldSprites.Count - 1].Width = 0;
+                    ActiveCharacter.Velocity = new Vector2(-ActiveCharacter.Speed, ActiveCharacter.Velocity.Y);
+                    if (InactiveCharacter.state == Sprite.State.Riding)
+                    {
+                        InactiveCharacter.Velocity = new Vector2(-ActiveCharacter.Speed, ActiveCharacter.Velocity.Y);
+                    }
+                
                 
             }
             else if (currentKeyboard.IsKeyDown(Keys.Right) || GamePad.GetState(PlayerIndex.One).DPad.Right == ButtonState.Pressed)
             {
-                worldSprites[worldSprites.Count - 1].Width = 0;
-                ActiveCharacter.Velocity = new Vector2(ActiveCharacter.Speed, ActiveCharacter.Velocity.Y);
-                if (InactiveCharacter.state == Sprite.State.Riding)
-                {
-                    InactiveCharacter.Velocity = new Vector2(ActiveCharacter.Speed, ActiveCharacter.Velocity.Y);
-                }
+               
+                    worldSprites[worldSprites.Count - 1].Width = 0;
+                    ActiveCharacter.Velocity = new Vector2(ActiveCharacter.Speed, ActiveCharacter.Velocity.Y);
+                    if (InactiveCharacter.state == Sprite.State.Riding)
+                    {
+                        InactiveCharacter.Velocity = new Vector2(ActiveCharacter.Speed, ActiveCharacter.Velocity.Y);
+                    }
+                
             }
             else
-                ActiveCharacter.Velocity = new Vector2(0, ActiveCharacter.Velocity.Y);
-
+            {
+                
+                    ActiveCharacter.Velocity = new Vector2(0, ActiveCharacter.Velocity.Y);
+                
+            }
             //Switch active characters
             if ((currentKeyboard.IsKeyDown(Keys.RightShift) || currentKeyboard.IsKeyDown(Keys.LeftShift) || GamePad.GetState(PlayerIndex.One).Buttons.X == ButtonState.Pressed) && !check)
             {
-                worldSprites[worldSprites.Count - 1].Width = 0;
-                //InactiveCharacter.state = previousState;
-                Sprite temp = ActiveCharacter;
-                ActiveCharacter = InactiveCharacter;
-                InactiveCharacter = temp;
-                check = true;
-                level.PlayerIcon.ChangeImage();
-                //InactiveCharacter.state = Sprite.State.Default;
-                bunny = !bunny;
-            } else if (currentKeyboard .IsKeyUp (Keys.RightShift ) && currentKeyboard.IsKeyUp(Keys.LeftShift) && GamePad .GetState (PlayerIndex .One ).Buttons.X == ButtonState.Released) {
-                check = false;
+                
+                    worldSprites[worldSprites.Count - 1].Width = 0;
+                    //InactiveCharacter.state = previousState;
+                    Sprite temp = ActiveCharacter;
+                    ActiveCharacter = InactiveCharacter;
+                    InactiveCharacter = temp;
+                    check = true;
+                    level.PlayerIcon.ChangeImage();
+                    //InactiveCharacter.state = Sprite.State.Default;
+                    bunny = !bunny;
+                
+            }
+            else if (currentKeyboard.IsKeyUp(Keys.RightShift) && currentKeyboard.IsKeyUp(Keys.LeftShift) && GamePad.GetState(PlayerIndex.One).Buttons.X == ButtonState.Released)
+            {
+                
+                    check = false;
+                
             }
             if ((currentKeyboard.IsKeyDown(Keys.Up) || GamePad.GetState(PlayerIndex.One).DPad .Up  == ButtonState.Pressed) )
             {
-                worldSprites[worldSprites.Count - 1].Width = 0;
-                if (ActiveCharacter.state == Sprite.State.Swimming)
-                {
-                    ActiveCharacter.Velocity += new Vector2(0, -ActiveCharacter.Speed);
-                }
+
+                
+                    worldSprites[worldSprites.Count - 1].Width = 0;
+                    if (ActiveCharacter.state == Sprite.State.Swimming)
+                    {
+                        ActiveCharacter.Velocity += new Vector2(0, -ActiveCharacter.Speed);
+                    }
+                
             }
             if ((currentKeyboard.IsKeyDown(Keys.Down) || GamePad.GetState(PlayerIndex.One).DPad.Down == ButtonState.Pressed))
             {
-                worldSprites[worldSprites.Count - 1].Width = 0;
+               
+                    worldSprites[worldSprites.Count - 1].Width = 0;
+
+                    if (ActiveCharacter.state == Sprite.State.Swimming)
+                    {
+                        ActiveCharacter.Velocity += new Vector2(0, ActiveCharacter.Speed);
+                    }
                 
-                if (ActiveCharacter.state == Sprite.State.Swimming)
-                {
-                    ActiveCharacter.Velocity += new Vector2(0, ActiveCharacter.Speed);
-                }
             }
             //Vertical position change
 
 
-            
-            if ((currentKeyboard.IsKeyDown(Keys.Space) || GamePad .GetState (PlayerIndex.One).Buttons .A == ButtonState.Pressed) && (ActiveCharacter.state == Sprite.State.Default || ActiveCharacter.state ==  Sprite.State.Riding ))
+
+            if ((currentKeyboard.IsKeyDown(Keys.Space) || GamePad.GetState(PlayerIndex.One).Buttons.A == ButtonState.Pressed) && (ActiveCharacter.state == Sprite.State.Default || ActiveCharacter.state == Sprite.State.Riding))
             {
-                worldSprites[worldSprites.Count - 1].Width = 0;
                 
-                if (bunny)
-                 {
-                    sounds[0].Play();
-                }
-                else
-                {
-                    sounds[1].Play();
-                }
-                ActiveCharacter.state = Sprite.State.Airbourne;
-                ActiveCharacter.Velocity -= new Vector2 (0, ActiveCharacter.jump);
+                    worldSprites[worldSprites.Count - 1].Width = 0;
+
+                    if (bunny)
+                    {
+                        sounds[0].Play();
+                    }
+                    else
+                    {
+                        sounds[1].Play();
+                    }
+                    ActiveCharacter.state = Sprite.State.Airbourne;
+                    ActiveCharacter.Velocity -= new Vector2(0, ActiveCharacter.jump);
+                
             }
             if (InactiveCharacter.state == Sprite.State.Riding)
             {
@@ -147,94 +174,101 @@ namespace Bunny_and_Clyde
             // determine sprite animation
             if (currentKeyboard.IsKeyDown(Keys.Left) || GamePad.GetState(PlayerIndex.One).DPad.Left == ButtonState.Pressed && ActiveCharacter.state != Sprite.State.Airbourne)
             {
-                // turn left
-                if (bunny)
-                {
-                    if (ActiveCharacter.currentFrame == 1 && sum.Milliseconds > 100)
+                
+                    // turn left
+                    if (bunny)
                     {
-                        ActiveCharacter.currentFrame = 2;
-                        sum = TimeSpan.Zero;
+                        if (ActiveCharacter.currentFrame == 1 && sum.Milliseconds > 100)
+                        {
+                            ActiveCharacter.currentFrame = 2;
+                            sum = TimeSpan.Zero;
+                        }
+                        else if (sum.Milliseconds > 100)
+                        {
+                            ActiveCharacter.currentFrame = 1;
+                            sum = TimeSpan.Zero;
+                        }
                     }
-                    else if (sum.Milliseconds > 100)
+                    else
                     {
-                        ActiveCharacter.currentFrame = 1;
-                        sum = TimeSpan.Zero;
+                        if (ActiveCharacter.currentFrame == 3 && sum.Milliseconds > 100)
+                        {
+                            ActiveCharacter.currentFrame = 2;
+                            sum = TimeSpan.Zero;
+                        }
+                        else if (sum.Milliseconds > 100)
+                        {
+                            ActiveCharacter.currentFrame = 3;
+                            sum = TimeSpan.Zero;
+                        }
                     }
-                }
-                else
-                {
-                    if (ActiveCharacter.currentFrame == 3 && sum.Milliseconds > 100)
-                    {
-                        ActiveCharacter.currentFrame = 2;
-                        sum = TimeSpan.Zero;
-                    }
-                    else if (sum.Milliseconds > 100)
-                    {
-                        ActiveCharacter.currentFrame = 3;
-                        sum = TimeSpan.Zero;
-                    }
-                }
+                
             }
             else if (currentKeyboard.IsKeyDown(Keys.Right) || GamePad.GetState(PlayerIndex.One).DPad.Right == ButtonState.Pressed && ActiveCharacter.state != Sprite.State.Airbourne)
             {
-                // turn right
-                if (bunny)
-                {
-                    if (ActiveCharacter.currentFrame == 4 && sum.Milliseconds > 100)
+                
+                    // turn right
+                    if (bunny)
                     {
-                        ActiveCharacter.currentFrame = 3;
-                        sum = TimeSpan.Zero;
+                        if (ActiveCharacter.currentFrame == 4 && sum.Milliseconds > 100)
+                        {
+                            ActiveCharacter.currentFrame = 3;
+                            sum = TimeSpan.Zero;
+                        }
+                        else if (sum.Milliseconds > 100)
+                        {
+                            ActiveCharacter.currentFrame = 4;
+                            sum = TimeSpan.Zero;
+                        }
+
                     }
-                    else if (sum.Milliseconds > 100)
+                    else
                     {
-                        ActiveCharacter.currentFrame = 4;
-                        sum = TimeSpan.Zero;
+                        if (ActiveCharacter.currentFrame == 0 && sum.Milliseconds > 100)
+                        {
+                            ActiveCharacter.currentFrame = 1;
+                            sum = TimeSpan.Zero;
+                        }
+                        else if (sum.Milliseconds > 100)
+                        {
+                            ActiveCharacter.currentFrame = 0;
+                            sum = TimeSpan.Zero;
+                        }
                     }
-                    
-                }
-                else
-                {
-                    if (ActiveCharacter.currentFrame == 0 && sum.Milliseconds > 100)
-                    {
-                        ActiveCharacter.currentFrame = 1;
-                        sum = TimeSpan.Zero;
-                    }
-                    else if (sum.Milliseconds > 100)
-                    {
-                        ActiveCharacter.currentFrame = 0;
-                        sum = TimeSpan.Zero;
-                    }
-                }
+                
             }
             if (ActiveCharacter.state == Sprite.State.Airbourne) // jumping
             {
-                // jump
-                if (bunny)
-                {
-                    if (ActiveCharacter.currentFrame == 4 || ActiveCharacter.currentFrame == 3 || ActiveCharacter.currentFrame == 5)
+                
+                    // jump
+                    if (bunny)
                     {
-                        ActiveCharacter.currentFrame = 5;
+                        if (ActiveCharacter.currentFrame == 4 || ActiveCharacter.currentFrame == 3 || ActiveCharacter.currentFrame == 5)
+                        {
+                            ActiveCharacter.currentFrame = 5;
+                        }
+                        else
+                        {
+                            ActiveCharacter.currentFrame = 0;
+                        }
                     }
                     else
                     {
-                        ActiveCharacter.currentFrame = 0;
+                        if (ActiveCharacter.currentFrame == 0 || ActiveCharacter.currentFrame == 1 || ActiveCharacter.currentFrame == 4)
+                        {
+                            ActiveCharacter.currentFrame = 4;
+                        }
+                        else
+                        {
+                            ActiveCharacter.currentFrame = 7;
+                        }
                     }
-                }
-                else
-                {
-                    if (ActiveCharacter.currentFrame == 0 || ActiveCharacter.currentFrame == 1 || ActiveCharacter.currentFrame == 4)
-                    {
-                        ActiveCharacter.currentFrame = 4;
-                    }
-                    else
-                    {
-                        ActiveCharacter.currentFrame = 7;
-                    }
-                }
+                
             }
             if (ActiveCharacter.state != Sprite.State.Airbourne)
             {
-                // land from jump
+                
+                    // land from jump
                 if (bunny)
                 {
                     if (ActiveCharacter.currentFrame == 5)
@@ -248,7 +282,7 @@ namespace Bunny_and_Clyde
                 }
                 else
                 {
-                    if (ActiveCharacter.currentFrame == 4 )
+                    if (ActiveCharacter.currentFrame == 4)
                     {
                         ActiveCharacter.currentFrame = 0;
                     }
@@ -256,6 +290,7 @@ namespace Bunny_and_Clyde
                     {
                         ActiveCharacter.currentFrame = 3;
                     }
+                }
                 }
             }
 
