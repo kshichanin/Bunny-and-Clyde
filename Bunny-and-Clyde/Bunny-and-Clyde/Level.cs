@@ -30,7 +30,7 @@ namespace Bunny_and_Clyde
         public List<Item> waters { get; private set; }
         public Inventory inventory { get; private set; }
         private Sprite background;
-        public imageshow reset { get; private set; }
+        public imageshow resetImshow { get; private set; }
         public imageshow imshow { get; private set; }
         public imageshow imshow2 { get; private set; }
         public imageshow imshow3 { get; private set; }
@@ -214,7 +214,8 @@ namespace Bunny_and_Clyde
             }
             this.imshow = new imageshow(logoImage, (map.TileWidth * map.Width) / 4, (map.TileHeight * map.Height) / 4, (map.TileWidth * map.Width) / 2, (map.TileHeight * map.Height) / 2);
             this.worldSprites.Add(imshow);
-            
+            this.resetImshow = new imageshow(resetImage, GameGlobals.WINDOW_WIDTH - 150, 0, 94, 31);
+            this.worldSprites.Add(resetImshow);
 
         }
         public void restart()
