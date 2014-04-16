@@ -77,12 +77,24 @@ namespace Bunny_and_Clyde
             if (checkPlatformCollision(sprite.testBox(0, velocity.Y)))
             {
                 resolveCollision(sprite, new Vector2(0,velocity.Y));
+                
                 sprite.Velocity = new Vector2(velocity.X, 0);
 
                 Console.WriteLine(sprite.Velocity);
                 if (velocity.Y > 0)
                 {
+                    //this is for ramp falling sound, fix later
+                    if (velocity.Y == 0.6)
+                    {
+                        if (sprite.imageName == "gate_block")
+                        {
+                            Ramp r = (Ramp)sprite;
+                            r.soundeffect.Play();
+                        }
+                    }
                     sprite.state = Sprite.State.Default;
+                    
+                    
                 }
                 else
                 {

@@ -13,6 +13,7 @@ namespace Bunny_and_Clyde
         public PushBox leftPushBox { get; set; }
         public PushBox rightPushBox { get; set; }
         public Vector2 SpawnPoint { get; private set; }
+        public SoundEffect soundeffect { get; set; }
         public Ramp(float x, float y, int width, int height, Level l)
         :base("gate_block",x,y,width,height)
         {

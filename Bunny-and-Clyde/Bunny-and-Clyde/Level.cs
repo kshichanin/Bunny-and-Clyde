@@ -35,6 +35,7 @@ namespace Bunny_and_Clyde
         public imageshow imshow3 { get; private set; }
         public SoundEffect takekey { get; private set; }
         public SoundEffect ramp { get; private set; }
+        public SoundEffect fall { get; private set; }
         public SoundEffect riding { get; private set; }
         public SoundEffect splash { get; private set; }
         public SoundEffect button { get; private set; }
@@ -256,6 +257,8 @@ namespace Bunny_and_Clyde
             button = content.Load<SoundEffect>("button.wav");
             opengate = content.Load<SoundEffect>("opengate.wav");
             closegate = content.Load<SoundEffect>("closegate.wav");
+            fall = content.Load<SoundEffect>("fall.wav");
+
             sounds.Add(jumpBunny);
             sounds.Add(jumpClyde);
             foreach (Sprite s in this.worldSprites)
@@ -270,6 +273,7 @@ namespace Bunny_and_Clyde
             {
                 s.leftPushBox.soundeffect = ramp;
                 s.rightPushBox.soundeffect = ramp;
+                s.soundeffect = fall;
             }
             foreach (Switch s in this.buttons)
             {
