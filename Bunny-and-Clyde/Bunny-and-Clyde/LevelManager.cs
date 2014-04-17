@@ -38,13 +38,13 @@ namespace Bunny_and_Clyde
             //do lists of songs later
             Song main0 = (content.Load<Song>("mainthemetheone.wav"));
             maintheme.Add(main0);  // Put the name of your song here instead of "song_title"
-            Song main1 = (content.Load<Song>("mainthemetheone2.wav"));
+            Song main1 = (content.Load<Song>("mainthemetheone3.wav"));
             maintheme.Add(main1);  // Put the name of your song here instead of "song_title"
-            Song main2 = (content.Load<Song>("mainthemetheone3.wav"));
+            Song main2 = (content.Load<Song>("mainthemetheone2.wav"));
             maintheme.Add(main2);  // Put the name of your song here instead of "song_title"
-            Song main3 = (content.Load<Song>("mainthemetheone5.wav"));
+            Song main3 = (content.Load<Song>("mainthemetheone6.wav"));
             maintheme.Add(main3);  // Put the name of your song here instead of "song_title"
-            Song main4 = (content.Load<Song>("mainthemetheone6.wav"));
+            Song main4 = (content.Load<Song>("mainthemetheone5.wav"));
             maintheme.Add(main4);  // Put the name of your song here instead of "song_title"
             Song main5 = (content.Load<Song>("mainthemetheone7.wav"));
             maintheme.Add(main5);  // Put the name of your song here instead of "song_title"
