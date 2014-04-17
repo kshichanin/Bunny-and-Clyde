@@ -107,7 +107,7 @@ namespace Bunny_and_Clyde
             else
             {
                 sprite.Position += new Vector2 (0, velocity .Y);
-                
+                sprite.Update(new GameTime());
             }
             if (checkPlatformCollision(sprite.testBox(velocity.X, 0)))
             {
@@ -116,6 +116,7 @@ namespace Bunny_and_Clyde
             else
             {
                 sprite.Position += new Vector2(velocity.X, 0);
+                sprite.Update(new GameTime());
             }
             if (removed)
             {
@@ -125,7 +126,7 @@ namespace Bunny_and_Clyde
             {
                 solids.Add(problem);
             }
-            sprite.Update(new GameTime());
+            //sprite.Update(new GameTime());
            // sprite.Velocity = new Vector2(0.5f * sprite .Velocity .X, sprite.Velocity.Y);
         }
         public void resolveCollision(Sprite s, Vector2 velocity)

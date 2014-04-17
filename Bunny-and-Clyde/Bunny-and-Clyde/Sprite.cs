@@ -54,7 +54,9 @@ namespace Bunny_and_Clyde
 
 
         public virtual Rectangle testBox(float X, float Y) {
-            return new Rectangle((int)(X+Position.X) , (int)(Y+Position .Y), Width, Height);
+            float tempx = X + Position.X;
+            float tempy = Y + Position.Y;
+            return new Rectangle((int)tempx , (int)tempy, Width, Height);
         }
 
         public virtual void LoadContent(ContentManager content)
