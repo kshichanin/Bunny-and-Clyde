@@ -27,7 +27,7 @@ namespace Bunny_and_Clyde
             :base("switch_button.png", x, y, width, height){
                 color = c;
                 activated = false;
-                activatedonce = false;
+                activatedonce = true;
                 level = l;
                 reverseGate = reverse;
         }
@@ -44,25 +44,26 @@ namespace Bunny_and_Clyde
             if (activatedonce == false)
             {
                 activatedonce = true;
+                if (reverseGate)
+                {
+                    level.getGate(color).close();
+                }
+                else
+                {
+                    level.getGate(color).open();
+                }
           //not working for some reason      soundeffect.Play();
             }
-            if (reverseGate)
-            {
-                level.getGate(color).close();
-            }
-            else
-            {
-                level.getGate(color).open();
-            }
+            
             this.imageName = "switch_button_pressed.png";
             this.LoadContent(this.contentManager);
         }
         public override void Update(GameTime gameTime)
         {
             base.Update(gameTime);
-            if (!activated && level.getGate(color) != null)
+            if (!activated && activatedonce  && level.getGate(color) != null)
             {
-                
+                activatedonce = false;
                 this.imageName = "switch_button.png";
                 this.LoadContent(this.contentManager);
                 if (reverseGate)
