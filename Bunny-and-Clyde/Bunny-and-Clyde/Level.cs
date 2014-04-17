@@ -231,7 +231,10 @@ namespace Bunny_and_Clyde
             this.imshow.Width = 0;
             this.imshow3.Width = 0;
             this.Bunny.Position = this.Bunny.SpawnPoint;
+            this.Bunny.Velocity = Vector2.Zero;
             this.Clyde.Position = this.Clyde.SpawnPoint;
+            this.Clyde.Velocity = Vector2.Zero;
+
             foreach (Key s in this.keys)
             {
                 this.inventory.removeItem(s);
