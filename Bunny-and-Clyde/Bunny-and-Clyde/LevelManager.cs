@@ -150,11 +150,18 @@ namespace Bunny_and_Clyde
                 MediaPlayer.Stop();
                 MediaPlayer.Play(maintheme[this.currentLevelIndex]);
                 MediaPlayer.IsRepeating = true;
-
+           //     if (this.levels[this.currentLevelIndex].Bunny.SpawnPoint == this.levels[this.currentLevelIndex].Bunny.SavePoint){
+                    this.levels[this.currentLevelIndex].imshow2.Width = this.levels[this.currentLevelIndex].Bunny.mapwidth;
+                    this.levels[this.currentLevelIndex].restart();
+               // }
+          //      else{
+            //        this.levels[this.currentLevelIndex].imshow2.Width = this.levels[this.currentLevelIndex].Bunny.mapwidth;
+   //                 this.levels[this.currentLevelIndex].Bunny.Position = this.levels[this.currentLevelIndex].Bunny.SavePoint;
+     //           }
                 //this.levels[this.currentLevelIndex].restart();
          //       this.levels[this.currentLevelIndex].Bunny.Position = this.levels[this.currentLevelIndex].Bunny.SavePoint;
-                this.levels[this.currentLevelIndex].imshow2.Width = this.levels[this.currentLevelIndex].Bunny.mapwidth;
-                this.levels[this.currentLevelIndex].restart();
+               // this.levels[this.currentLevelIndex].imshow2.Width = this.levels[this.currentLevelIndex].Bunny.mapwidth;
+              //  this.levels[this.currentLevelIndex].restart();
             }
 
             if (this.levels[this.currentLevelIndex].isComplete)

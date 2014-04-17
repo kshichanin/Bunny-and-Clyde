@@ -53,6 +53,19 @@ namespace Bunny_and_Clyde
             if (currentKeyboard.IsKeyDown(Keys.Enter) || GamePad.GetState(PlayerIndex.One).Buttons.Start == ButtonState.Pressed){
                 worldSprites[worldSprites.Count - 2].Width = 0;
             }
+            if (currentKeyboard.IsKeyDown(Keys.S))
+            {
+                if (bunny)
+                {
+                    Bunny b = (Bunny)ActiveCharacter;
+                    b.SavePoint = b.Position;
+                }
+                else
+                {
+                    Bunny b = (Bunny)InactiveCharacter;
+                    b.SavePoint = b.Position;
+                }
+            }
             if (!rKeyEdge && (currentKeyboard.IsKeyDown(Keys.R) || GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed))
             {
                 rKeyEdge = true;
@@ -68,17 +81,12 @@ namespace Bunny_and_Clyde
                 {
                     worldSprites[worldSprites.Count - 1].Width = 0;
                     
-                    if (bunny)
-                    {
-                        Bunny b = (Bunny)ActiveCharacter;
-                        b.SavePoint = b.Position;
-                    }
+                    
                     ActiveCharacter.Velocity = new Vector2(-ActiveCharacter.Speed, ActiveCharacter.Velocity.Y);
                     if (InactiveCharacter.state == Sprite.State.Riding)
                     {
                         InactiveCharacter.Velocity = new Vector2(-ActiveCharacter.Speed, ActiveCharacter.Velocity.Y);
-                        Bunny b = (Bunny)InactiveCharacter;
-                        b.SavePoint = b.Position;
+                        
                           
                     }
 
@@ -86,18 +94,13 @@ namespace Bunny_and_Clyde
                 else if (currentKeyboard.IsKeyDown(Keys.Right) || GamePad.GetState(PlayerIndex.One).DPad.Right == ButtonState.Pressed)
                 {
                     worldSprites[worldSprites.Count - 1].Width = 0;
-                    if (bunny)
-                    {
-                        Bunny b = (Bunny)ActiveCharacter;
-                        b.SavePoint = b.Position;
-                    }
+                   
                     ActiveCharacter.Velocity = new Vector2(ActiveCharacter.Speed, ActiveCharacter.Velocity.Y);
 
                     if (InactiveCharacter.state == Sprite.State.Riding)
                     {
                         InactiveCharacter.Velocity = new Vector2(ActiveCharacter.Speed, ActiveCharacter.Velocity.Y);
-                        Bunny b = (Bunny)InactiveCharacter;
-                        b.SavePoint = b.Position;
+                       
                     }
                 }
                 else
