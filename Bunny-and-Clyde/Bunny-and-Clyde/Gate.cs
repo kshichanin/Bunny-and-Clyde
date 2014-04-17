@@ -16,11 +16,13 @@ namespace Bunny_and_Clyde
         public SoundEffect soundeffect1 { get; set; }
         public SoundEffect soundeffect2 { get; set; }
         public Color color { get; private set; }
+        private int numPressed;
         public Gate(String imagename, Color c, float x, float y, int width, int height)
             : base(imagename, x, y, width, height)
         {
             defaultPosition = this.Position;
             color = c;
+            numPressed = 0;
         }
         public override void activate(Sprite collider)
         {
@@ -28,6 +30,7 @@ namespace Bunny_and_Clyde
         }
         public void open()
         {
+            numPressed++;
             if (!isopen)
             {
                 soundeffect1.Play();
@@ -37,6 +40,9 @@ namespace Bunny_and_Clyde
         }
         public void close()
         {
+            numPressed--;
+            if (numPressed < 0) { numPressed = 0; }
+            if (numPressed != 0) { return; }
             if (isopen)
             {
                 soundeffect2.Play();
