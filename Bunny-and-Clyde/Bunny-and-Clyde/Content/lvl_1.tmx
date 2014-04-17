@@ -752,5 +752,41 @@
     <property name="type" value="goal_door"/>
    </properties>
   </object>
+  <object x="64" y="96" width="96" height="64">
+   <properties>
+    <property name="imageName" value="cloud.png"/>
+    <property name="type" value="cloud"/>
+   </properties>
+  </object>
+  <object x="224" y="32" width="96" height="64">
+   <properties>
+    <property name="imageName" value="cloud.png"/>
+    <property name="type" value="cloud"/>
+   </properties>
+  </object>
+  <object x="384" y="64" width="96" height="64">
+   <properties>
+    <property name="imageName" value="cloud.png"/>
+    <property name="type" value="cloud"/>
+   </properties>
+  </object>
+  <object x="544" y="32" width="96" height="64">
+   <properties>
+    <property name="imageName" value="cloud.png"/>
+    <property name="type" value="cloud"/>
+   </properties>
+  </object>
+  <object x="736" y="64" width="96" height="64">
+   <properties>
+    <property name="imageName" value="cloud.png"/>
+    <property name="type" value="cloud"/>
+   </properties>
+  </object>
+  <object x="928" y="96" width="96" height="64">
+   <properties>
+    <property name="imageName" value="cloud.png"/>
+    <property name="type" value="cloud"/>
+   </properties>
+  </object>
  </objectgroup>
 </map>
