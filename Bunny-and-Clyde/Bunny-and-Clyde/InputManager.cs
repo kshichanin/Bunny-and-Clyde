@@ -150,7 +150,7 @@ namespace Bunny_and_Clyde
 
                     if (bunny)
                     {
-                        sounds[0].Play();
+                        sounds[0].Play(0.3f, 0,0);
                     }
                     else
                     {
