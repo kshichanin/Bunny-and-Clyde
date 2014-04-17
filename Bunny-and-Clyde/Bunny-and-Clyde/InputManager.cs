@@ -169,7 +169,7 @@ namespace Bunny_and_Clyde
                 }
 
                 // determine sprite animation
-                if (currentKeyboard.IsKeyDown(Keys.Left) || GamePad.GetState(PlayerIndex.One).DPad.Left == ButtonState.Pressed && ActiveCharacter.state != Sprite.State.Airbourne)
+                if (currentKeyboard.IsKeyDown(Keys.Left) || GamePad.GetState(PlayerIndex.One).DPad.Left == ButtonState.Pressed)
                 {
                     // turn left
                     if (bunny)
@@ -199,7 +199,7 @@ namespace Bunny_and_Clyde
                         }
                     }
                 }
-                else if (currentKeyboard.IsKeyDown(Keys.Right) || GamePad.GetState(PlayerIndex.One).DPad.Right == ButtonState.Pressed && ActiveCharacter.state != Sprite.State.Airbourne)
+                else if (currentKeyboard.IsKeyDown(Keys.Right) || GamePad.GetState(PlayerIndex.One).DPad.Right == ButtonState.Pressed)
                 {
                     // turn right
                     if (bunny)
